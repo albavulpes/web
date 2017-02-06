@@ -6,7 +6,12 @@ module.exports = function(gulp, plugins, paths, project)
 {
     gulp.task("clean", function (callback)
     {
-        return del(paths.build + "/**", {force: true}, callback);
+        var delPaths = [
+            paths.build + "/**",
+            paths.deploy + "/**"
+        ];
+    
+        return del(delPaths, {force: true}, callback);
     });
     
     // Build App
@@ -55,7 +60,7 @@ module.exports = function(gulp, plugins, paths, project)
         ];
         
         var client = gulp.src(clientPaths)
-            .pipe(plugins.zip("client.zip", {compress: true}))
+            .pipe(plugins.zip(`${project.meta.name}.zip`, {compress: true}))
             .pipe(gulp.dest(paths.deploy));
         
         return client;
