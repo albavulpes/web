@@ -1,0 +1,262 @@
+.comic-container
+{
+    padding-top: 10px;
+
+    .reader-social-buttons
+    {
+        padding: 0 15px;
+
+        .btn
+        {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+// Normal Reader
+.comic-reader
+{
+    .reader-top-bar
+    {
+        border-bottom: $border-color 1px solid;
+    }
+    .reader-episode-meta-container
+    {
+        padding: 10px 0 4px;
+
+        .reader-episode-meta
+        {
+            font-size: $font-size-h5;
+        }
+        .reader-episode-title
+        {
+            font-size: $font-size-h3;
+            margin: 2px 0 0;
+        }
+    }
+    .reader-main-area
+    {
+        position: relative;
+        padding: 30px 0;
+
+        .reader-page-image
+        {
+            @include shadowfy(0, 15px);
+        }
+    }
+    .reader-guide
+    {
+        padding: 0 30px;
+
+        .guide-arc-controls
+        {
+            .btn
+            {
+                width: 26px;
+                height: 26px;
+
+                margin: 0 2px;
+                padding: 0;
+                line-height: 1.6;
+            }
+        }
+        .guide-chapters
+        {
+            margin-top: 15px;
+
+            .panel-group
+            {
+                margin: 0;
+
+                .panel
+                {
+                    background: none;
+                    border: none;
+
+                    &.panel-open
+                    {
+                        .chapter-expand-control
+                        {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+            .guide-chapter-wrapper
+            {
+                border-top: $gray-darker 1px solid;
+
+                .chapter-title
+                {
+                    padding: 8px 15px;
+                    font-size: $font-size-h4;
+
+                    cursor: pointer;
+
+                    @include transitions(background);
+
+                    &:hover
+                    {
+                        background: transparentize($gray-dark, 0.5);
+                    }
+
+                    .chapter-expand-control
+                    {
+                        @include transitions(transform);
+                    }
+                }
+                .chapter-pages-wrapper
+                {
+                    padding-bottom: 15px;
+                    padding-left: 15px;
+                    border-top: $gray-darker 1px solid;
+
+                    .chapter-page
+                    {
+                        padding: 5px 15px;
+                        cursor: pointer;
+
+                        @include transitions(background);
+
+                        &:hover
+                        {
+                            background: transparentize($gray-dark, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .reader-bottom-bar
+    {
+        border-top: $border-color 1px solid;
+
+        .reader-social-buttons
+        {
+            padding: 15px 0;
+        }
+    }
+
+    .control-button
+    {
+        padding: 15px 20px;
+    }
+}
+
+// Fullscreen Reader
+$topBarZ: 999;
+
+.comic-reader.is-fullscreen
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .reader-top-bar
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: $topBarZ;
+
+        background: none;
+        border: none;
+
+        .reader-info-controls
+        {
+            .control-button
+            {
+                background: none;
+            }
+        }
+    }
+    .reader-episode-meta-container
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: $topBarZ - 2;
+
+        padding: 10px 0 50px 80px;
+
+        background: linear-gradient(to bottom, $gray-base, transparent);
+
+        opacity: 0;
+
+        @include transitions(opacity);
+
+        &.shown
+        {
+            opacity: 1;
+        }
+    }
+    .reader-guide
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: $topBarZ - 1;
+
+        padding: 0 30px;
+
+        background: darken($brand-primary, 32%);
+
+        transform: translate(100%, 0);
+
+        @include transitions(transform);
+
+        &.shown
+        {
+            transform: translate(0, 0);
+        }
+
+        .guide-arc-controls
+        {
+            .btn
+            {
+                border: $gray-darker 1px solid;
+            }
+        }
+    }
+    .reader-main-area
+    {
+        z-index: -1;
+
+        background: $gray-base;
+        height: 100%;
+
+        .reader-page-image
+        {
+            max-width: 98vw;
+            max-height: 98vh;
+        }
+    }
+    .reader-bottom-bar
+    {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: $topBarZ;
+
+        background: none;
+        border: none;
+    }
+
+    .control-button
+    {
+        color: $gray;
+
+        &:hover
+        {
+            color: white;
+        }
+    }
+}

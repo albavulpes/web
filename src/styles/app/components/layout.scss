@@ -1,0 +1,54 @@
+html, body
+{
+    height: 100%;
+    @include text-antialias();
+}
+[hidden],
+template
+{
+    display: none !important;
+}
+#content-container
+{
+    padding: 0 30px 30px;
+    overflow: hidden;
+
+    //background: white;
+    //@include shadowfy();
+}
+#footer-container
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.container-fluid
+{
+    padding: 0;
+}
+@media (min-width: $screen-xs-min) {
+    .container-fluid
+    {
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (min-width: $screen-sm-min) {
+    .container-fluid
+    {
+        margin: 0 4%;
+    }
+}
+@media (min-width: $screen-md-min) {
+    .container-fluid
+    {
+        margin: 0 8%;
+    }
+}
+@media (min-width: $screen-lg-min) {
+    .container-fluid
+    {
+        margin: 0 12%;
+    }
+}

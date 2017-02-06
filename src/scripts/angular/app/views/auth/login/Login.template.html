@@ -1,0 +1,61 @@
+<div class="clearfix">
+    <h2 class="page-header">Log In</h2>
+
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+            <form name="loginForm" ng-submit="$ctrl.login()" novalidate>
+
+                <div class="alert alert-danger" ng-show="$ctrl.hasLoginFailed">
+                    <span class="fa fa-lg fa-warning"></span>
+                    {{$ctrl.hasLoginFailed}}
+                </div>
+
+                <!-- Email -->
+                <div class="form-group" ng-class="{'has-error': loginForm.email.$dirty && loginForm.email.$invalid}">
+                    <label for="email" class="required">Email</label>
+
+                    <input type="text" class="form-control"
+                           id="email" name="email" tabindex="1" required
+                           placeholder="Email Address" ng-model="$ctrl.email" ng-model-options="{debounce: 200}">
+
+                    <div class="help-block" ng-show="loginForm.email.$dirty && loginForm.email.$invalid" ng-messages="loginForm.email.$error" role="alert">
+                        <div ng-message="required">Email Address is required.</div>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" ng-class="{'has-error': loginForm.password.$dirty && loginForm.password.$invalid}">
+                    <label for="password" class="required">Password</label>
+                    <input type="password" class="form-control"
+                           id="password" name="password" tabindex="2" required
+                           placeholder="Password" ng-model="$ctrl.password">
+
+                    <div class="help-block" ng-show="loginForm.password.$dirty && loginForm.password.$invalid" ng-messages="loginForm.password.$error" role="alert">
+                        <div ng-message="required">Password is required.</div>
+                    </div>
+                </div>
+
+                <!-- Log In Button -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block btn-primary" tabindex="3">
+                        <span class="fa fa-sign-in"></span>
+                        Log In
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <div class="text-center">
+                        <div class="h4">
+                            <a ui-sref="register">Don't have an account? Sign up.</a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a>Forgot Password?</a>
+                    </div>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+
+</div>

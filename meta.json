@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "name": "project-strokes-web",
+    "description": "Project Strokes - Web Client",
+    "version": "0.1.0",
+    "copyright": "Copyright \u00A9 2017",
+    "author": {
+      "name": "cypherix93",
+      "url": "https://github.com/cypherix93"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/albavulpes/project-strokes-web.git"
+    },
+    "private": true,
+    "license": "UNLICENSED"
+  },
+  "config": {
+    "ports": {
+      "client": 7970,
+      "server": 7950
+    }
+  }
+}

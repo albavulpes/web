@@ -1,0 +1,68 @@
+<div class="comic-reader">
+
+    <!-- Top Bar -->
+    <div class="reader-top-bar">
+        <div class="row bottom-xs">
+            <div class="col-xs-12 col-md-10">
+                <div class="row bottom-xs">
+                    <div class="col-xs">
+                        <div class="reader-episode-meta-container">
+                            <div class="reader-episode-meta">
+                                Chapter 4 Episode 12
+                            </div>
+                            <div class="reader-episode-title">
+                                Episode Title Goes Here
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-1">
+                        <div class="reader-view-controls text-right">
+                            <a class="btn btn-transparent control-button" ng-click="$ctrl.ComicReaderFullscreenService.openFullscreenReader()" uib-tooltip="Open Reader View">
+                                <span class="fa fa-lg fa-arrows-alt"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 hidden-xs hidden-sm">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Area -->
+    <div class="reader-main-area clearfix">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-xs-10 col-md-8">
+                <img class="reader-page-image img-responsive center-block" src="../../../../../../images/comic/page-1.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="reader-bottom-bar">
+        <div class="row right-xs">
+            <div class="col-xs text-right">
+                <div class="reader-social-buttons">
+                    Share this shit:
+                    <a class="btn btn-social-icon btn-facebook" uib-tooltip="Facebook" tooltip-append-to-body="!$ctrl.isFullscreen">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-twitter" uib-tooltip="Twitter" tooltip-append-to-body="!$ctrl.isFullscreen">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-instagram" uib-tooltip="Instagram" tooltip-append-to-body="!$ctrl.isFullscreen">
+                        <span class="fa fa-instagram"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-tumblr" uib-tooltip="Tumblr" tooltip-append-to-body="!$ctrl.isFullscreen">
+                        <span class="fa fa-tumblr"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-default" uib-tooltip="Copy to Clipboard" tooltip-append-to-body="!$ctrl.isFullscreen">
+                        <span class="fa fa-copy"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

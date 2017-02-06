@@ -1,0 +1,77 @@
+/* Theme variables */
+
+/* Colors */
+$gray-base:             #090909;
+$gray-darker:           lighten($gray-base, 15.0%);
+$gray-dark:             lighten($gray-base, 30%);
+$gray:                  lighten($gray-base, 50.0%);
+$gray-light:            lighten($gray-base, 75%);
+$gray-lighter:          lighten($gray-base, 90.0%);
+
+$brand-primary:         hsl(214, 42%, 45%);
+$brand-success:         hsl(150, 75%, 30%);
+$brand-info:            hsl(200, 82%, 40%);
+$brand-warning:         hsl(40, 65%, 48%);
+$brand-danger:          hsl(0, 85%, 36%);
+
+$state-success-text:    lighten($brand-success, 15%);
+$state-success-bg:      darken($brand-success, 15%);
+$state-success-border:  lighten($state-success-bg, 8%);
+
+$state-info-text:       lighten($brand-info, 25%);
+$state-info-bg:         darken($brand-info, 25%);
+$state-info-border:     lighten($state-info-bg, 8%);
+
+$state-warning-text:    lighten($brand-warning, 10%);
+$state-warning-bg:      darken($brand-warning, 35%);
+$state-warning-border:  lighten($state-warning-bg, 8%);
+
+$state-danger-text:     lighten($brand-danger, 10%);
+$state-danger-bg:       darken($brand-danger, 25%);
+$state-danger-border:   lighten($state-danger-bg, 8%);
+
+
+/* Font Stuff */
+$web-font-path: "https://fonts.googleapis.com/css?family=Athiti:500,500i,700,700i";
+
+$font-family-sans-serif: "Athiti", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$font-family-base:        $font-family-sans-serif;
+$headings-font-family:    $font-family-sans-serif;
+
+$font-size-base: 16px;
+
+$fa-font-path: "~font-awesome/fonts/";
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+
+/* Global */
+$body-bg: desaturate(darken($brand-primary, 38%), 10%);
+
+
+/* Text */
+$text-color: white;
+$link-color: lighten(saturate($brand-primary, 30%), 30%);
+
+$text-shadow: transparentize($gray-base, 0.9) 0 0 1px;
+
+
+/* Border Stuff */
+$border-color: transparentize($gray-dark, 0.5);
+
+
+/* Nav-Bar */
+$navbar-inverse-bg: $brand-primary;
+
+$navbar-inverse-brand-color: $gray-lighter;
+$navbar-inverse-brand-hover-color: white;
+
+$navbar-inverse-link-color: $gray-lighter;
+$navbar-inverse-link-hover-color: white;
+$navbar-inverse-link-active-color: white;
+
+
+/* Forms */
+$input-bg: lighten($body-bg, 18%);
+$input-border: $gray-base;

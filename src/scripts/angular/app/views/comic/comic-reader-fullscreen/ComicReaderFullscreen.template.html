@@ -1,0 +1,107 @@
+<div class="comic-reader is-fullscreen">
+
+    <!-- Player Controls -->
+    <div class="reader-top-bar">
+        <div class="reader-info-controls pull-left">
+            <a class="btn control-button" ng-mouseenter="showInfo = true" ng-mouseleave="showInfo = false">
+                <span class="fa fa-stack">
+                    <span class="fa fa-stack-2x fa-circle-thin"></span>
+                    <span class="fa fa-stack-1x fa-info"></span>
+                </span>
+            </a>
+        </div>
+        <div class="reader-player-controls pull-right">
+            <a class="btn control-button" ng-click="showGuide = !showGuide">
+                <span class="fa fa-stack">
+                    <span class="fa fa-lg fa-stack-1x" ng-class="{'fa-bars': !showGuide, 'fa-arrow-right': showGuide}"></span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Episode Meta Info -->
+    <div class="reader-episode-meta-container" ng-class="{'shown': showInfo}">
+        <div class="reader-episode-meta">
+            Chapter 4 Episode 12
+        </div>
+        <div class="reader-episode-title">
+            Episode Title Goes Here
+        </div>
+    </div>
+
+    <!-- Guide -->
+    <div class="reader-guide col-xs-6 col-sm-5 col-md-4 col-lg-3" ng-class="{'shown': showGuide}">
+        <div class="h3">Guide</div>
+        <hr>
+        <div class="row">
+            <div class="col-xs">
+                <div class="guide-arc-controls row middle-xs col-xs">
+                    <small>ARCS &nbsp;</small>
+                    <a class="btn btn-sm btn-transparent">1</a>
+                    <a class="btn btn-sm btn-transparent">2</a>
+                    <a class="btn btn-sm btn-transparent">3</a>
+                </div>
+                <div class="guide-chapters">
+                    <script type="text/ng-template" id="accordion-group-template.html">
+                        <div class="guide-chapter-wrapper">
+                            <div ng-click="toggleOpen()" uib-accordion-transclude="heading">
+                                <div class="chapter-title">
+                                    <div class="chapter-expand-control pull-right">
+                                        <span class="fa fa-chevron-down"></span>
+                                    </div>
+                                    <div uib-accordion-header>
+                                        {{heading}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse" uib-collapse="!isOpen">
+                                <div ng-transclude></div>
+                            </div>
+                        </div>
+                    </script>
+
+                    <uib-accordion>
+                        <div ng-repeat="i in [].constructor(4) track by $index">
+                            <div uib-accordion-group template-url="accordion-group-template.html">
+                                <uib-accordion-heading>Chapter {{$index+1}}</uib-accordion-heading>
+                                <div class="chapter-pages-wrapper">
+                                    <div class="chapter-page" ng-repeat="j in [].constructor(8) track by $index">
+                                        Page {{$index+1}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </uib-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Area -->
+    <div class="reader-main-area">
+        <div class="row" style="height: 100%">
+            <div class="col-xs">
+                <div class="row middle-xs center-xs" style="height: 100%;">
+                    <img class="reader-page-image img-responsive" src="../../../../../../images/comic/page-1.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="reader-bottom-bar">
+        <div class="reader-player-controls pull-right">
+            <a class="btn control-button">
+                34
+                <span class="fa fa-stack">
+                    <span class="fa fa-lg fa-stack-1x fa-comments-o"></span>
+                </span>
+            </a>
+            <a class="btn control-button" ng-click="$ctrl.ComicReaderFullscreenService.closeFullscreenReader()">
+                <span class="fa fa-stack">
+                    <span class="fa fa-lg fa-stack-1x fa-compress"></span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+﻿.navbar
+{
+    height: 52px;
+    padding: 0 30px;
+    margin-bottom: 0;
+    border: none;
+
+    @include shadowfy(0.2);
+
+    .navbar-header
+    {
+        margin-left: -300px;
+        opacity: 0;
+
+        transition: margin 0.25s ease, opacity 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+
+        .navbar-brand
+        {
+            padding: 12px 15px 0;
+            margin-right: 20px;
+            height: auto;
+            line-height: normal;
+
+            .h3
+            {
+                line-height: 0.9;
+                margin: 0;
+
+                .fa
+                {
+                    vertical-align: -1px;
+                }
+            }
+
+            &:hover
+            {
+                text-shadow: $gray-light 0 0 4px;
+            }
+        }
+    }
+
+    .navbar-nav > li > a
+    {
+        padding: 15px 22px;
+    }
+}
+// When sticky
+.sticky-wrapper.is-sticky
+{
+    .navbar
+    {
+        .navbar-header
+        {
+            margin-left: 0;
+            opacity: 1;
+
+            transition: margin 0.25s ease, opacity 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.35);
+        }
+    }
+}
+
+// On xs screens, dont do the hide-show thing because there's no banner
+@media (max-width: $screen-xs-max) {
+    .navbar
+    {
+        .navbar-header
+        {
+            margin-left: 0;
+            opacity: 1;
+        }
+    }
+}

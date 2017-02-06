@@ -1,0 +1,47 @@
+a, button
+{
+    cursor: pointer;
+    text-decoration: none !important;
+
+    &:hover
+    {
+        color: lighten(saturate($link-color, 25%), 10%);
+    }
+    &.btn.btn-transparent
+    {
+        color: inherit;
+        border: none;
+
+        &:hover
+        {
+            color: inherit;
+            background: transparentize($gray, 0.8);
+        }
+    }
+    &.btn-default
+    {
+        color: inherit;
+        background: $gray-dark;
+
+        &:hover
+        {
+            color: inherit;
+            background: $gray-darker;
+        }
+    }
+    &.btn-social-icon
+    {
+        border: none;
+        font-size: 1.4em;
+
+        .fa
+        {
+            font-size: 1em;
+        }
+    }
+}
+a, .btn, button
+{
+    @include transitions();
+    outline: none !important;
+}

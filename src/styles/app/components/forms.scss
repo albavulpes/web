@@ -1,0 +1,25 @@
+label.required::after
+{
+    content: " *";
+    color: $brand-danger;
+}
+textarea
+{
+    resize: vertical;
+}
+.has-error .control-label
+{
+    .control-label
+    {
+        color: $text-color;
+    }
+    .control-error
+    {
+        color: $brand-danger;
+
+        & > *
+        {
+            display: block;
+        }
+    }
+}

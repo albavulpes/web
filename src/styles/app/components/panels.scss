@@ -1,0 +1,6 @@
+.jumbotron, .well
+{
+    background: transparentize($gray-light, 0.75);
+
+    box-shadow: transparentize($gray-dark, 0.4) 0 0 4px;
+}
