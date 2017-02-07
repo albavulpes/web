@@ -759,10 +759,24 @@
       "dev": true
     },
     "copy-webpack-plugin": {
-      "version": "3.0.1",
-      "from": "copy-webpack-plugin@>=3.0.1 <4.0.0",
-      "resolved": "https://registry.npmjs.org/copy-webpack-plugin/-/copy-webpack-plugin-3.0.1.tgz",
-      "dev": true
+      "version": "4.0.1",
+      "from": "copy-webpack-plugin@latest",
+      "resolved": "https://registry.npmjs.org/copy-webpack-plugin/-/copy-webpack-plugin-4.0.1.tgz",
+      "dev": true,
+      "dependencies": {
+        "is-extglob": {
+          "version": "2.1.1",
+          "from": "is-extglob@>=2.1.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+          "dev": true
+        },
+        "is-glob": {
+          "version": "3.1.0",
+          "from": "is-glob@>=3.1.0 <4.0.0",
+          "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-3.1.0.tgz",
+          "dev": true
+        }
+      }
     },
     "core-util-is": {
       "version": "1.0.2",
@@ -817,9 +831,9 @@
       "dev": true
     },
     "css-loader": {
-      "version": "0.25.0",
-      "from": "css-loader@>=0.25.0 <0.26.0",
-      "resolved": "https://registry.npmjs.org/css-loader/-/css-loader-0.25.0.tgz",
+      "version": "0.26.1",
+      "from": "css-loader@latest",
+      "resolved": "https://registry.npmjs.org/css-loader/-/css-loader-0.26.1.tgz",
       "dev": true
     },
     "css-select": {
@@ -829,9 +843,9 @@
       "dev": true
     },
     "css-selector-tokenizer": {
-      "version": "0.6.0",
-      "from": "css-selector-tokenizer@>=0.6.0 <0.7.0",
-      "resolved": "https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.6.0.tgz",
+      "version": "0.7.0",
+      "from": "css-selector-tokenizer@>=0.7.0 <0.8.0",
+      "resolved": "https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.7.0.tgz",
       "dev": true
     },
     "css-what": {
@@ -1302,9 +1316,9 @@
       "dev": true
     },
     "file-loader": {
-      "version": "0.9.0",
-      "from": "file-loader@>=0.9.0 <0.10.0",
-      "resolved": "https://registry.npmjs.org/file-loader/-/file-loader-0.9.0.tgz",
+      "version": "0.10.0",
+      "from": "file-loader@latest",
+      "resolved": "https://registry.npmjs.org/file-loader/-/file-loader-0.10.0.tgz",
       "dev": true
     },
     "filename-regex": {
@@ -1703,9 +1717,9 @@
       "dev": true
     },
     "gulp-clean-css": {
-      "version": "2.4.0",
-      "from": "gulp-clean-css@>=2.0.10 <3.0.0",
-      "resolved": "https://registry.npmjs.org/gulp-clean-css/-/gulp-clean-css-2.4.0.tgz",
+      "version": "3.0.0",
+      "from": "gulp-clean-css@latest",
+      "resolved": "https://registry.npmjs.org/gulp-clean-css/-/gulp-clean-css-3.0.0.tgz",
       "dev": true
     },
     "gulp-concat": {
@@ -2775,12 +2789,6 @@
       "resolved": "https://registry.npmjs.org/lodash._basevalues/-/lodash._basevalues-3.0.0.tgz",
       "dev": true
     },
-    "lodash._createcompounder": {
-      "version": "3.0.0",
-      "from": "lodash._createcompounder@>=3.0.0 <4.0.0",
-      "resolved": "https://registry.npmjs.org/lodash._createcompounder/-/lodash._createcompounder-3.0.0.tgz",
-      "dev": true
-    },
     "lodash._getnative": {
       "version": "3.9.1",
       "from": "lodash._getnative@>=3.0.0 <4.0.0",
@@ -2830,21 +2838,15 @@
       "dev": true
     },
     "lodash.camelcase": {
-      "version": "3.0.1",
-      "from": "lodash.camelcase@>=3.0.1 <4.0.0",
-      "resolved": "https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-3.0.1.tgz",
+      "version": "4.3.0",
+      "from": "lodash.camelcase@>=4.3.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz",
       "dev": true
     },
     "lodash.clonedeep": {
       "version": "4.5.0",
       "from": "lodash.clonedeep@>=4.3.2 <5.0.0",
       "resolved": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz",
-      "dev": true
-    },
-    "lodash.deburr": {
-      "version": "3.2.0",
-      "from": "lodash.deburr@>=3.0.0 <4.0.0",
-      "resolved": "https://registry.npmjs.org/lodash.deburr/-/lodash.deburr-3.2.0.tgz",
       "dev": true
     },
     "lodash.defaults": {
@@ -2947,12 +2949,6 @@
       "version": "4.5.0",
       "from": "lodash.uniq@>=4.3.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz",
-      "dev": true
-    },
-    "lodash.words": {
-      "version": "3.2.0",
-      "from": "lodash.words@>=3.0.0 <4.0.0",
-      "resolved": "https://registry.npmjs.org/lodash.words/-/lodash.words-3.2.0.tgz",
       "dev": true
     },
     "longest": {
@@ -3714,13 +3710,29 @@
       "version": "1.1.1",
       "from": "postcss-modules-local-by-default@>=1.0.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/postcss-modules-local-by-default/-/postcss-modules-local-by-default-1.1.1.tgz",
-      "dev": true
+      "dev": true,
+      "dependencies": {
+        "css-selector-tokenizer": {
+          "version": "0.6.0",
+          "from": "css-selector-tokenizer@>=0.6.0 <0.7.0",
+          "resolved": "https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.6.0.tgz",
+          "dev": true
+        }
+      }
     },
     "postcss-modules-scope": {
       "version": "1.0.2",
       "from": "postcss-modules-scope@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/postcss-modules-scope/-/postcss-modules-scope-1.0.2.tgz",
-      "dev": true
+      "dev": true,
+      "dependencies": {
+        "css-selector-tokenizer": {
+          "version": "0.6.0",
+          "from": "css-selector-tokenizer@>=0.6.0 <0.7.0",
+          "resolved": "https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.6.0.tgz",
+          "dev": true
+        }
+      }
     },
     "postcss-modules-values": {
       "version": "1.2.2",
@@ -4184,7 +4196,7 @@
     },
     "sass-loader": {
       "version": "4.1.1",
-      "from": "sass-loader@>=4.1.1 <5.0.0",
+      "from": "sass-loader@>=4.0.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/sass-loader/-/sass-loader-4.1.1.tgz",
       "dev": true,
       "dependencies": {
@@ -4825,7 +4837,7 @@
     },
     "typescript": {
       "version": "2.1.5",
-      "from": "typescript@>=2.1.5 <3.0.0",
+      "from": "typescript@latest",
       "resolved": "https://registry.npmjs.org/typescript/-/typescript-2.1.5.tgz",
       "dev": true
     },
