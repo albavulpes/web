@@ -1062,6 +1062,12 @@
       "resolved": "https://registry.npmjs.org/domutils/-/domutils-1.5.1.tgz",
       "dev": true
     },
+    "dotenv": {
+      "version": "4.0.0",
+      "from": "dotenv@latest",
+      "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz",
+      "dev": true
+    },
     "duplexer2": {
       "version": "0.0.2",
       "from": "duplexer2@0.0.2",
