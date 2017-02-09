@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "dependencies": {
     "@types/angular": {
-      "version": "1.6.4",
-      "from": "@types/angular@>=1.5.19 <2.0.0",
-      "resolved": "https://registry.npmjs.org/@types/angular/-/angular-1.6.4.tgz",
+      "version": "1.6.5",
+      "from": "@types/angular@1.6.5",
+      "resolved": "https://registry.npmjs.org/@types/angular/-/angular-1.6.5.tgz",
       "dev": true
     },
     "@types/angular-ui-router": {
@@ -22,7 +22,7 @@
     },
     "@types/lodash": {
       "version": "4.14.52",
-      "from": "@types/lodash@>=4.14.36 <5.0.0",
+      "from": "@types/lodash@latest",
       "resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.52.tgz",
       "dev": true
     },
@@ -80,24 +80,24 @@
       "dev": true
     },
     "angular": {
-      "version": "1.6.1",
-      "from": "angular@>=1.5.8 <2.0.0",
-      "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.1.tgz"
+      "version": "1.6.2",
+      "from": "angular@1.6.2",
+      "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.2.tgz"
     },
     "angular-animate": {
-      "version": "1.6.1",
-      "from": "angular-animate@>=1.5.8 <2.0.0",
-      "resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.6.1.tgz"
+      "version": "1.6.2",
+      "from": "angular-animate@1.6.2",
+      "resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.6.2.tgz"
     },
     "angular-messages": {
-      "version": "1.6.1",
-      "from": "angular-messages@>=1.5.8 <2.0.0",
-      "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.6.1.tgz"
+      "version": "1.6.2",
+      "from": "angular-messages@1.6.2",
+      "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.6.2.tgz"
     },
     "angular-sanitize": {
-      "version": "1.6.1",
-      "from": "angular-sanitize@>=1.5.8 <2.0.0",
-      "resolved": "https://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.6.1.tgz"
+      "version": "1.6.2",
+      "from": "angular-sanitize@1.6.2",
+      "resolved": "https://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.6.2.tgz"
     },
     "angular-scroll": {
       "version": "1.0.0",
@@ -1717,10 +1717,18 @@
       "dev": true
     },
     "gulp-clean-css": {
-      "version": "3.0.0",
-      "from": "gulp-clean-css@latest",
-      "resolved": "https://registry.npmjs.org/gulp-clean-css/-/gulp-clean-css-3.0.0.tgz",
-      "dev": true
+      "version": "3.0.2",
+      "from": "gulp-clean-css@3.0.2",
+      "resolved": "https://registry.npmjs.org/gulp-clean-css/-/gulp-clean-css-3.0.2.tgz",
+      "dev": true,
+      "dependencies": {
+        "clean-css": {
+          "version": "4.0.5",
+          "from": "clean-css@>=4.0.5 <5.0.0",
+          "resolved": "https://registry.npmjs.org/clean-css/-/clean-css-4.0.5.tgz",
+          "dev": true
+        }
+      }
     },
     "gulp-concat": {
       "version": "2.6.1",
@@ -2768,7 +2776,7 @@
     },
     "lodash": {
       "version": "4.17.4",
-      "from": "lodash@>=4.16.3 <5.0.0",
+      "from": "lodash@latest",
       "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz"
     },
     "lodash._basecopy": {
@@ -4836,9 +4844,9 @@
       "dev": true
     },
     "typescript": {
-      "version": "2.1.5",
-      "from": "typescript@latest",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-2.1.5.tgz",
+      "version": "2.1.6",
+      "from": "typescript@>=2.1.0 <2.2.0",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-2.1.6.tgz",
       "dev": true
     },
     "uglify-js": {
