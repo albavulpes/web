@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 const merge = require("merge-stream");
 
-module.exports = function (gulp, plugins, paths, project)
+module.exports = function (gulp, plugins, paths, meta)
 {    
     // Compile Client files
     gulp.task("compile", function (callback)

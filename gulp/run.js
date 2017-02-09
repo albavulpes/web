@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 
-module.exports = function (gulp, plugins, paths, project)
+module.exports = function (gulp, plugins, paths, meta)
 {    
     gulp.task("start", function ()
     {
@@ -12,11 +12,11 @@ module.exports = function (gulp, plugins, paths, project)
         webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
         webpackConfig.plugins.push(new webpack.NoErrorsPlugin());
     
-        var host = "localhost";
-        var port = project.config.ports.client;
+        var host = process.env.HOST;
+        var port = process.env.PORT;
     
         var serverOptions = {
-            contentBase: paths.build + "/client/",
+            contentBase: paths.build,
             inline: true,
             hot: true,
             historyApiFallback: true,

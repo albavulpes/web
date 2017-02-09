@@ -1,3 +1,6 @@
+// Let's get dotenv going
+require("dotenv").config();
+
 const path = require("path");
 const webpack = require("webpack");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -60,6 +63,10 @@ module.exports = {
         extensions: ["", ".js", ".ts"]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            "process.env": JSON.stringify(process.env)
+        }),
+        
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor_bundle",
             minChunks: Infinity
