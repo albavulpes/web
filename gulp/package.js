@@ -24,7 +24,7 @@ module.exports = function(gulp, plugins, paths, meta)
             callback
         );
     });
-        
+    
     // Update Assembly Info
     gulp.task("update-package-info", function ()
     {
@@ -34,17 +34,19 @@ module.exports = function(gulp, plugins, paths, meta)
             .pipe(plugins.jsonEditor(meta))
             .pipe(gulp.dest(paths.root));
         
+        /*
         // Update meta.json Info
         var metaJson = gulp.src(paths.metaJson)
             .pipe(plugins.debug({title: "meta.json:"}))
             .pipe(gulp.dest(paths.scripts));
+        */
         
-        return merge(packageJson, metaJson);
+        return merge(packageJson);
     });
 
     // Package App
     gulp.task("package", ["build"], function ()
-    {        
+    {
         var clientPaths = [
             paths.build + "/**"
         ];
