@@ -16,8 +16,8 @@ paths.output = path.join(__dirname, "./build/");
 
 var entries = {
     "vendor_bundle": path.join(paths.scripts, "Vendor.ts"),
-    "angular_bundle": path.join(paths.scripts, "Angular.ts"),
-    "styles_bundle": path.join(paths.styles, "main.scss")
+    "app_bundle": path.join(paths.scripts, "App.ts"),
+    "styles_bundle": path.join(paths.scripts, "Styles.ts")
 };
 
 module.exports = {
@@ -56,11 +56,8 @@ module.exports = {
             }
         ]
     },
-    ts: {
-        configFilePath: paths.src + "/tsconfig.json"
-    },
     resolve: {
-        extensions: ["", ".js", ".ts"]
+        extensions: ["", ".js", ".ts", ".scss"]
     },
     plugins: [
         new webpack.DefinePlugin({
