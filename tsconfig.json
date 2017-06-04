@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "lib": ["dom", "scripthost", "es5", "es6", "es7"],
+    "lib": ["dom", "dom.iterable", "scripthost", "es5", "es6", "es7"],
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
