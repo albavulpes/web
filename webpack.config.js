@@ -17,7 +17,7 @@ paths.output = path.join(__dirname, "./build/");
 var entries = {
     "vendor_bundle": path.join(paths.scripts, "Vendor.ts"),
     "app_bundle": path.join(paths.scripts, "App.ts"),
-    "styles_bundle": path.join(paths.scripts, "Styles.ts")
+    "styles_bundle": path.join(paths.styles, "main.scss")
 };
 
 module.exports = {
@@ -57,7 +57,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ["", ".js", ".ts", ".scss"]
+        extensions: ["", ".js", ".ts", ".sc"]
     },
     plugins: [
         new webpack.DefinePlugin({

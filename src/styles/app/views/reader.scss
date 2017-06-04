@@ -26,11 +26,11 @@
 
         .reader-episode-meta
         {
-            font-size: $font-size-h5;
+            font-size: $h5-font-size;
         }
         .reader-episode-title
         {
-            font-size: $font-size-h3;
+            font-size: $h3-font-size;
             margin: 2px 0 0;
         }
     }
@@ -89,7 +89,7 @@
                 .chapter-title
                 {
                     padding: 8px 15px;
-                    font-size: $font-size-h4;
+                    font-size: $h4-font-size;
 
                     cursor: pointer;
 

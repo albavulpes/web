@@ -1,2 +1,9 @@
-﻿@import "app/theme";
+﻿/* App Theme */
+@import "app/theme";
+
+/* Libraries */
+@import "~normalize-scss";
+@import "~font-awesome/scss/font-awesome";
+
+/* App Components */
 @import "app/views";

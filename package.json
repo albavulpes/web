@@ -21,6 +21,7 @@
     "keen-ui": "^1.0.0",
     "lodash": "^4.17.4",
     "moment": "^2.11.1",
+    "normalize-scss": "^7.0.0",
     "vue": "^2.3.3"
   },
   "devDependencies": {
