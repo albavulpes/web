@@ -2,11 +2,8 @@
     <div id="AppComponent">
         <TopNav></TopNav>
 
-        <div class="sidenav-container">
-            <SideNav></SideNav>
-        </div>
         <div class="content-container">
-            <div class="container-fluid bindr-root" id="router-container">
+            <div class="container-fluid" id="router-container">
                 <router-view :key="$route.fullPath"></router-view>
             </div>
         </div>

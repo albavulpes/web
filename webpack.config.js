@@ -36,12 +36,6 @@ const CONFIG = merge([
                 }
             ]
         },
-        resolve: {
-            alias: {
-                vue: 'vue/dist/vue.js',
-                app: path.resolve('./src/')
-            }
-        },
         plugins: [
             new webpack.DllReferencePlugin({
                 manifest: env.paths.vendorManifest

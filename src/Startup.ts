@@ -6,16 +6,16 @@ import VueRouter from 'vue-router';
 import routes from './scripts/routing/Routes';
 
 export default async function () {
-
     // Init Vue Modules
     Vue.use(VueRouter);
 
-    // Load app related configs
     await initVue();
 }
 
 async function initVue(): Promise<void> {
     const router = new VueRouter({routes});
 
-    new Vue({router}).$mount(`#vue-entry`);
+    $(() => {
+        new Vue({router}).$mount(`#vue-entry`);
+    });
 }

@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 
 const env = require('./env');
@@ -49,7 +50,11 @@ const common = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts'],
+        alias: {
+            vue: 'vue/dist/vue.js',
+            app: path.resolve('./src/')
+        }
     },
     stats: {
         errorDetails: true,

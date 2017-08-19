@@ -19,9 +19,9 @@
     "lodash": "^4.17.4",
     "moment": "^2.11.1",
     "normalize-scss": "^7.0.0",
-    "vue": "^2.3.3",
+    "vue": "^2.4.2",
     "vue-property-decorator": "^5.1.0",
-    "vue-router": "^2.5.3",
+    "vue-router": "^2.7.0",
     "zepto": "^1.2.0"
   },
   "devDependencies": {
@@ -60,7 +60,7 @@
     "wp:dev": "npm run wp:vendor & npm run wp:app:dev",
     "wp:app": "cross-env NODE_ENV=production webpack",
     "wp:app:dev": "webpack",
-    "wp:app:dev:watch": "npm run wp:app:dev --watch",
+    "wp:app:dev:watch": "webpack --watch",
     "wp:vendor": "cross-env NODE_ENV=production webpack --config webpack.vendor.config.js",
     "start": "live-server ./dist/ --host=localhost --port=5164"
   }

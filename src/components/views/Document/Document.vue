@@ -1,7 +1,5 @@
 <template>
-    <div class="DocumentViewComponent">
-        <div v-if="documentHtml" v-html="documentHtml"></div>
-    </div>
+    <h1>Document Page</h1>
 </template>
 
 <script lang="ts" src="./Document.ts"></script>
