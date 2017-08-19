@@ -14,18 +14,21 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
+    "bootstrap": "4.0.0-beta",
     "font-awesome": "^4.7.0",
     "fullscreen": "^1.1.0",
+    "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "mdbootstrap": "^4.4.1",
     "moment": "^2.11.1",
     "normalize-scss": "^7.0.0",
+    "popper.js": "^1.12.3",
     "vue": "^2.4.2",
     "vue-property-decorator": "^5.1.0",
-    "vue-router": "^2.7.0",
-    "zepto": "^1.2.0"
+    "vue-router": "^2.7.0"
   },
   "devDependencies": {
-    "@types/jquery": "^2.0.32",
+    "@types/jquery": "^3.2.11",
     "@types/lodash": "^4.14.65",
     "@types/node": "^7.0.5",
     "add-asset-html-webpack-plugin": "^2.1.1",
@@ -33,7 +36,6 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
-    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
     "html-webpack-include-assets-plugin": "^0.0.7",
@@ -50,7 +52,7 @@
     "typescript": "^2.3.4",
     "vue-loader": "^13.0.4",
     "vue-template-compiler": "^2.4.2",
-    "webpack": "^2.0.0",
+    "webpack": "2",
     "webpack-merge": "^4.1.0"
   },
   "scripts": {
