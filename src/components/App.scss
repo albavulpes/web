@@ -1,0 +1,32 @@
+@import "~app/styles/includes/vars";
+
+.sidenav-container {
+    position: fixed;
+    top: $navbar-height;
+    left: 0;
+
+    width: $side-nav-width;
+    height: calc(100% - #{$navbar-height});
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-shadow: $gray-light 0 0 4px;
+}
+
+.content-container {
+    position: fixed;
+    top: $navbar-height;
+    left: $side-nav-width;
+
+    width: calc(100% - #{$side-nav-width});
+    height: calc(100% - #{$navbar-height});
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    #router-container {
+        padding: 1.5rem 6rem;
+        margin-bottom: 5rem;
+    }
+}

@@ -1,0 +1,45 @@
+@import "~app/styles/includes/vars";
+
+.menu-item {
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    .menu-item-title {
+        position: relative;
+
+        a {
+            display: block;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+
+            &.router-link-active {
+                font-weight: bold;
+            }
+        }
+
+        .collapse-icon {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-left: -0.5rem;
+
+            font-size: 1rem;
+
+            transform: translateY(-50%) rotate(0);
+            transition: transform 0.25s ease;
+        }
+    }
+
+    &.collapsed {
+        .collapse-icon {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+    }
+
+    .menu-item-children {
+        padding-left: 2rem;
+        border-left: rgba(0,0,0,0.05) 1px solid;
+    }
+}

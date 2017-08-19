@@ -1,0 +1,20 @@
+@import "~app/styles/includes/vars";
+
+.navbar {
+    box-shadow: $gray-base 0 0 4px;
+    border: none;
+
+    .navbar-brand {
+        padding-top: $navbar-height / 12;
+        padding-bottom: $navbar-height / 12;
+
+        text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 2px;
+
+        .navbar-brand-logo {
+            display: inline;
+            vertical-align: -($navbar-height / 4);
+        }
+
+        font-size: $navbar-height * 0.45;
+    }
+}
