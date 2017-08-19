@@ -1,3 +1,4 @@
+/*
 @import "~app/styles/includes/vars";
 
 .sidenav-container {
@@ -6,7 +7,7 @@
     left: 0;
 
     width: $side-nav-width;
-    height: calc(100% - #{$navbar-height});
+    height: calc(100% - {$navbar-height});
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -19,8 +20,8 @@
     top: $navbar-height;
     left: $side-nav-width;
 
-    width: calc(100% - #{$side-nav-width});
-    height: calc(100% - #{$navbar-height});
+    width: calc(100% - {$side-nav-width});
+    height: calc(100% - {$navbar-height});
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -30,3 +31,4 @@
         margin-bottom: 5rem;
     }
 }
+*/

@@ -4,8 +4,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="#" class="navbar-brand">
-                        <img class="navbar-brand-logo" src="../../../assets/images/logo_shadow.png" alt="Bindr Logo"/>
-                        Bindr
+                        Project Strokes
                     </a>
                 </div>
             </div>
