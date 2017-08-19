@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-const env = require('./config/env.js');
+const env = require('./config/env');
 const common = require('./config/common');
 
 module.exports = merge([
@@ -14,7 +14,7 @@ module.exports = merge([
         output: {
             path: env.paths.dist,
             publicPath: '/',
-            filename: 'js/[name].[chunkhash:8].js',
+            filename: 'js/[name].[chunkhash:8].dll.js',
             library: '[name]'
         },
         plugins: [
