@@ -1,84 +1,105 @@
-// Let's get dotenv going
-require("dotenv").config();
+const path = require('path');
+const webpack = require('webpack');
 
-const path = require("path");
-const webpack = require("webpack");
-const CopyPlugin = require("copy-webpack-plugin");
-const glob = require("glob");
+const paths = {};
 
-var paths = {};
+paths.root = __dirname;
+paths.src = path.join(paths.root, 'src');
+paths.dist = path.join(paths.root, 'dist');
 
-paths.src = path.resolve("./src/");
-paths.scripts = path.join(paths.src, "scripts");
-paths.styles = path.join(paths.src, "styles");
-
-paths.output = path.join(__dirname, "./build/");
-
-var entries = {
-    "vendor_bundle": path.join(paths.scripts, "Vendor.ts"),
-    "app_bundle": path.join(paths.scripts, "App.ts"),
-    "styles_bundle": path.join(paths.styles, "main.scss")
+const entries = {
+    'bindr': path.join(paths.src, 'index.ts')
 };
 
-module.exports = {
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
+
+const CONFIG = {
     context: __dirname,
     entry: entries,
     output: {
-        path: paths.output,
-        library: "[name]",
-        filename: "js/[name].js"
+        path: paths.dist,
+        library: '[name]',
+        filename: 'js/[name].js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.ts$/,
-                loaders: ["ts-loader", "import-glob-loader"]
+                use: ['ts-loader']
             },
             {
                 test: /\.scss$/,
-                loaders: ["style-loader", "css-loader", "sass-loader"]
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: isDev
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: isDev
+                        }
+                    }
+                ]
             },
             {
-                test: /\.(html)$/,
-                loaders: ["html-loader"]
+                test: /\.vue$/,
+                use: [
+                    {
+                        loader: 'vue-loader',
+                        options: {
+                            esModule: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: ['html-loader']
             },
             {
                 test: /\.json$/,
-                loaders: ["json-loader"]
+                use: ['json-loader']
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)/,
-                loader: "file-loader?name=fonts/[name].[ext]"
+                use: 'file-loader?name=fonts/[name].[ext]'
             },
             {
                 test: /\.(jpg|jpeg|png|bmp|gif|tiff)/,
-                loader: "file-loader?name=images/[name].[ext]"
+                use: 'file-loader?name=images/[name].[ext]'
             }
         ]
     },
     resolve: {
-        extensions: ["", ".js", ".ts", ".sc"]
+        extensions: ['.js', '.ts', '.scss'],
+        alias: {
+            vue: 'vue/dist/vue.js',
+            app: path.resolve('./src/')
+        }
     },
     plugins: [
         new webpack.DefinePlugin({
-            "process.env": JSON.stringify(process.env)
-        }),
-        
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor_bundle",
-            minChunks: Infinity
-        }),
-        
-        new CopyPlugin([
-            {
-                context: paths.src,
-                from: "**/*",
-                ignore: [
-                    "scripts/**/*",
-                    "styles/**/*",
-                    "tsconfig.json"
-                ]
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
-        ])
+        })
     ]
 };
+
+if (isProd) {
+    CONFIG.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: true,
+            minimize: true,
+            mangle: true,
+            comments: false
+        })
+    );
+}
+
+module.exports = CONFIG;
