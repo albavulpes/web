@@ -1,5 +1,3 @@
-import './webpack';
-
 // Vendor
 import './Vendor';
 

@@ -2,16 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title v-bind="pageTitle"></title>
-
-        <!-- Main Script Bundles -->
-        <script src="js/vendor_bundle.js"></script>
-        <script src="js/app_bundle.js"></script>
-        <script src="js/styles_bundle.js"></script>
-
-        <base href="/">
+        <title>{{pageTitle}}</title>
     </head>
     <body>
-        <app-component></app-component>
+        <div id="vue-entry">
+            <router-view></router-view>
+        </div>
     </body>
 </html>
