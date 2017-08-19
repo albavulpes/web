@@ -10,7 +10,6 @@ const common = require('./config/common');
 const CONFIG = merge([
     common,
     {
-        context: __dirname,
         entry: {
             'app': path.join(env.paths.src, 'index.ts')
         },

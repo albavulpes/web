@@ -14,7 +14,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "font-awesome": "^4.6.3",
+    "font-awesome": "^4.7.0",
     "fullscreen": "^1.1.0",
     "lodash": "^4.17.4",
     "moment": "^2.11.1",
@@ -29,6 +29,7 @@
     "@types/lodash": "^4.14.65",
     "@types/node": "^7.0.5",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.0",

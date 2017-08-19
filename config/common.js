@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const env = require('./env');
 
 const common = {
+    context: __dirname,
     module: {
         rules: [
             {
@@ -63,7 +64,9 @@ const common = {
 if (!env.isDev) {
     common.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
-            compress: true,
+            compress: {
+                warnings: false
+            },
             minimize: true,
             mangle: true,
             comments: false
