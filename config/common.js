@@ -12,7 +12,20 @@ const common = {
                 use: ['ts-loader']
             },
             {
-                test: /\.scss$/,
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: !env.isDev,
+                            sourceMap: env.isDev
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.styl$/,
                 use: [
                     'style-loader',
                     {
@@ -22,11 +35,10 @@ const common = {
                             sourceMap: env.isDev
                         }
                     },
-                    'resolve-url-loader',
                     {
-                        loader: 'sass-loader',
+                        loader: 'stylus-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: env.isDev
                         }
                     }
                 ]
