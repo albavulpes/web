@@ -13,4 +13,4 @@
 </template>
 
 <script lang="ts" src="./TopNav.ts"></script>
-<style lang="scss" src="./TopNav.scss" scoped></style>
+<style lang="stylus" src="./TopNav.styl" scoped></style>

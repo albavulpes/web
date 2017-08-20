@@ -5,6 +5,7 @@ import 'vue-property-decorator';
 import 'vuetify';
 
 // Utils
+import 'zepto/src/zepto';
 import 'lodash';
 import 'moment';
 

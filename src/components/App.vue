@@ -11,4 +11,4 @@
 </template>
 
 <script lang="ts" src="./App.ts"></script>
-<style lang="scss" src="./App.scss" scoped></style>
+<style lang="stylus" src="./App.styl" scoped></style>
