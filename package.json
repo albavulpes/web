@@ -57,14 +57,13 @@
   },
   "scripts": {
     "clean": "rimraf ./dist/",
-    "clean:dll": "rimraf ./dist/dll/",
     "build": "npm run clean & npm run wp",
     "wp": "npm run wp:vendor & npm run wp:app",
     "wp:dev": "npm run wp:vendor & npm run wp:app:dev",
     "wp:app": "cross-env NODE_ENV=production webpack",
     "wp:app:dev": "webpack",
     "wp:app:dev:watch": "webpack --watch",
-    "wp:vendor": "npm run clean:dll & cross-env NODE_ENV=production webpack --config webpack.vendor.config.js",
+    "wp:vendor": "cross-env NODE_ENV=production webpack --config webpack.vendor.config.js",
     "start": "live-server ./dist/ --host=localhost --port=5164"
   }
 }

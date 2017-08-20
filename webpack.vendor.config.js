@@ -22,7 +22,7 @@ module.exports = merge([
         plugins: [
             new webpack.DllPlugin({
                 name: '[name]',
-                path: path.join(env.paths.dist, '[name].dll.json')
+                path: path.join(env.paths.dist, env.filenames.dll.vendor)
             }),
             new webpack.ProvidePlugin({
                 $: 'jquery',
@@ -32,7 +32,7 @@ module.exports = merge([
                 _: 'lodash'
             }),
             new ManifestPlugin({
-                fileName: 'vendor-manifest.json'
+                fileName: env.filenames.manifests.vendor
             })
         ]
     }

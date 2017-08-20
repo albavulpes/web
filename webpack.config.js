@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const HtmlInjectManifestFiles = require('./config/plugins/HtmlInjectManifestFiles');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -38,7 +38,7 @@ const CONFIG = merge([
         },
         plugins: [
             new webpack.DllReferencePlugin({
-                manifest: env.paths.vendorManifest
+                manifest: env.paths.dll.vendor
             }),
             new webpack.DefinePlugin({
                 'process.env': {
@@ -46,11 +46,27 @@ const CONFIG = merge([
                 }
             }),
             new HtmlWebpackPlugin({
-                inject: true,
-                template: path.join(env.paths.src, 'index.ejs')
+                inject: false,
+                template: path.join(env.paths.src, 'index.html')
             }),
             new ManifestPlugin({
-                fileName: 'app-manifest.json'
+                fileName: env.filenames.manifests.app
+            }),
+            new HtmlInjectManifestFiles({
+                manifests: [
+                    {
+                        manifest: env.paths.manifests.app,
+                        files: [
+                            'app.js'
+                        ]
+                    },
+                    {
+                        manifest: env.paths.manifests.vendor,
+                        files: [
+                            'vendor.js'
+                        ]
+                    }
+                ]
             })
             // new AddAssetHtmlPlugin({
             //     filepath: path.join(env.paths.dist, 'dll', '*.js'),
