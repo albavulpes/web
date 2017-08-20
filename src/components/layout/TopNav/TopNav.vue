@@ -5,8 +5,8 @@
                 <v-layout align-center justify-center>
                     <v-flex xs12 lg10>
                         <v-toolbar-title>
-                            <a href="#" class="white--text">
-                                Project Strokes
+                            <a href="#" class="headline white--text">
+                                AlbaVulpes
                             </a>
                         </v-toolbar-title>
                     </v-flex>

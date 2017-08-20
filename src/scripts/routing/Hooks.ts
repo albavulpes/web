@@ -4,7 +4,7 @@ export function init(router: VueRouter) {
     router.beforeEach((to, from, next) => {
         const pageTitle = to.meta.title;
 
-        document.title = `${pageTitle ? `${pageTitle} - ` : ''}Project Strokes`;
+        document.title = `${pageTitle ? `${pageTitle} - ` : ''}AlbaVulpes`;
         next();
     });
 }
