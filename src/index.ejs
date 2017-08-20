@@ -5,8 +5,11 @@
         <title v-bind="pageTitle"></title>
     </head>
     <body>
+        <%= JSON.stringify(webpackConfig) %>
+
         <div id="vue-entry">
             <router-view></router-view>
         </div>
+        <script type="text/javascript" src=""></script>
     </body>
 </html>

@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const env = require('./env');
 
 const common = {
-    context: __dirname,
+    context: env.paths.root,
     module: {
         rules: [
             {
@@ -34,6 +34,10 @@ const common = {
             {
                 test: /\.html$/,
                 use: ['html-loader']
+            },
+            {
+                test: /\.ejs$/,
+                loader: ['ejs-loader']
             },
             {
                 test: /\.json$/,
