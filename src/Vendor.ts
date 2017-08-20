@@ -10,6 +10,7 @@ import 'moment';
 
 // Styles
 import 'font-awesome/scss/font-awesome.scss';
+import 'popper.js';
 import 'bootstrap';
 import 'mdbootstrap';
 

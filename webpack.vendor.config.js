@@ -14,13 +14,20 @@ module.exports = merge([
         output: {
             path: env.paths.dist,
             publicPath: '/',
-            filename: 'js/[name].[chunkhash:8].dll.js',
+            filename: 'dll/[name].[chunkhash:8].js',
             library: '[name]'
         },
         plugins: [
             new webpack.DllPlugin({
                 name: '[name]',
                 path: path.join(env.paths.dist, '[name].json')
+            }),
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery',
+                Popper: ['popper.js', 'default'],
+                _: 'lodash'
             })
         ]
     }

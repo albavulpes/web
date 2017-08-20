@@ -4,7 +4,6 @@ const merge = require('webpack-merge');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -46,13 +45,14 @@ const CONFIG = merge([
                 }
             }),
             new HtmlWebpackPlugin({
+                inject: true,
                 template: path.join(env.paths.src, 'index.html')
             }),
             new AddAssetHtmlPlugin({
-                filepath: path.join(env.paths.dist, 'js', '*.dll.js'),
+                filepath: path.join(env.paths.dist, 'dll', '*.js'),
                 includeSourcemap: false,
-                outputPath: 'js',
-                publicPath: '/js/'
+                outputPath: 'dll',
+                publicPath: '/dll/'
             })
         ]
     }

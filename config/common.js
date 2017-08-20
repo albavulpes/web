@@ -61,13 +61,13 @@ const common = {
         colors: true
     },
     plugins: [
-        new webpack.HashedModuleIdsPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
     ]
 };
 
 if (!env.isDev) {
     common.plugins.push(
+        new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false

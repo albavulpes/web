@@ -28,6 +28,7 @@
     "vue-router": "^2.7.0"
   },
   "devDependencies": {
+    "@types/bootstrap": "^3.3.35",
     "@types/jquery": "^3.2.11",
     "@types/lodash": "^4.14.65",
     "@types/node": "^7.0.5",
@@ -35,14 +36,11 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.26.1",
-    "dotenv": "^4.0.0",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
-    "html-webpack-include-assets-plugin": "^0.0.7",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
     "node-sass": "^4.5.3",
-    "raw-loader": "^0.5.1",
     "resolve-url-loader": "^2.1.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
@@ -52,18 +50,19 @@
     "typescript": "^2.3.4",
     "vue-loader": "^13.0.4",
     "vue-template-compiler": "^2.4.2",
-    "webpack": "2",
+    "webpack": "^2.7.0",
     "webpack-merge": "^4.1.0"
   },
   "scripts": {
     "clean": "rimraf ./dist/",
+    "clean:dll": "rimraf ./dist/dll/",
     "build": "npm run clean & npm run wp",
     "wp": "npm run wp:vendor & npm run wp:app",
     "wp:dev": "npm run wp:vendor & npm run wp:app:dev",
     "wp:app": "cross-env NODE_ENV=production webpack",
     "wp:app:dev": "webpack",
     "wp:app:dev:watch": "webpack --watch",
-    "wp:vendor": "cross-env NODE_ENV=production webpack --config webpack.vendor.config.js",
+    "wp:vendor": "npm run clean:dll & cross-env NODE_ENV=production webpack --config webpack.vendor.config.js",
     "start": "live-server ./dist/ --host=localhost --port=5164"
   }
 }
