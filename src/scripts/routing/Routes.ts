@@ -9,8 +9,11 @@ const routes: RouteConfig[] = [
         component: App,
         children: [
             {
-                name: 'doc',
+                name: 'home',
                 path: '/',
+                meta: {
+                    title: 'Home'
+                },
                 component: Document
             }
         ]

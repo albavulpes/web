@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Vuetify from 'vuetify';
 
 import routes from './scripts/routing/Routes';
+import * as RoutingHooks from './scripts/routing/Hooks';
 
 export default async function () {
     // Init Vue Modules
@@ -16,6 +17,8 @@ export default async function () {
 
 async function initVue(): Promise<void> {
     const router = new VueRouter({routes});
+
+    RoutingHooks.init(router);
 
     $(() => {
         new Vue({router}).$mount(`#vue-entry`);
