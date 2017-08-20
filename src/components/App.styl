@@ -1,34 +1,9 @@
-/*
-@import "~app/styles/includes/vars";
+@require "../styles/app/theme/variables.styl";
 
-.sidenav-container {
-    position: fixed;
-    top: $navbar-height;
-    left: 0;
-
-    width: $side-nav-width;
-    height: calc(100% - {$navbar-height});
-
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    box-shadow: $gray-light 0 0 4px;
+.application {
+    background: desaturate(darken($theme.primary, 70%), 10%);
 }
 
-.content-container {
-    position: fixed;
-    top: $navbar-height;
-    left: $side-nav-width;
-
-    width: calc(100% - {$side-nav-width});
-    height: calc(100% - {$navbar-height});
-
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    #router-container {
-        padding: 1.5rem 6rem;
-        margin-bottom: 5rem;
-    }
+#router-container {
+    padding-top: 80px;
 }
-*/

@@ -1,11 +1,17 @@
 <template>
     <div class="TopNavComponent">
-        <v-toolbar fixed scroll-off-screen>
-            <v-toolbar-title>
-                <a href="#">
-                    Project Strokes
-                </a>
-            </v-toolbar-title>
+        <v-toolbar fixed scroll-off-screen class="primary">
+            <v-container>
+                <v-layout align-center justify-center>
+                    <v-flex xs12 lg10>
+                        <v-toolbar-title>
+                            <a href="#" class="white--text">
+                                Project Strokes
+                            </a>
+                        </v-toolbar-title>
+                    </v-flex>
+                </v-layout>
+            </v-container>
         </v-toolbar>
     </div>
 </template>

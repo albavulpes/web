@@ -5,7 +5,11 @@
 
             <main>
                 <v-container id="router-container">
-                    <router-view :key="$route.fullPath"></router-view>
+                    <v-layout align-center justify-center>
+                        <v-flex xs12 lg10>
+                            <router-view :key="$route.fullPath"></router-view>
+                        </v-flex>
+                    </v-layout>
                 </v-container>
             </main>
         </v-app>
