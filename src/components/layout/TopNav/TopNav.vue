@@ -1,14 +1,12 @@
 <template>
     <div class="TopNavComponent">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="#" class="navbar-brand">
-                        Project Strokes
-                    </a>
-                </div>
-            </div>
-        </nav>
+        <v-toolbar fixed scroll-off-screen>
+            <v-toolbar-title>
+                <a href="#">
+                    Project Strokes
+                </a>
+            </v-toolbar-title>
+        </v-toolbar>
     </div>
 </template>
 

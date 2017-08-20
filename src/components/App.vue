@@ -1,12 +1,14 @@
 <template>
     <div id="AppComponent">
-        <TopNav></TopNav>
+        <v-app dark>
+            <TopNav></TopNav>
 
-        <div class="content-container">
-            <div class="container-fluid" id="router-container">
-                <router-view :key="$route.fullPath"></router-view>
-            </div>
-        </div>
+            <main>
+                <v-container id="router-container">
+                    <router-view :key="$route.fullPath"></router-view>
+                </v-container>
+            </main>
+        </v-app>
     </div>
 </template>
 
