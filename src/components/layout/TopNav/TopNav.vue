@@ -1,14 +1,15 @@
 <template>
     <div class="TopNavComponent">
         <v-toolbar fixed scroll-off-screen class="primary">
-            <v-container>
+            <v-container fluid>
                 <v-layout align-center justify-center>
-                    <v-flex xs12 lg10>
-                        <v-toolbar-title>
-                            <a href="#" class="headline white--text">
+                    <v-flex xs12 sm11 md10 lg9 xl8>
+                        <a href="#" class="headline white--text brand-link">
+                            <img class="brand-logo" src="../../../assets/images/logo.png" alt="AlbaVulpes Logo" width="64" height="64">
+                            <v-toolbar-title class="headline">
                                 AlbaVulpes
-                            </a>
-                        </v-toolbar-title>
+                            </v-toolbar-title>
+                        </a>
                     </v-flex>
                 </v-layout>
             </v-container>

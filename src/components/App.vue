@@ -4,9 +4,9 @@
             <TopNav></TopNav>
 
             <main>
-                <v-container id="router-container">
+                <v-container fluid id="router-container">
                     <v-layout align-center justify-center>
-                        <v-flex xs12 lg10>
+                        <v-flex xs12 sm11 md10 lg9 xl8>
                             <router-view :key="$route.fullPath"></router-view>
                         </v-flex>
                     </v-layout>
