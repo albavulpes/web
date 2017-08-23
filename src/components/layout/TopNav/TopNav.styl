@@ -1,16 +1,35 @@
-.brand-link {
-    text-decoration: none;
+@require "../../../styles/theme/variables.styl";
 
-    .brand-logo,
-    .toolbar__title {
-        display: inline-block;
-        margin: 0;
+.toolbar {
+    background: linear-gradient(to bottom, $theme.primary, $theme.accent 125%);
+
+    .brand-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
+        margin-left: 15px;
+        margin-right: 60px;
+
+        .brand-logo {
+            margin: 0;
+            width: 48px;
+            height: @width;
+        }
+        .toolbar__title {
+            margin: -1px 0;
+        }
+    }
+    .toolbar__items {
+        .btn {
+            border-radius: 0;
+            text-transform: none;
+        }
     }
 
-    .brand-logo {
-        width: 48px;
-        height: @width;
-
-        vertical-align: bottom;
+    .brand-link,
+    .toolbar__items .btn {
+        text-shadow: rgba(black, 0.25) 0 1px 2px;
     }
 }
