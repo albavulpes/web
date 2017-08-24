@@ -6,10 +6,10 @@
             <main>
                 <v-container fluid id="router-container">
                     <v-layout align-center justify-center>
-                        <v-flex xs12 sm11 md10 lg9 xl8>
-                            <v-content class="page-container">
+                        <v-flex xs12 lg10>
+                            <div class="page-container">
                                 <router-view :key="$route.fullPath"></router-view>
-                            </v-content>
+                            </div>
                         </v-flex>
                     </v-layout>
                 </v-container>
