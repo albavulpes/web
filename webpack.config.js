@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlInjectManifestFiles = require('./config/plugins/HtmlInjectManifestFiles');
 
 const env = require('./config/env');
@@ -67,13 +68,14 @@ const CONFIG = merge([
                         ]
                     }
                 ]
-            })
-            // new AddAssetHtmlPlugin({
-            //     filepath: path.join(env.paths.dist, 'dll', '*.js'),
-            //     includeSourcemap: false,
-            //     outputPath: 'dll',
-            //     publicPath: '/dll/'
-            // })
+            }),
+            // TODO: remove this when we can get access to hosting
+            new CopyWebpackPlugin([
+                {
+                    from: path.join(env.paths.src, 'assets'),
+                    to: 'assets'
+                }
+            ])
         ]
     }
 ]);

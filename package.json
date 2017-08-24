@@ -30,6 +30,7 @@
     "@types/lodash": "^4.14.65",
     "@types/node": "^7.0.5",
     "@types/zepto": "^1.0.28",
+    "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.26.1",
     "file-loader": "^0.10.0",

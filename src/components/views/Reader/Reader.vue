@@ -29,6 +29,11 @@
                 </v-btn>
             </v-layout>
             <v-divider></v-divider>
+            <v-layout justify-center>
+                <v-flex text-center>
+                    <img :src="`/assets/images/comic/${currentPage}`" :alt="currentPage">
+                </v-flex>
+            </v-layout>
         </v-flex>
     </v-layout>
 </template>
