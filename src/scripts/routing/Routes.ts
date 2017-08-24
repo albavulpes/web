@@ -1,7 +1,9 @@
 import {RouteConfig} from 'vue-router';
 
 import App from '../../components/App.vue';
-import Document from '../../components/views/Comic/Comic.vue';
+import Home from '../../components/views/Home/Home.vue';
+import Comics from '../../components/views/Comic/Comic.vue';
+import Reader from '../../components/views/Reader/Reader.vue';
 
 const routes: RouteConfig[] = [
     {
@@ -14,7 +16,23 @@ const routes: RouteConfig[] = [
                 meta: {
                     title: 'Home'
                 },
-                component: Document
+                component: Home
+            },
+            {
+                name: 'comic',
+                path: '/comic',
+                meta: {
+                    title: 'Comics'
+                },
+                component: Comics
+            },
+            {
+                name: 'reader',
+                path: '/reader',
+                meta: {
+                    title: 'Reader'
+                },
+                component: Reader
             }
         ]
     }
