@@ -21,6 +21,10 @@ export default class extends Vue {
         '14.png'
     ];
 
+    selectPage(page: string) {
+        this.currentPage = page;
+    }
+
     nextPage() {
         let index = this.pages.indexOf(this.currentPage);
         index++;
