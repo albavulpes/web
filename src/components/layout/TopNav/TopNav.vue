@@ -1,9 +1,13 @@
 <template>
     <div class="TopNavComponent">
         <v-toolbar fixed scroll-off-screen class="primary">
-            <v-toolbar-side-icon class="btn--large hidden-md-and-up"></v-toolbar-side-icon>
-            <a href="#" class="headline white--text brand-link">
-                <img class="brand-logo" src="../../../assets/images/logo_shadow.png" alt="AlbaVulpes Logo" width="64" height="64">
+            <v-toolbar-items class="menu__button__container hidden-md-and-u">
+                <v-btn flat large class="menu__button">
+                    <v-icon>mdi-menu</v-icon>
+                </v-btn>
+            </v-toolbar-items>
+            <a href="#" class="headline white--text brand__link">
+                <img class="brand__logo" src="../../../assets/images/logo_shadow.png" alt="AlbaVulpes Logo" width="64" height="64">
                 <v-toolbar-title class="headline">
                     Alba Vulpes
                 </v-toolbar-title>

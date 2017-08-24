@@ -12,6 +12,7 @@ import 'moment';
 // Styles
 import 'normalize.css/normalize.css';
 import 'font-awesome/css/font-awesome.css';
+import 'mdi/css/materialdesignicons.css';
 
 // Libraries
 import 'fullscreen';

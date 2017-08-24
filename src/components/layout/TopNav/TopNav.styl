@@ -3,7 +3,11 @@
 .toolbar {
     background: linear-gradient(to bottom, $theme.primary, $theme.accent 125%);
 
-    .brand-link {
+    .menu__button__container {
+        margin-left: 0 !important;
+    }
+
+    .brand__link {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -12,13 +16,14 @@
         margin-left: 15px;
         margin-right: 60px;
 
-        .brand-logo {
+        .brand__logo {
             margin: 0;
             width: 48px;
             height: @width;
         }
         .toolbar__title {
-            margin: -1px 0;
+            margin: 0;
+            margin-top: -1px;
         }
     }
     .toolbar__items {
@@ -28,7 +33,7 @@
         }
     }
 
-    .brand-link,
+    .brand__link,
     .toolbar__items .btn {
         text-shadow: rgba(black, 0.25) 0 1px 2px;
     }
