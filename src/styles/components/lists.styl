@@ -1,5 +1,10 @@
 .list {
     .list__tile {
+        &.list__tile--active {
+            color: $material-theme.text.primary;
+            background: $material-theme.buttons.focused;
+        }
+
         .list__tile__title {
             overflow-y: hidden;
         }

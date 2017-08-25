@@ -28,15 +28,13 @@ $headings = {
   button: { size: 16px, weight: 500 }
 }
 
-$backgroundBase = desaturate(darken($theme.primary, 70%), 10%);
-
 $material-dark = {
   status-bar: {
     regular: #000000,
     lights-out: rgba(#000, .2)
   },
   app-bar: #212121,
-  background: $backgroundBase,
+  background: desaturate(darken($theme.primary, 70%), 10%),
   cards: rgba(white, 0.15),
   dividers: rgba(#fff, .12),
   text: {
