@@ -1,11 +1,11 @@
 <template>
     <v-layout row>
-        <v-flex xs12 md2 class="hidden-sm-and-down">
+        <v-flex xs12 md3 lg2 class="hidden-sm-and-down">
             <v-list dense>
                 <template v-for="page in pages">
-                    <v-list-tile :key="page" @click="selectPage(page)">
-                        <v-list-tile-content>
-                            <v-list-tile-title v-html="page"></v-list-tile-title>
+                    <v-list-tile @click="selectPage(page)">
+                        <v-list-tile-content :key="page" :class="{'list__tile--active': page === currentPage}">
+                            <v-list-tile-title>{{page}}</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                 </template>
@@ -30,7 +30,7 @@
             </v-layout>
             <v-divider></v-divider>
             <v-layout justify-center>
-                <v-flex text-center>
+                <v-flex text-xs-center>
                     <img :src="`/assets/images/comic/${currentPage}`" :alt="currentPage">
                 </v-flex>
             </v-layout>
