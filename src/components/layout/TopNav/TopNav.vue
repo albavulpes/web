@@ -13,19 +13,19 @@
                 </v-toolbar-title>
             </a>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat large>
+                <v-btn flat large :to="{name: 'home'}" exact>
                     <span class="subheading">
                         Home
                     </span>
                 </v-btn>
-                <v-btn flat large>
+                <v-btn flat large :to="{name: 'comic'}">
                     <span class="subheading">
                         Comics
                     </span>
                 </v-btn>
-                <v-btn flat large>
+                <v-btn flat large :to="{name: 'reader'}">
                     <span class="subheading">
-                        Art
+                        Reader
                     </span>
                 </v-btn>
             </v-toolbar-items>
