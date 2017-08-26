@@ -1,16 +1,37 @@
 import Vue from 'vue';
-import {Component, Prop, Provide} from 'vue-property-decorator';
+import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
     constructor() {
         super();
-        this.currentPage = this.pages[0];
+
+        this.currentPages = {
+            prev: null,
+            main: null,
+            next: null
+        };
+        this.atIndex = 0;
     }
 
     @Provide()
-    currentPage: string;
+    atIndex: number;
 
+    @Provide()
+    currentPages: {
+        prev: string,
+        main: string,
+        next: string
+    };
+
+    @Watch('atIndex', {immediate: true})
+    onIndexChange(index: number) {
+        this.currentPages.prev = index > 1 ? this.pages[index - 1] : null;
+        this.currentPages.main = this.pages[index];
+        this.currentPages.next = index < this.pages.length - 1 ? this.pages[index + 1] : null;
+    }
+
+    // TODO: This should be API data
     pages = [
         '08.png',
         '09.png',
@@ -22,26 +43,26 @@ export default class extends Vue {
     ];
 
     selectPage(page: string) {
-        this.currentPage = page;
+        this.atIndex = this.pages.indexOf(page);
     }
 
     nextPage() {
-        let index = this.pages.indexOf(this.currentPage);
+        let index = this.atIndex;
         index++;
 
         if (index >= this.pages.length)
             index = this.pages.length - 1;
 
-        this.currentPage = this.pages[index];
+        this.atIndex = index;
     }
 
     prevPage() {
-        let index = this.pages.indexOf(this.currentPage);
+        let index = this.atIndex;
         index--;
 
         if (index < 0)
             index = 0;
 
-        this.currentPage = this.pages[index];
+        this.atIndex = index;
     }
 }

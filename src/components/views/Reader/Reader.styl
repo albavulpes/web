@@ -6,35 +6,38 @@
         position: relative;
         display: inline-block;
         padding: 15px 30px;
+        opacity: 0.4;
+
+        &.main {
+            opacity: 1;
+        }
     }
 }
 
-.pages-container {
-    .page-nav-button {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        padding: 15px;
-        opacity: 0;
-        z-index: 20;
+.page-nav-button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 15px;
+    opacity: 0;
+    z-index: 20;
 
-        transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
 
-        &:hover {
-            opacity: 1;
-        }
+    &:hover {
+        opacity: 1;
+    }
 
-        &.previous {
-            left: 0;
-            width: 20%;
+    &.previous {
+        left: 0;
+        width: 20%;
 
-            background: linear-gradient(to right, rgba(black, 0.8), transparent);
-        }
-        &.next {
-            right: 0;
-            width: 40%;
+        background: linear-gradient(to right, rgba(black, 0.8), transparent);
+    }
+    &.next {
+        right: 0;
+        width: 40%;
 
-            background: linear-gradient(to left, rgba(black, 0.8), transparent);
-        }
+        background: linear-gradient(to left, rgba(black, 0.8), transparent);
     }
 }
