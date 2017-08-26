@@ -72,6 +72,7 @@ const common = {
             app: path.resolve('./src/')
         }
     },
+    cache: true,
     stats: {
         errorDetails: true,
         colors: true
@@ -90,7 +91,8 @@ if (!env.isDev) {
             },
             minimize: true,
             mangle: true,
-            comments: false
+            comments: false,
+            parallel: true
         })
     );
 }
