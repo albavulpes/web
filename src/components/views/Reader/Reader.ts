@@ -26,7 +26,7 @@ export default class extends Vue {
 
     @Watch('atIndex', {immediate: true})
     onIndexChange(index: number) {
-        this.currentPages.prev = index > 1 ? this.pages[index - 1] : null;
+        this.currentPages.prev = index > 0 ? this.pages[index - 1] : null;
         this.currentPages.main = this.pages[index];
         this.currentPages.next = index < this.pages.length - 1 ? this.pages[index + 1] : null;
     }

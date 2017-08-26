@@ -15,10 +15,10 @@
             <v-flex xs12 md9 lg10>
                 <v-layout class="pages-container">
                     <div class="page-nav-buttons">
-                        <button class="page-nav-button previous text-xs-left" @click="prevPage()">
+                        <button class="page-nav-button previous text-xs-left" v-if="!!currentPages.prev" @click="prevPage()">
                             <i class="fa fa-fw fa-2x fa-chevron-left"></i>
                         </button>
-                        <button class="page-nav-button next text-xs-right" @click="nextPage()">
+                        <button class="page-nav-button next text-xs-right" v-if="!!currentPages.next" @click="nextPage()">
                             <i class="fa fa-fw fa-2x fa-chevron-right"></i>
                         </button>
                     </div>
@@ -33,7 +33,7 @@
                         </div>
                     </v-flex>
                     <v-flex lg6 class="hidden-md-and-down">
-                        <div class="page-container">
+                        <div class="page-container" v-if="!!currentPages.next">
                             <div class="page-heading">
                                 <h6 class="page-title text-xs-right">{{currentPages.next}}</h6>
                             </div>
