@@ -1,3 +1,5 @@
+@require "../../../styles/theme/variables.styl";
+
 .pages-container {
     position: relative;
     background: rgba(black, 0.35);
@@ -29,7 +31,7 @@
     opacity: 0;
     z-index: 20;
 
-    transition: opacity 0.25s ease;
+    transition: $primary-transition;
 
     &:hover {
         opacity: 1;

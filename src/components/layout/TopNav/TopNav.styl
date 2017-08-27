@@ -4,6 +4,14 @@
     background: linear-gradient(to bottom, $theme.primary, $theme.accent 125%);
     z-index: 500;
 
+    .toolbar__content {
+        height: 56px;
+
+        @media screen and (min-width: $grid-breakpoints.md) {
+            height: 64px;
+        }
+    }
+
     .menu__button__container {
         margin-left: 0 !important;
 
@@ -25,10 +33,15 @@
         margin-left: 30px;
         margin-right: 60px;
 
-        .brand__logo {
+        .brand-logo {
             margin: 0;
-            width: 48px;
+            width: 42px;
             height: @width;
+
+            @media (min-width: $grid-breakpoints.md) {
+                width: 48px;
+                height: @width;
+            }
         }
         .toolbar__title {
             margin: 0;
