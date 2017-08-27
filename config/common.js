@@ -59,11 +59,25 @@ const common = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)/,
-                use: 'file-loader?name=fonts/[name].[ext]'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'fonts/[name].[hash].[ext]'
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(jpg|jpeg|png|bmp|gif|tiff)/,
-                use: 'file-loader?name=images/[name].[ext]'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[name].[hash].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
