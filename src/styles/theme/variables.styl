@@ -11,24 +11,8 @@ $theme = {
     success: $green.base
 }
 
-$font-size-root = 16px;
-$body-font-family = 'Athiti', sans-serif;
-
-$headings = {
-  h1: { size: 64px, weight: 300, line-height: 1, letter-spacing: -.04em },
-  h2: { size: 52px, weight: 400, line-height: 1.35, letter-spacing: -.02em },
-  h3: { size: 44px, weight: 400, line-height: 48px, letter-spacing: normal },
-  h4: { size: 32px, weight: 400, line-height: 40px, letter-spacing: normal },
-  h5: { size: 24px, weight: 400, line-height: 32px, letter-spacing: normal },
-  h6: { size: 20px, weight: 500, line-height: 1, letter-spacing: .02em },
-  subheading: { size: 18px, weight: 400 },
-  body-2: { size: 16px, weight: 500 },
-  body-1: { size: 16px, weight: 400 },
-  caption: { size: 14px, weight: 400 },
-  button: { size: 16px, weight: 500 }
-}
-
-$material-dark = {
+/* Theme variables */
+$material-theme = $material-dark = {
   status-bar: {
     regular: #000000,
     lights-out: rgba(#000, .2)
@@ -96,6 +80,27 @@ $material-dark = {
   inactive-icon-percent: .50
 };
 
-$material-theme = $material-dark;
+/* Typography */
+$font-size-root = 16px;
+$body-font-family = 'Athiti', sans-serif;
+
+/* Heading definitions */
+$headings = {
+  h1: { size: 64px, weight: 300, line-height: 1, letter-spacing: -.04em },
+  h2: { size: 52px, weight: 400, line-height: 1.35, letter-spacing: -.02em },
+  h3: { size: 44px, weight: 400, line-height: 48px, letter-spacing: normal },
+  h4: { size: 32px, weight: 400, line-height: 40px, letter-spacing: normal },
+  h5: { size: 24px, weight: 400, line-height: 32px, letter-spacing: normal },
+  h6: { size: 20px, weight: 500, line-height: 1, letter-spacing: .02em },
+  subheading: { size: 18px, weight: 400 },
+  body-2: { size: 16px, weight: 500 },
+  body-1: { size: 16px, weight: 400 },
+  caption: { size: 14px, weight: 400 },
+  button: { size: 16px, weight: 500 }
+}
+
+/* Navbar */
+$navbar-small-height = 56px;
+$navbar-normal-height = 64px;
 
 @require "~vuetify/src/stylus/settings/_variables.styl";
