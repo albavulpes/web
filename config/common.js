@@ -38,7 +38,9 @@ const common = {
                     {
                         loader: 'stylus-loader',
                         options: {
-                            sourceMap: env.isDev
+                            stylus: {
+                                sourceMap: env.isDev
+                            }
                         }
                     }
                 ]
