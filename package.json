@@ -1,5 +1,5 @@
 {
-  "name": "project-strokes-web",
+  "name": "albavulpes-web",
   "description": "Project Strokes - Web Client",
   "version": "0.0.0",
   "private": true,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/albavulpes/project-strokes-web.git"
+    "url": "https://github.com/albavulpes/web.git"
   },
   "license": "UNLICENSED",
   "dependencies": {

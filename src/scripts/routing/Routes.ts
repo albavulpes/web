@@ -2,7 +2,7 @@ import {RouteConfig} from 'vue-router';
 
 import App from '../../components/App.vue';
 import Home from '../../components/views/Home/Home.vue';
-import Comics from '../../components/views/Comic/Comic.vue';
+import Comics from '../../components/views/Comics/Comics.vue';
 import Reader from '../../components/views/Reader/Reader.vue';
 
 const routes: RouteConfig[] = [
