@@ -1,7 +1,7 @@
 import {PageImage} from './PageImage';
 
-export class Page {
-    Id: number;
+export interface Page {
+    Id: string;
     Number: number;
     Image: PageImage;
     Description?: string;

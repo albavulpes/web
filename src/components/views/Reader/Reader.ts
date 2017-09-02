@@ -1,8 +1,16 @@
 import Vue from 'vue';
-import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
+import {Component, Provide, Watch} from 'vue-property-decorator';
+
+import ReaderPages from './ReaderPages/ReaderPages.vue';
+import ReaderGuide from './ReaderGuide/ReaderGuide.vue';
 import {Page} from '../../../scripts/models/comics/Page';
 
-@Component
+@Component({
+    components: {
+        ReaderPages,
+        ReaderGuide
+    }
+})
 export default class extends Vue {
     constructor() {
         super();
@@ -73,7 +81,7 @@ function getPages(): Page[] {
         .map(x => `/assets/images/comic/${x}`)
         .map((x, i) => {
             return {
-                Id: Math.random() * 100,
+                Id: x,
                 Number: i + 1,
                 Image: {
                     Main: x

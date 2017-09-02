@@ -1,0 +1,55 @@
+@require "../../../../styles/theme/variables.styl";
+
+.pages-container {
+    position: relative;
+    background: rgba(black, 0.35);
+
+    .page-container {
+        position: relative;
+        display: inline-block;
+        padding: 15px 30px;
+        opacity: 0.4;
+        transform: scale(0.9);
+
+        height: 100%;
+        max-width: 100%;
+
+        &.main {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .page-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+.page-nav-button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 30px;
+    opacity: 0;
+    z-index: 20;
+
+    transition: $primary-transition;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.previous {
+        left: 0;
+        width: 20%;
+
+        background: linear-gradient(to right, rgba(black, 0.8), transparent);
+    }
+    &.next {
+        right: 0;
+        width: 50%;
+
+        background: linear-gradient(to left, rgba(black, 0.8), transparent);
+    }
+}
