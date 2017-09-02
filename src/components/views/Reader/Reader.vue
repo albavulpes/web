@@ -4,9 +4,9 @@
             <v-flex md3 lg2 fill-height class="hidden-sm-and-down">
                 <v-list dense>
                     <template v-for="page in pages">
-                        <v-list-tile :key="page" v-model="currentPages.main" @click="selectPage(page)">
+                        <v-list-tile :key="page" v-model="currentPages.main.Id" @click="selectPage(page)">
                             <v-list-tile-content>
-                                <v-list-tile-title>{{page}}</v-list-tile-title>
+                                <v-list-tile-title>Page {{page.Number}}</v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
                     </template>
@@ -25,20 +25,20 @@
                     <v-flex lg6 class="text-xs-center text-lg-left">
                         <div class="page-container main">
                             <div class="page-heading">
-                                <h6 class="page-title text-xs-center text-lg-right">{{currentPages.main}}</h6>
+                                <h6 class="page-title text-xs-center text-lg-right">Page {{currentPages.main.Number}}</h6>
                             </div>
                             <div class="page-content">
-                                <img class="page-image elevation-8" :src="`/assets/images/comic/${currentPages.main}`" :alt="currentPages.main">
+                                <img class="page-image elevation-8" :src="currentPages.main.Image.Main" :alt="currentPages.main">
                             </div>
                         </div>
                     </v-flex>
                     <v-flex lg6 class="hidden-md-and-down">
                         <div class="page-container" v-if="!!currentPages.next">
                             <div class="page-heading">
-                                <h6 class="page-title text-xs-right">{{currentPages.next}}</h6>
+                                <h6 class="page-title text-xs-right">Page {{currentPages.next.Number}}</h6>
                             </div>
                             <div class="page-content">
-                                <img class="page-image elevation-8" :src="`/assets/images/comic/${currentPages.next}`" :alt="currentPages.next">
+                                <img class="page-image elevation-8" :src="currentPages.next.Image.Main" :alt="currentPages.next.Description">
                             </div>
                         </div>
                     </v-flex>

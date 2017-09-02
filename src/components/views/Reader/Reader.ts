@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
+import {Page} from '../../../scripts/models/comics/Page';
 
 @Component
 export default class extends Vue {
@@ -19,9 +20,9 @@ export default class extends Vue {
 
     @Provide()
     currentPages: {
-        prev: string,
-        main: string,
-        next: string
+        prev: Page,
+        main: Page,
+        next: Page
     };
 
     @Watch('atIndex', {immediate: true})
@@ -32,17 +33,9 @@ export default class extends Vue {
     }
 
     // TODO: This should be API data
-    pages = [
-        '08.png',
-        '09.png',
-        '10.png',
-        '11.png',
-        '12.png',
-        '13.png',
-        '14.png'
-    ];
+    pages: Page[] = getPages();
 
-    selectPage(page: string) {
+    selectPage(page: Page) {
         this.atIndex = this.pages.indexOf(page);
     }
 
@@ -65,4 +58,26 @@ export default class extends Vue {
 
         this.atIndex = index;
     }
+}
+
+function getPages(): Page[] {
+    return [
+        '08.png',
+        '09.png',
+        '10.png',
+        '11.png',
+        '12.png',
+        '13.png',
+        '14.png'
+    ]
+        .map(x => `/assets/images/comic/${x}`)
+        .map((x, i) => {
+            return {
+                Id: Math.random() * 100,
+                Number: i + 1,
+                Image: {
+                    Main: x
+                }
+            };
+        });
 }
