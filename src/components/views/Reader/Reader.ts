@@ -2,13 +2,13 @@ import Vue from 'vue';
 import {Component, Provide, Watch} from 'vue-property-decorator';
 
 import ReaderPages from './ReaderPages/ReaderPages.vue';
-import ReaderGuide from './ReaderGuide/ReaderGuide.vue';
+import ReaderControls from './ReaderControls/ReaderControls.vue';
 import {Page} from '../../../scripts/models/comics/Page';
 
 @Component({
     components: {
         ReaderPages,
-        ReaderGuide
+        ReaderControls
     }
 })
 export default class extends Vue {

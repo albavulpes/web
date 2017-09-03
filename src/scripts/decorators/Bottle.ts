@@ -1,14 +1,16 @@
 import 'reflect-metadata';
 import {BottleContainer} from '../bottle/BottleContainer';
 
-export function Bottle(): PropertyDecorator {
+export function Inject(): PropertyDecorator {
     return (prototype: any, propertyKey: string) => {
-        const serviceTypeName = Reflect.getMetadata('design:type', prototype, propertyKey);
-
-        console.log(serviceTypeName);
+        const serviceType = Reflect.getMetadata('design:type', prototype, propertyKey) as Function;
 
         if (delete prototype[propertyKey]) {
-            prototype[propertyKey] = (BottleContainer.container as any)[serviceTypeName];
+            Object.defineProperty(prototype, propertyKey, {
+                get() {
+                    return (BottleContainer.container as any)[serviceType.name];
+                }
+            });
         }
     };
 }
