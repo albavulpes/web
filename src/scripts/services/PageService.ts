@@ -2,6 +2,14 @@ import {Page} from '@albavulpes/data-abstraction-layer/dist/models/Page';
 import {BottleContainer} from '../bottle/BottleContainer';
 
 export class PageService {
+    constructor() {
+        this.loadedPages = {
+            previous: null,
+            current: null,
+            next: null
+        };
+    }
+
     loadedPages: {
         previous: Page,
         current: Page,
@@ -13,11 +21,11 @@ export class PageService {
     }
 
     loadNextPage(): void {
-
+        console.log('Next Page');
     }
 
     loadPreviousPage(): void {
-
+        console.log('Previous Page');
     }
 }
 

@@ -11,10 +11,10 @@
         <v-flex lg6 class="text-xs-center text-lg-left">
             <div class="page-container main">
                 <div class="page-heading">
-                    <h6 class="page-title text-xs-center text-lg-right">Page {{currentPage.Number}}</h6>
+                    <h6 class="page-title text-xs-center text-lg-right">Page currentPage.Number</h6>
                 </div>
                 <div class="page-content">
-                    <img class="page-image elevation-8" :src="currentPage.Image.Main" :alt="currentPage">
+                    <img class="page-image elevation-8" src="currentPage.Image.Main" alt="currentPage">
                 </div>
             </div>
         </v-flex>
@@ -24,7 +24,7 @@
                     <h6 class="page-title text-xs-right">Page {{nextPage.Number}}</h6>
                 </div>
                 <div class="page-content">
-                    <img class="page-image elevation-8" :src="nextPage.Image.Main" :alt="nextPage.Description">
+                    <img class="page-image elevation-8" src="nextPage.Image.Main" :alt="nextPage.Description">
                 </div>
             </div>
         </v-flex>

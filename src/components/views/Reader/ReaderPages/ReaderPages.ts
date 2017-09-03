@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
-import {Page} from '../../../../scripts/models/comics/Page';
+import {Page} from '@albavulpes/data-abstraction-layer/dist/models/Page';
+
 
 @Component
 export default class extends Vue {
