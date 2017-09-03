@@ -9,6 +9,9 @@ import 'zepto/src/zepto';
 import 'lodash';
 import 'moment';
 
+// Project
+import '@albavulpes/data-abstraction-layer';
+
 // Styles
 import 'font-awesome/css/font-awesome.css';
 import 'mdi/css/materialdesignicons.css';

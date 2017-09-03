@@ -1,5 +1,7 @@
 import './scripts/hooks/ComponentHooks';
 
+import '@albavulpes/data-abstraction-layer';
+
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuetify from 'vuetify';
@@ -13,6 +15,8 @@ export default async function () {
     Vue.use(Vuetify);
 
     await initVue();
+
+    (window as any).config = config;
 }
 
 async function initVue(): Promise<void> {

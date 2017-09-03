@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@albavulpes/data-abstraction-layer@^0.0.5":
-  version "0.0.5"
-  resolved "https://www.myget.org/F/albavulpes/npm/@albavulpes/data-abstraction-layer/-/@albavulpes/data-abstraction-layer-0.0.5.tgz#c90f69cac8089d821e3d100740274608e0475359"
+"@albavulpes/data-abstraction-layer@^0.1.0":
+  version "0.1.0"
+  resolved "https://www.myget.org/F/albavulpes/npm/@albavulpes/data-abstraction-layer/-/@albavulpes/data-abstraction-layer-0.1.0.tgz#0e11395cd6548053dc03c2a7a06bd1a15d9780af"
   dependencies:
     remove "^0.1.5"
     superagent "^3.6.0"
