@@ -1,3 +1,6 @@
+// Polyfills
+import 'reflect-metadata';
+
 // Vue
 import 'vue';
 import 'vue-router';
