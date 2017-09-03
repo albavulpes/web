@@ -1,6 +1,6 @@
 {
-  "name": "albavulpes-web",
-  "description": "Project Strokes - Web Client",
+  "name": "@albavulpes/web",
+  "description": "Alba Vulpes - Web Client",
   "version": "0.0.0",
   "private": true,
   "copyright": "Copyright © 2017",
@@ -14,6 +14,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
+    "@albavulpes/data-abstraction-layer": "^0.0.5",
     "font-awesome": "^4.7.0",
     "fullscreen": "^1.1.0",
     "lodash": "^4.17.4",

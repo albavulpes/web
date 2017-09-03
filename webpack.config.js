@@ -42,6 +42,7 @@ const CONFIG = merge([
                 manifest: env.paths.dll.vendor
             }),
             new webpack.DefinePlugin({
+                'config': JSON.stringify(require('./config.json')),
                 'process.env': {
                     'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
                 }
