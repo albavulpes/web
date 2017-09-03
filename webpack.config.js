@@ -41,12 +41,6 @@ const CONFIG = merge([
             new webpack.DllReferencePlugin({
                 manifest: env.paths.dll.vendor
             }),
-            new webpack.DefinePlugin({
-                'config': JSON.stringify(require('./config.json')),
-                'process.env': {
-                    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-                }
-            }),
             new HtmlWebpackPlugin({
                 inject: false,
                 template: path.join(env.paths.src, 'index.html')

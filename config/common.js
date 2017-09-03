@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const env = require('./env');
+const config = require('../config.json');
 
 const common = {
     context: env.paths.root,
@@ -94,7 +95,13 @@ const common = {
         colors: true
     },
     plugins: [
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.DefinePlugin({
+            'config': JSON.stringify(config),
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            }
+        })
     ]
 };
 
