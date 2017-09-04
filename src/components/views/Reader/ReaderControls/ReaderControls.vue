@@ -10,16 +10,16 @@
                 <v-btn flat light class="hidden-xs-only">
                     <v-icon>mdi-page-first</v-icon>
                 </v-btn>
-                <v-btn flat light class="hidden-xs-only">
+                <v-btn flat light class="hidden-xs-only" @click="prevPage()">
                     <v-icon>mdi-chevron-left</v-icon>
                 </v-btn>
 
                 <v-btn flat light>
-                    <span class="subheading">Page 1</span>
+                    <span class="subheading">{{currentPage}}</span>
                     <span>Chapter 2</span>
                 </v-btn>
 
-                <v-btn flat light class="hidden-xs-only">
+                <v-btn flat light class="hidden-xs-only" @click="nextPage()">
                     <v-icon>mdi-chevron-right</v-icon>
                 </v-btn>
                 <v-btn flat light class="hidden-xs-only">
