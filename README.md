@@ -26,9 +26,3 @@ This will take quite a while, just be patient. Once this has finished, you are n
 ```
 npm start
 ```
-or if you want to individually run client and / or server
-```
-npm run start-server
-npm run start-client
-```
-The above will start both the server and the client and you are now ready to develop.
