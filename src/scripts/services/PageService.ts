@@ -16,16 +16,37 @@ export class PageService {
         next: Page
     };
 
-    loadPage(pageId: string): void {
+    async loadPage(pageId: string): Promise<void> {
+        const currentPage = await data.getPage(pageId);
+        this.loadedPages.current = currentPage;
 
+        const pageChapter = await data.chapters.getChapter(currentPage.ChapterId);
+
+        const previousPageMeta = pageChapter.Pages.find(p => p.Number === currentPage.Number - 1);
+        const nextPageMeta = pageChapter.Pages.find(p => p.Number === currentPage.Number + 1);
+
+        const [previousPage, nextPage] =
+            await Promise.all([
+                data.pages.getPage(previousPageMeta.Id),
+                data.pages.getPage(nextPageMeta.Id)
+            ]);
+
+        this.loadedPages.previous = previousPage;
+        this.loadedPages.next = nextPage;
     }
 
-    loadNextPage(): void {
-        console.log('Next Page');
+    async loadNextPage(): Promise<void> {
+        if (!this.loadedPages.next)
+            return;
+
+        this.loadPage(this.loadedPages.next.Id);
     }
 
-    loadPreviousPage(): void {
-        console.log('Previous Page');
+    async loadPreviousPage(): Promise<void> {
+        if (!this.loadedPages.previous)
+            return;
+
+        this.loadPage(this.loadedPages.previous.Id);
     }
 }
 
