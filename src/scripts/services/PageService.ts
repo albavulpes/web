@@ -1,4 +1,5 @@
-import {Page} from '@albavulpes/data-abstraction-layer/dist/models/Page';
+import {data} from '@albavulpes/data-abstraction-layer';
+import {Page} from '@albavulpes/data-abstraction-layer/dist/models/api/Page';
 import {BottleContainer} from '../bottle/BottleContainer';
 
 export class PageService {
@@ -17,7 +18,7 @@ export class PageService {
     };
 
     async loadPage(pageId: string): Promise<void> {
-        const currentPage = await data.getPage(pageId);
+        const currentPage = await data.pages.getPage(pageId);
         this.loadedPages.current = currentPage;
 
         const pageChapter = await data.chapters.getChapter(currentPage.ChapterId);
@@ -39,14 +40,14 @@ export class PageService {
         if (!this.loadedPages.next)
             return;
 
-        this.loadPage(this.loadedPages.next.Id);
+        await this.loadPage(this.loadedPages.next.Id);
     }
 
     async loadPreviousPage(): Promise<void> {
         if (!this.loadedPages.previous)
             return;
 
-        this.loadPage(this.loadedPages.previous.Id);
+        await this.loadPage(this.loadedPages.previous.Id);
     }
 }
 

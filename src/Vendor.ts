@@ -11,6 +11,7 @@ import 'vuetify';
 import 'zepto/src/zepto';
 import 'lodash';
 import 'moment';
+import 'store';
 
 // Project
 import '@albavulpes/data-abstraction-layer';

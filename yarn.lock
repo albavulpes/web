@@ -2,11 +2,12 @@
 # yarn lockfile v1
 
 
-"@albavulpes/data-abstraction-layer@^0.1.0":
-  version "0.1.0"
-  resolved "https://www.myget.org/F/albavulpes/npm/@albavulpes/data-abstraction-layer/-/@albavulpes/data-abstraction-layer-0.1.0.tgz#0e11395cd6548053dc03c2a7a06bd1a15d9780af"
+"@albavulpes/data-abstraction-layer@^0.1.2":
+  version "0.1.2"
+  resolved "https://www.myget.org/F/albavulpes/npm/@albavulpes/data-abstraction-layer/-/@albavulpes/data-abstraction-layer-0.1.2.tgz#40e8f9ab4969fa02a394996160058081734e186b"
   dependencies:
     remove "^0.1.5"
+    store "^2.0.12"
     superagent "^3.6.0"
     superagent-prefix "^0.0.2"
     superagent-use "^0.1.0"
@@ -2742,6 +2743,10 @@ sshpk@^1.7.0:
     ecc-jsbn "~0.1.1"
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
 
 stream-browserify@^2.0.1:
   version "2.0.1"

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
-import {Page} from '@albavulpes/data-abstraction-layer/dist/models/Page';
+import {Page} from '@albavulpes/data-abstraction-layer/dist/models/api/Page';
 
 
 @Component

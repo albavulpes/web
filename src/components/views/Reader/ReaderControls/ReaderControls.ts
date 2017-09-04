@@ -3,7 +3,7 @@ import {Component} from 'vue-property-decorator';
 import {Inject} from '../../../../scripts/decorators/Bottle';
 
 import {PageService} from '../../../../scripts/services/PageService';
-import {Page} from '@albavulpes/data-abstraction-layer/dist/models/Page';
+import {Page} from '@albavulpes/data-abstraction-layer/dist/models/api/Page';
 
 @Component
 export default class extends Vue {
