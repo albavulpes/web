@@ -22,12 +22,18 @@ export default class extends Vue {
 
     }
 
-    nextPage(): void {
-        this.PageService.loadNextPage();
+    async nextPage(): Promise<void> {
+        this.$router.push({
+            params: {
+                pageId: this.$route.params.pageId + 1
+            }
+        });
+
+        await this.PageService.loadNextPage();
     }
 
-    prevPage(): void {
-        this.PageService.loadPreviousPage();
+    async prevPage(): Promise<void> {
+        await this.PageService.loadPreviousPage();
     }
 
     goFullscreen(): void {

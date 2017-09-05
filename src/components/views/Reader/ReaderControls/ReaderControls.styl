@@ -6,7 +6,10 @@
     }
 
     .btn {
-        color: white;
-        width: auto;
+        max-width: none;
+
+        &:not(.btn--block) {
+            width: auto;
+        }
     }
 }

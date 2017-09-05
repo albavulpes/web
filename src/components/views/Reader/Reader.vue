@@ -2,7 +2,7 @@
     <div>
         <v-layout>
             <v-flex>
-                <ReaderPages class="reader-pages-container"></ReaderPages>
+                <ReaderPages></ReaderPages>
             </v-flex>
         </v-layout>
         <v-layout>
