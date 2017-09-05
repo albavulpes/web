@@ -3,7 +3,9 @@ import {RouteConfig} from 'vue-router';
 import App from '../../components/App.vue';
 import Home from '../../components/views/Home/Home.vue';
 import Comics from '../../components/views/Comics/Comics.vue';
+
 import Reader from '../../components/views/Reader/Reader.vue';
+import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
 
 const routes: RouteConfig[] = [
     {
@@ -32,7 +34,13 @@ const routes: RouteConfig[] = [
                 meta: {
                     title: 'Reader'
                 },
-                component: Reader
+                component: Reader,
+                children: [
+                    {
+                        name: 'reader.page',
+                        path: 'page/:pageId'
+                    }
+                ]
             }
         ]
     }
