@@ -4,3 +4,31 @@ a {
     display: inline-block;
     color: $material-theme.text.primary;
 }
+
+h1, .h1 {
+    @extend .display-4;
+}
+
+h2, .h2 {
+    @extend .display-3;
+}
+
+h3, .h3 {
+    @extend .display-2;
+}
+
+h4, .h4 {
+    @extend .display-1;
+}
+
+h5, .h5 {
+    @extend .headline;
+}
+
+h6, .h6 {
+    @extend .title;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin: 15px 0;
+}

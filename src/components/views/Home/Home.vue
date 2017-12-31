@@ -10,9 +10,9 @@
                             Welcome to the Home Page!
                         </h1>
                         <v-divider></v-divider>
-                        <h2>
+                        <h3>
                             Go to the following links for more awesome placeholders:
-                        </h2>
+                        </h3>
                         <v-btn primary :to="{name: 'reader'}">
                             Reader
                         </v-btn>

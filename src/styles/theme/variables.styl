@@ -20,11 +20,18 @@ $material-theme = $material-dark = {
   app-bar: #212121,
   background: desaturate(darken($theme.primary, 70%), 10%),
   cards: rgba(white, 0.15),
+  chips: {
+    background: #FFF,
+    color: $theme.primary
+  },
   dividers: rgba(#fff, .12),
   text: {
+    theme: #fff,
     primary: #fff,
     secondary: rgba(#fff, .70),
-    disabled: rgba(#fff, .50)
+    disabled: rgba(#fff, .50),
+    link: $blue.accent-1,
+    link-hover: $grey.lighten-3
   },
   icons: {
     active: #fff,
@@ -35,6 +42,9 @@ $material-theme = $material-dark = {
     focused: rgba(#fff, .12),
     focused-alt: rgba(#fff, .1),
     pressed: rgba(#ccc, .25)
+  },
+  expansion-panels: {
+    focus: rgba(#000, .70)
   },
   selection-controls: {
     active: $teal.lighten-3,
@@ -68,7 +78,11 @@ $material-theme = $material-dark = {
     active: $grey.darken-1
     hover: $grey.darken-2
   },
-
+  picker: {
+    body: #424242,
+    clock: $grey.darken-2,
+    title: $grey.darken-2
+  },
   bg-color: $backgroundBase,
   fg-color: #fff,
   text-color: #fff,

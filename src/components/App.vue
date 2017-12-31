@@ -6,11 +6,11 @@
         <v-app dark>
             <TopNav></TopNav>
 
-            <main>
+            <v-content>
                 <div class="page-container" id="router-container">
                     <router-view :key="$route.path"></router-view>
                 </div>
-            </main>
+            </v-content>
         </v-app>
     </div>
 </template>
