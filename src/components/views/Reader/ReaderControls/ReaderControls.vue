@@ -39,7 +39,5 @@
                 </v-btn>
             </v-flex>
         </v-layout>
-
-
     </v-bottom-nav>
 </template>
