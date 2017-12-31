@@ -1,4 +1,7 @@
+import Vue from 'vue';
 import {RouteConfig} from 'vue-router';
+
+import * as RoutingHooks from './Hooks';
 
 import App from '../../components/App.vue';
 import Home from '../../components/views/Home/Home.vue';
@@ -6,44 +9,56 @@ import Comics from '../../components/views/Comics/Comics.vue';
 
 import Reader from '../../components/views/Reader/Reader.vue';
 import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
+import VueRouter from 'vue-router';
 
 const routes: RouteConfig[] = [
     {
+        name: 'home',
         path: '/',
-        component: App,
+        meta: {
+            title: 'Home'
+        },
+        component: Home
+    },
+    {
+        name: 'comic',
+        path: '/comic',
+        meta: {
+            title: 'Comics'
+        },
+        component: Comics
+    },
+    {
+        name: 'reader',
+        path: '/reader',
+        meta: {
+            title: 'Reader'
+        },
+        component: Reader,
         children: [
             {
-                name: 'home',
-                path: '/',
-                meta: {
-                    title: 'Home'
-                },
-                component: Home
-            },
-            {
-                name: 'comic',
-                path: '/comic',
-                meta: {
-                    title: 'Comics'
-                },
-                component: Comics
-            },
-            {
-                name: 'reader',
-                path: '/reader',
-                meta: {
-                    title: 'Reader'
-                },
-                component: Reader,
-                children: [
-                    {
-                        name: 'reader.page',
-                        path: 'page/:pageId'
-                    }
-                ]
+                name: 'reader.page',
+                path: 'page/:pageId'
             }
         ]
     }
 ];
 
-export default routes;
+export function mountVue() {
+    const router = new VueRouter({
+        routes,
+        mode: 'history',
+        scrollBehavior: function () {
+            return {x: 0, y: 0};
+        }
+    });
+
+    RoutingHooks.init(router);
+
+    // Mount vue
+    new Vue({
+        router,
+        el: `#vue-entry`,
+        render: h => h(App)
+    });
+}

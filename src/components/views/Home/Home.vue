@@ -1,3 +1,5 @@
+<script lang="ts" src="./Home.ts"></script>
+
 <template>
     <v-container>
         <v-card>
@@ -24,4 +26,3 @@
     </v-container>
 </template>
 
-<script lang="ts" src="./Home.ts"></script>

@@ -11,7 +11,7 @@ module.exports = merge([
     common,
     {
         entry: {
-            vendor: [path.join(env.paths.src, 'Vendor.ts')]
+            vendor: [path.join(env.paths.src, 'Vendor.js')]
         },
         output: {
             path: env.paths.dist,
@@ -34,6 +34,7 @@ module.exports = merge([
             new ManifestPlugin({
                 fileName: env.filenames.manifests.vendor
             })
-        ]
+        ],
+        devtool: false
     }
 ]);

@@ -1,3 +1,6 @@
+<script lang="ts" src="./ReaderControls.ts"></script>
+<style lang="stylus" src="./ReaderControls.styl"></style>
+
 <template>
     <v-bottom-nav absolute value="true" class="reader-controls">
         <v-layout class="reader-controls-layout">
@@ -40,6 +43,3 @@
 
     </v-bottom-nav>
 </template>
-
-<script lang="ts" src="./ReaderControls.ts"></script>
-<style lang="stylus" src="./ReaderControls.styl" scoped></style>

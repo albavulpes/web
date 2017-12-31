@@ -1,3 +1,6 @@
+<script lang="ts" src="./ReaderPages.ts"></script>
+<style lang="stylus" src="./ReaderPages.styl"></style>
+
 <template>
     <v-layout class="pages-container">
         <div class="page-nav-buttons">
@@ -30,6 +33,3 @@
         </v-flex>
     </v-layout>
 </template>
-
-<script lang="ts" src="./ReaderPages.ts"></script>
-<style lang="stylus" src="./ReaderPages.styl" scoped></style>

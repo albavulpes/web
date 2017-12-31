@@ -1,3 +1,6 @@
+<script lang="ts" src="./TopNav.ts"></script>
+<style lang="stylus" src="./TopNav.styl"></style>
+
 <template>
     <div class="TopNavComponent">
         <v-toolbar fixed class="primary">
@@ -32,6 +35,3 @@
         </v-toolbar>
     </div>
 </template>
-
-<script lang="ts" src="./TopNav.ts"></script>
-<style lang="stylus" src="./TopNav.styl"></style>
