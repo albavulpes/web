@@ -9,6 +9,7 @@ declare module 'vue-material' {
 // Vue files fix
 declare module '*.vue' {
     import Vue from 'vue';
+    import 'vue-router';
     export default class extends Vue {
     }
 }

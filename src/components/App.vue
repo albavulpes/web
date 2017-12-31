@@ -2,13 +2,13 @@
 <style lang="stylus" src="./App.styl"></style>
 
 <template>
-    <div id="AppComponent">
+    <div class="AppComponent">
         <v-app dark>
             <TopNav></TopNav>
 
             <main>
                 <div class="page-container" id="router-container">
-                    <router-view :key="$route.fullPath"></router-view>
+                    <router-view :key="$route.path"></router-view>
                 </div>
             </main>
         </v-app>

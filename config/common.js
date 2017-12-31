@@ -20,7 +20,7 @@ const common = {
                         loader: 'css-loader',
                         options: {
                             minimize: !env.isDev,
-                            sourceMap: env.isDev
+                            sourceMap: true
                         }
                     }
                 ]
@@ -33,14 +33,14 @@ const common = {
                         loader: 'css-loader',
                         options: {
                             minimize: !env.isDev,
-                            sourceMap: env.isDev
+                            sourceMap: true
                         }
                     },
                     {
                         loader: 'stylus-loader',
                         options: {
                             stylus: {
-                                sourceMap: env.isDev
+                                sourceMap: true
                             }
                         }
                     }
@@ -85,7 +85,6 @@ const common = {
     resolve: {
         extensions: ['.js', '.ts'],
         alias: {
-            vue: 'vue/dist/vue.js',
             app: path.resolve('./src/')
         }
     },

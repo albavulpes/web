@@ -62,6 +62,6 @@
     "wp:app:dev": "webpack",
     "wp:app:dev:watch": "webpack --watch",
     "wp:vendor": "cross-env NODE_ENV=production webpack --config webpack.vendor.config.js",
-    "start": "live-server ./dist/ --host=localhost --port=5164 --no-browser"
+    "start": "live-server dist --host=localhost --port=5164 --entry-file=index.html --no-browser"
   }
 }

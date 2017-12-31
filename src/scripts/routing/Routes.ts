@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {RouteConfig} from 'vue-router';
+import VueRouter, {RouteConfig} from 'vue-router';
 
 import * as RoutingHooks from './Hooks';
 
@@ -9,7 +9,6 @@ import Comics from '../../components/views/Comics/Comics.vue';
 
 import Reader from '../../components/views/Reader/Reader.vue';
 import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
-import VueRouter from 'vue-router';
 
 const routes: RouteConfig[] = [
     {
@@ -48,9 +47,7 @@ export function mountVue() {
     const router = new VueRouter({
         routes,
         mode: 'history',
-        scrollBehavior: function () {
-            return {x: 0, y: 0};
-        }
+        scrollBehavior: () => ({x: 0, y: 0})
     });
 
     RoutingHooks.init(router);

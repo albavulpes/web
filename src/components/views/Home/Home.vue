@@ -6,13 +6,13 @@
             <v-card-title>
                 <v-layout style="flex: 1">
                     <v-flex>
-                        <h2>
+                        <h1>
                             Welcome to the Home Page!
-                        </h2>
+                        </h1>
                         <v-divider></v-divider>
-                        <h4>
+                        <h2>
                             Go to the following links for more awesome placeholders:
-                        </h4>
+                        </h2>
                         <v-btn primary :to="{name: 'reader'}">
                             Reader
                         </v-btn>
