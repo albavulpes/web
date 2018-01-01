@@ -54,15 +54,11 @@ export const ReaderPagesStore = new (class extends Store<CartStoreState> {
                 goToPrevious(state, previousPage: Page) {
                     state.nextPage = state.currentPage;
                     state.currentPage = state.previousPage;
-
-                    // TODO: Make API call for next page here
                     state.previousPage = previousPage;
                 },
                 goToNext(state, nextPage: Page) {
                     state.previousPage = state.currentPage;
                     state.currentPage = state.nextPage;
-
-                    // TODO: Make API call for next page here
                     state.nextPage = nextPage;
                 }
             }

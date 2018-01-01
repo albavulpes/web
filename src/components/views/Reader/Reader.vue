@@ -3,15 +3,8 @@
 
 <template>
     <div class="ReaderComponent container-fluid">
-        <div class="row">
-            <div class="col">
-                <ReaderPages></ReaderPages>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <ReaderControls class="reader-controls-container"></ReaderControls>
-            </div>
-        </div>
+        <ReaderPages></ReaderPages>
+
+        <ReaderControls class="reader-controls-container"></ReaderControls>
     </div>
 </template>
