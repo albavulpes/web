@@ -1,10 +1,11 @@
-@require "../styles/_variables.scss";
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
 
 #router-container {
     padding: 0;
     padding-top: $navbar-small-height;
 
-    @media screen and (min-width: $grid-breakpoints.md) {
+    @include breakpoint(md) {
         padding-top: $navbar-normal-height;
     }
 }

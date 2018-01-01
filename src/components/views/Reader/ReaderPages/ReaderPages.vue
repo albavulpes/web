@@ -1,5 +1,5 @@
 <script lang="ts" src="./ReaderPages.ts"></script>
-<style lang="stylus" src="./ReaderPages.styl"></style>
+<!--<style lang="stylus" src="./ReaderPages.styl"></style>-->
 
 <template>
     <v-layout class="pages-container">

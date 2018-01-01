@@ -1,5 +1,5 @@
 <script lang="ts" src="./Reader.ts"></script>
-<style lang="stylus" src="./Reader.styl"></style>
+<!--<style lang="stylus" src="./Reader.styl"></style>-->
 
 <template>
     <div class="ReaderComponent">
