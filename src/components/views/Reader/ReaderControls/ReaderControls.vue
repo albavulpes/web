@@ -1,49 +1,49 @@
 <script lang="ts" src="./ReaderControls.ts"></script>
-<!--<style lang="stylus" src="./ReaderControls.styl"></style>-->
+<style lang="scss" src="./ReaderControls.scss"></style>
 
 <template>
     <div class="ReaderControlsComponent">
         <div class="reader-controls">
             <div class="row reader-controls-row">
                 <div class="col text-left">
-                    <button class="btn">
+                    <button class="btn btn-lg btn-dark">
                         <i class="mdi mdi-view-list"></i>
                     </button>
                 </div>
                 <div class="col-md-5 col-lg-6">
                     <div class="row justify-content-center">
-                        <div class="col">
-                            <button class="btn d-none d-sm-block">
+                        <div class="col text-right d-none d-sm-block">
+                            <button class="btn btn-lg btn-dark">
                                 <i class="mdi mdi-page-first"></i>
                             </button>
                         </div>
-                        <div class="col">
-                            <button class="btn d-none d-md-block" @click="prevPage()">
+                        <div class="col text-right d-none d-md-block">
+                            <button class="btn btn-lg btn-dark" @click="prevPage()">
                                 <i class="mdi mdi-chevron-left"></i>
                             </button>
                         </div>
 
                         <div class="col-md-5 text-center">
-                            <button class="btn btn-block">
+                            <button class="btn btn-lg btn-dark btn-block">
                                 <span class="h5">{{currentPage}}</span>
                                 <span>Chapter 2</span>
                             </button>
                         </div>
 
-                        <div class="col">
-                            <button class="btn d-none d-md-block" @click="nextPage()">
+                        <div class="col text-left d-none d-md-block">
+                            <button class="btn btn-lg btn-dark" @click="nextPage()">
                                 <i class="mdi mdi-chevron-right"></i>
                             </button>
                         </div>
-                        <div class="col">
-                            <button class="btn d-none d-sm-block">
+                        <div class="col text-left d-none d-sm-block">
+                            <button class="btn btn-lg btn-dark">
                                 <i class="mdi mdi-page-last"></i>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="col text-right">
-                    <button class="btn">
+                    <button class="btn btn-lg btn-dark">
                         <i class="mdi mdi-fullscreen"></i>
                     </button>
                 </div>
