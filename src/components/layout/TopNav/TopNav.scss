@@ -4,7 +4,6 @@
 nav.navbar {
     background: linear-gradient(to bottom, darken($primary, 5%), $secondary 120%);
     border: none;
-    border-radius: 0;
     z-index: 500;
 
     height: $navbar-small-height;

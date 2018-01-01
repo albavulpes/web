@@ -2,18 +2,16 @@
 <!--<style lang="stylus" src="./Reader.styl"></style>-->
 
 <template>
-    <div class="ReaderComponent">
-        <v-container fluid>
-            <v-layout>
-                <v-flex>
-                    <ReaderPages></ReaderPages>
-                </v-flex>
-            </v-layout>
-            <v-layout>
-                <v-flex>
-                    <ReaderControls class="reader-controls-container"></ReaderControls>
-                </v-flex>
-            </v-layout>
-        </v-container>
+    <div class="ReaderComponent container-fluid">
+        <div class="row">
+            <div class="col">
+                <ReaderPages></ReaderPages>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ReaderControls class="reader-controls-container"></ReaderControls>
+            </div>
+        </div>
     </div>
 </template>

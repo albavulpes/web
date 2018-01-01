@@ -3,9 +3,9 @@
 
 #router-container {
     padding: 0;
-    padding-top: $navbar-small-height;
+    padding-top: $navbar-small-height + 30px;
 
     @include breakpoint(md) {
-        padding-top: $navbar-normal-height;
+        padding-top: $navbar-normal-height + 30px;
     }
 }

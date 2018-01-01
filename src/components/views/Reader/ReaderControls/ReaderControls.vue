@@ -2,42 +2,52 @@
 <!--<style lang="stylus" src="./ReaderControls.styl"></style>-->
 
 <template>
-    <v-bottom-nav absolute value="true" class="reader-controls">
-        <v-layout class="reader-controls-layout">
-            <v-flex class="text-xs-left">
-                <v-btn flat>
-                    <v-icon>mdi-view-list</v-icon>
-                </v-btn>
-            </v-flex>
-            <v-flex md8 lg6 class="text-xs-center">
-                <v-layout justify-center>
-                    <v-btn flat class="hidden-xs-only">
-                        <v-icon>mdi-page-first</v-icon>
-                    </v-btn>
-                    <v-btn flat class="hidden-sm-and-down" @click="prevPage()">
-                        <v-icon>mdi-chevron-left</v-icon>
-                    </v-btn>
+    <div class="ReaderControlsComponent">
+        <div class="reader-controls">
+            <div class="row reader-controls-row">
+                <div class="col text-left">
+                    <button class="btn">
+                        <i class="mdi mdi-view-list"></i>
+                    </button>
+                </div>
+                <div class="col-md-5 col-lg-6">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <button class="btn d-none d-sm-block">
+                                <i class="mdi mdi-page-first"></i>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn d-none d-md-block" @click="prevPage()">
+                                <i class="mdi mdi-chevron-left"></i>
+                            </button>
+                        </div>
 
-                    <v-flex md5 class="text-xs-center">
-                        <v-btn block flat>
-                            <span class="subheading">{{currentPage}}</span>
-                            <span>Chapter 2</span>
-                        </v-btn>
-                    </v-flex>
+                        <div class="col-md-5 text-center">
+                            <button class="btn btn-block">
+                                <span class="h5">{{currentPage}}</span>
+                                <span>Chapter 2</span>
+                            </button>
+                        </div>
 
-                    <v-btn flat class="hidden-sm-and-down" @click="nextPage()">
-                        <v-icon>mdi-chevron-right</v-icon>
-                    </v-btn>
-                    <v-btn flat class="hidden-xs-only">
-                        <v-icon>mdi-page-last</v-icon>
-                    </v-btn>
-                </v-layout>
-            </v-flex>
-            <v-flex class="text-xs-right">
-                <v-btn flat>
-                    <v-icon>mdi-fullscreen</v-icon>
-                </v-btn>
-            </v-flex>
-        </v-layout>
-    </v-bottom-nav>
+                        <div class="col">
+                            <button class="btn d-none d-md-block" @click="nextPage()">
+                                <i class="mdi mdi-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn d-none d-sm-block">
+                                <i class="mdi mdi-page-last"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-right">
+                    <button class="btn">
+                        <i class="mdi mdi-fullscreen"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

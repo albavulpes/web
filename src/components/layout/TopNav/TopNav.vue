@@ -3,7 +3,7 @@
 
 <template>
     <div class="TopNavComponent">
-        <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <nav class="navbar navbar-expand fixed-top navbar-dark bg-primary">
             <router-link class="navbar-brand" :to="{name: 'home'}">
                 <div class="row align-items-center">
                     <div class="col">
