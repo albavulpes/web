@@ -1,8 +1,8 @@
 <script lang="ts" src="./Comics.ts"></script>
 
 <template>
-    <v-container>
-        <h2>Comic Page</h2>
-    </v-container>
+    <div class="container">
+        <h1>Comic Page</h1>
+    </div>
 </template>
 

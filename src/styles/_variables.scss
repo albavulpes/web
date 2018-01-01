@@ -1,6 +1,6 @@
 /* Theme variables */
 $primary: hsl(206, 80%, 30%);
-$secondary: hsl(184, 80%, 38%);
+$secondary: hsl(184, 70%, 40%);
 $light: desaturate(lighten($primary, 10%), 60%);
 $dark: desaturate(darken($primary, 10%), 60%);
 
