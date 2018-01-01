@@ -30,7 +30,7 @@
                 </li>
                 <li class="nav-item">
                     <router-link class="nav-link" :to="{name: 'reader'}">
-                        Pricing
+                        Reader
                     </router-link>
                 </li>
             </ul>

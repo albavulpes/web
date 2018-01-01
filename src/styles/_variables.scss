@@ -1,12 +1,15 @@
 /* Theme variables */
 $primary: hsl(206, 80%, 20%);
 $secondary: hsl(184, 60%, 36%);
-$dark: hsl(184, 60%, 36%);
-$light: desaturate(lighten($secondary, 30%), 10%);
-//$dark: desaturate(darken($primary, 30%), 10%);
+$light: desaturate(lighten($primary, 5%), 40%);
+$dark: desaturate(darken($primary, 5%), 40%);
 
-$body-bg: desaturate(darken($primary, 70%), 10%);
+/* Body */
+$body-bg: desaturate(darken($primary, 15%), 30%);
 $body-color: white;
+
+/* Buttons */
+$btn-padding-x: 20px;
 
 /* Typography */
 $headings-font-family: inherit;

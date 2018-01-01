@@ -7,7 +7,7 @@
                 <h1>
                     Welcome to the Home Page!
                 </h1>
-                <hr>
+                <hr class="border-light">
                 <h3>
                     Go to the following links for more awesome placeholders:
                 </h3>
