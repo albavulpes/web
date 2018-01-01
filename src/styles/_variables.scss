@@ -1,0 +1,40 @@
+/* Theme variables */
+$primary: hsl(206, 80%, 20%);
+$secondary: hsl(184, 60%, 36%);
+$dark: hsl(184, 60%, 36%);
+$light: desaturate(lighten($secondary, 30%), 10%);
+//$dark: desaturate(darken($primary, 30%), 10%);
+
+$body-bg: desaturate(darken($primary, 70%), 10%);
+$body-color: white;
+
+/* Typography */
+$headings-font-family: inherit;
+
+$font-size-base: 1rem;
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * .875);
+
+/* Heading definitions */
+//$h1-font-size:                $font-size-base * 2.5 !default;
+//$h2-font-size:                $font-size-base * 2 !default;
+//$h3-font-size:                $font-size-base * 1.75 !default;
+//$h4-font-size:                $font-size-base * 1.5 !default;
+//$h5-font-size:                $font-size-base * 1.25 !default;
+//$h6-font-size:                $font-size-base !default;
+//$headings = {
+//  h1: { size: 64px, weight: 300, line-height: 1, letter-spacing: -.04em },
+//  h2: { size: 52px, weight: 400, line-height: 1.35, letter-spacing: -.02em },
+//  h3: { size: 44px, weight: 400, line-height: 48px, letter-spacing: normal },
+//  h4: { size: 32px, weight: 400, line-height: 40px, letter-spacing: normal },
+//  h5: { size: 24px, weight: 400, line-height: 32px, letter-spacing: normal },
+//  h6: { size: 20px, weight: 500, line-height: 1, letter-spacing: .02em },
+//  subheading: { size: 18px, weight: 400 },
+//  body-2: { size: 16px, weight: 500 },
+//  body-1: { size: 16px, weight: 400 },
+//  caption: { size: 14px, weight: 400 },
+//  button: { size: 16px, weight: 500 }
+//}
+
+$navbar-small-height: 58px;
+$navbar-normal-height: 64px;

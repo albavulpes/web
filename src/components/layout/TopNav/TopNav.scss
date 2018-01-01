@@ -1,4 +1,4 @@
-@require "../../../styles/theme/variables.styl";
+@require "../../../styles/variables.scss";
 
 .toolbar {
     background: linear-gradient(to bottom, $theme.primary, $theme.accent 120%);
