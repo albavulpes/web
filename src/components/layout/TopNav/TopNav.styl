@@ -1,34 +1,14 @@
 @require "../../../styles/theme/variables.styl";
 
 .toolbar {
-    background: linear-gradient(to bottom, $theme.primary, $theme.accent 125%);
+    background: linear-gradient(to bottom, $theme.primary, $theme.accent 120%);
     z-index: 500;
 
-    .toolbar__content {
-        height: $navbar-small-height;
-
-        @media screen and (min-width: $grid-breakpoints.md) {
-            height: $navbar-normal-height;
-        }
-    }
-
-    .menu__button__container {
+    .menu-button-container {
         margin-left: 0 !important;
-
-        .menu__button {
-            min-width: auto;
-
-            .icon {
-                font-size: 28px;
-            }
-        }
     }
 
-    .brand__link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
+    .brand-link {
         text-decoration: none;
         margin-left: 30px;
         margin-right: 60px;
@@ -45,7 +25,7 @@
         }
         .toolbar__title {
             margin: 0;
-            margin-top: -4px;
+            margin-top: -2px;
         }
     }
     .toolbar__items {
@@ -55,7 +35,7 @@
         }
     }
 
-    .brand__link,
+    .brand-link,
     .toolbar__items .btn {
         text-shadow: rgba(black, 0.25) 0 1px 2px;
     }
