@@ -1,11 +1,11 @@
 /* Theme variables */
-$primary: hsl(206, 80%, 20%);
-$secondary: hsl(184, 60%, 36%);
-$light: desaturate(lighten($primary, 5%), 40%);
-$dark: desaturate(darken($primary, 5%), 40%);
+$primary: hsl(206, 80%, 30%);
+$secondary: hsl(184, 80%, 38%);
+$light: desaturate(lighten($primary, 10%), 60%);
+$dark: desaturate(darken($primary, 10%), 60%);
 
 /* Body */
-$body-bg: desaturate(darken($primary, 15%), 30%);
+$body-bg: desaturate(darken($primary, 25%), 30%);
 $body-color: white;
 
 /* Buttons */
