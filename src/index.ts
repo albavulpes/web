@@ -2,7 +2,7 @@
 import './Vendor';
 
 // Styles
-import './styles/main.styl';
+import './styles/main.scss';
 
 // Init the app
 import startup from './Startup';

@@ -26,7 +26,7 @@ const common = {
                 ]
             },
             {
-                test: /\.styl$/,
+                test: /\.scss$/,
                 use: [
                     'style-loader',
                     {
@@ -37,11 +37,15 @@ const common = {
                         }
                     },
                     {
-                        loader: 'stylus-loader',
+                        loader: 'resolve-url-loader',
                         options: {
-                            stylus: {
-                                sourceMap: true
-                            }
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
                         }
                     }
                 ]
@@ -85,7 +89,7 @@ const common = {
     resolve: {
         extensions: ['.js', '.ts'],
         alias: {
-            app: path.resolve('./src/')
+            root: path.resolve(__dirname, '../src')
         }
     },
     cache: true,
