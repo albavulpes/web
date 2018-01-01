@@ -1,4 +1,5 @@
-@require "../../../../styles/_variables.scss";
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
 
 .pages-container {
     position: relative;
@@ -33,8 +34,6 @@
     padding: 30px;
     opacity: 0;
     z-index: 20;
-
-    transition: $primary-transition;
 
     &:hover {
         opacity: 1;

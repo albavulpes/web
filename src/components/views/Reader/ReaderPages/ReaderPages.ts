@@ -1,32 +1,30 @@
 import Vue from 'vue';
 import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
-import {Page} from '@albavulpes/data-abstraction-layer/dist/models/api/Page';
+import {ReaderPagesStore} from '../../../../scripts/stores/reader/ReaderPagesStore';
 
 @Component
 export default class extends Vue {
-    async mounted() {
-        this.$watch(() => this.pageId,
-            () => {
-                this.loadPage(this.pageId);
-            }, {
-                immediate: true
-            });
-    }
-
     get pageId() {
         return this.$route.params.pageId;
     }
 
-    @Prop()
-    previousPage: Page;
+    get previousPage() {
+        return ReaderPagesStore.previousPage;
+    }
 
-    @Prop()
-    currentPage: Page;
+    get currentPage() {
+        return ReaderPagesStore.currentPage;
+    }
 
-    @Prop()
-    nextPage: Page;
+    get nextPage() {
+        return ReaderPagesStore.nextPage;
+    }
 
-    loadPage(pageId: string) {
-        console.log(pageId);
+    async goToPreviousPage() {
+        await ReaderPagesStore.goToPrevious();
+    }
+
+    async goToNextPage() {
+        await ReaderPagesStore.goToNext();
     }
 }

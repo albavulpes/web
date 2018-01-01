@@ -7,8 +7,12 @@
 
         background: rgba(black, 0.8) !important;
 
-        .reader-controls-layout {
-            width: 100%;
+        .btn {
+            background-color: transparent;
+
+            &:not(:hover) {
+                border-color: transparent;
+            }
         }
     }
 }
