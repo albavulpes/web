@@ -73,7 +73,8 @@
             border: none;
             outline: none;
 
-            opacity: 0.15;
+            opacity: 0;
+            @include transition(opacity);
 
             &:hover {
                 opacity: 1;
