@@ -1,11 +1,11 @@
 /* Theme variables */
 $primary: hsl(206, 80%, 30%);
-$secondary: hsl(184, 70%, 40%);
+$secondary: hsl(184, 75%, 45%);
 $light: desaturate(lighten($primary, 10%), 60%);
 $dark: desaturate(darken($primary, 10%), 60%);
 
 /* Body */
-$body-bg: desaturate(darken($primary, 25%), 30%);
+$body-bg: desaturate(darken($primary, 22%), 30%);
 $body-color: white;
 
 /* Buttons */
@@ -14,7 +14,9 @@ $btn-padding-x: 20px;
 /* Typography */
 $headings-font-family: inherit;
 
-$font-size-base: 1rem;
+$font-weight-base: 400;
+
+$font-size-base: 1.1rem;
 $font-size-lg: ($font-size-base * 1.25);
 $font-size-sm: ($font-size-base * .875);
 
