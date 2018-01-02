@@ -17,7 +17,7 @@
                 </div>
             </router-link>
 
-            <ul class="navbar-nav d-none d-sm-flex">
+            <ul class="navbar-nav d-none d-md-flex">
                 <li class="nav-item active">
                     <router-link class="nav-link" :to="{name: 'home'}">
                         Home

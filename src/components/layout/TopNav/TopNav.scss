@@ -5,6 +5,8 @@ nav.navbar {
     background: linear-gradient(to bottom, darken($primary, 5%), $secondary 125%);
     border: none;
     z-index: 500;
+    border-radius: 0 !important;
+    border-bottom-left-radius: 350px 50px !important;
 
     @include navbar-height();
 
