@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
-                                <div class="card shadow-light-2">
+                                <div class="card border-0 shadow-2">
                                     <img class="img-responsive" :src="comic.CoverImage.Thumbnail" :alt="comic.Title">
                                 </div>
                             </div>

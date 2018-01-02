@@ -8,21 +8,21 @@
                 <!-- Previous Page -->
                 <div class="col-4 h-100 page-container d-none d-md-block previous">
                     <div class="row h-100 align-items-center justify-content-center page-content" v-if="!!previousPage">
-                        <img class="page-image" :src="`http://via.placeholder.com/1200x1600?text=Page+${previousPage.Number}`" alt="Previous Page">
+                        <img class="page-image card border-0 shadow-4" :src="`http://via.placeholder.com/1200x1600?text=Page+${previousPage.Number}`" alt="Previous Page">
                     </div>
                 </div>
 
                 <!-- Current Page -->
                 <div class="col-lg-6 h-100 page-container current">
                     <div class="row h-100 align-items-center justify-content-center page-content">
-                        <img class="page-image" :src="`http://via.placeholder.com/1200x1600?text=Page+${currentPage.Number}`" alt="Current Page">
+                        <img class="page-image card border-0 shadow-4" :src="`http://via.placeholder.com/1200x1600?text=Page+${currentPage.Number}`" alt="Current Page">
                     </div>
                 </div>
 
                 <!-- Next Page -->
                 <div class="col-4 h-100 page-container d-none d-md-block next">
                     <div class="row h-100 align-items-center justify-content-center page-content" v-if="!!nextPage">
-                        <img class="page-image" :src="`http://via.placeholder.com/1200x1600?text=Page+${nextPage.Number}`" alt="Next Page">
+                        <img class="page-image card border-0 shadow-4" :src="`http://via.placeholder.com/1200x1600?text=Page+${nextPage.Number}`" alt="Next Page">
                     </div>
                 </div>
             </div>
