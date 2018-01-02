@@ -1,0 +1,7 @@
+@mixin navbar-height($prop: height) {
+    #{$prop}: $navbar-small-height;
+
+    @include breakpoint(md) {
+        #{$prop}: $navbar-normal-height;
+    }
+}
