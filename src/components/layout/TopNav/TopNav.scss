@@ -30,19 +30,20 @@ nav.navbar {
         }
         .brand-name {
             margin: 0;
+            text-shadow: rgba($black, 0.75) 1px 1px 2px;
         }
     }
 
     .nav-item {
         .nav-link {
-            padding: 10px 15px;
-            margin: 0 5px;
+            padding: 10px 20px;
+            margin: 0 8px;
+
+            text-shadow: rgba($black, 0.75) 1px 1px 2px;
             box-shadow: none;
 
             &:hover,
-            &:active,
-            &.active,
-            &.router-link-exact-active {
+            &:active {
                 border-color: $secondary;
             }
         }
