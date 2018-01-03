@@ -2,7 +2,13 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import {Comic} from '@albavulpes/data-abstraction-layer/dist/models/api/Comic';
 
-@Component
+import ComicPanel from './ComicPanel/ComicPanel.vue';
+
+@Component({
+    components: {
+        ComicPanel
+    }
+})
 export default class extends Vue {
 
     // TODO: Get comics from the API
