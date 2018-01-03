@@ -35,7 +35,16 @@ nav.navbar {
 
     .nav-item {
         .nav-link {
-            padding: 20px 1.5rem;
+            padding: 10px 15px;
+            margin: 0 5px;
+            box-shadow: none;
+
+            &:hover,
+            &:active,
+            &.active,
+            &.router-link-exact-active {
+                border-color: $secondary;
+            }
         }
     }
 }

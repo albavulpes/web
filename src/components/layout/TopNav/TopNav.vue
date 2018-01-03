@@ -19,17 +19,17 @@
 
             <ul class="navbar-nav d-none d-md-flex">
                 <li class="nav-item active">
-                    <router-link class="nav-link" :to="{name: 'home'}">
+                    <router-link class="btn nav-link" :to="{name: 'home'}">
                         Home
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" :to="{name: 'comic'}">
+                    <router-link class="btn nav-link" :to="{name: 'comic'}">
                         Comics
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" :to="{name: 'reader'}">
+                    <router-link class="btn nav-link" :to="{name: 'reader'}">
                         Reader
                     </router-link>
                 </li>
