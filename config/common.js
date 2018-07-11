@@ -1,4 +1,6 @@
 const path = require('path');
+const os = require('os');
+
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
@@ -25,7 +27,7 @@ const configs = [
             colors: true,
             cached: true,
             entrypoints: false
-        
+            
         },
         plugins: [
             new webpack.NoEmitOnErrorsPlugin(),
@@ -128,7 +130,7 @@ const configs = [
         module: {
             rules: [
                 {
-                    test: /\.(jpg|jpeg|png)/,
+                    test: /\.(jpg|jpeg|png|xml|svg)/,
                     use: [
                         {
                             loader: 'file-loader',
@@ -191,8 +193,7 @@ if (!env.isDev) {
                                     }
                                 }
                             ]
-                        },
-                        canPrint: true
+                        }
                     })
                 ]
             },
