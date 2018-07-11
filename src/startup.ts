@@ -6,4 +6,5 @@ export default async function () {
     mount();
 
     (window as any).config = config;
+    (window as any).$ = $;
 }
