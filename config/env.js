@@ -24,10 +24,6 @@ paths.dist = path.join(paths.root, 'dist');
 paths.dll = {};
 paths.dll.vendor = path.join(paths.dist, 'vendor.dll.json');
 
-paths.manifests = {};
-paths.manifests.app = path.join(paths.dist, filenames.manifests.app);
-paths.manifests.vendor = path.join(paths.dist, filenames.manifests.vendor);
-
 exports.paths = paths;
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';

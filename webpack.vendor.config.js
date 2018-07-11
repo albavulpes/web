@@ -24,13 +24,6 @@ module.exports = merge([
                 name: '[name]',
                 path: path.join(env.paths.dist, env.filenames.dll.vendor)
             }),
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                'window.jQuery': 'jquery',
-                Popper: ['popper.js', 'default'],
-                _: 'lodash'
-            }),
             new ManifestPlugin({
                 fileName: env.filenames.manifests.vendor
             })

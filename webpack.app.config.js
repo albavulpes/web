@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlInjectManifestFiles = require('./config/plugins/HtmlInjectManifestFiles');
+const HtmlInjectManifestPlugin = require('./config/plugins/HtmlInjectManifestPlugin');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -48,20 +48,9 @@ const CONFIG = merge([
             new ManifestPlugin({
                 fileName: env.filenames.manifests.app
             }),
-            new HtmlInjectManifestFiles({
-                manifests: [
-                    {
-                        manifest: env.paths.manifests.app,
-                        files: [
-                            'app.js'
-                        ]
-                    },
-                    {
-                        manifest: env.paths.manifests.vendor,
-                        files: [
-                            'vendor.js'
-                        ]
-                    }
+            new HtmlInjectManifestPlugin({
+                files: [
+                    path.join(env.paths.dist, 'vendor-manifest.json')
                 ]
             }),
             // TODO: remove this when we can get access to hosting
