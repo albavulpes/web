@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, {Component} from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 
 import * as RoutingHooks from './Hooks';
@@ -9,6 +9,8 @@ import Comics from '../../components/views/Comics/Comics.vue';
 
 import Reader from '../../components/views/Reader/Reader.vue';
 import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
+
+const APP_CONTAINER_ID = 'app-container';
 
 const routes: RouteConfig[] = [
     {
@@ -43,19 +45,45 @@ const routes: RouteConfig[] = [
     }
 ];
 
-export function mountVue() {
+export function mount(): void {
+    $(`#vue-entry`)
+        .empty()
+        .html(`
+            <div id="${APP_CONTAINER_ID}">
+                <router-view></router-view>
+            </div>
+        `);
+
+    const router = createRouter();
+
+    // Mount router to page
+    new Vue({
+        el: `#${APP_CONTAINER_ID}`,
+        router,
+        render: h => h(App)
+    });
+}
+
+function createRouter() {
+    // Create router
     const router = new VueRouter({
         routes,
         mode: 'history',
-        scrollBehavior: () => ({x: 0, y: 0})
+        scrollBehavior(to, from, savedPosition) {
+            // Simulate anchor scroll
+            if (to.hash && document.getElementById(to.hash.substring(1))) {
+                return {
+                    selector: to.hash
+                };
+            }
+
+            // Otherwise go to top of page
+            return {x: 0, y: 0};
+        }
     });
 
+    // Register hooks
     RoutingHooks.init(router);
 
-    // Mount vue
-    new Vue({
-        router,
-        el: `#vue-entry`,
-        render: h => h(App)
-    });
+    return router;
 }

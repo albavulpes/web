@@ -12,9 +12,9 @@
     superagent-prefix "^0.0.2"
     superagent-use "^0.1.0"
 
-"@types/jquery@^3.2.17":
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.4.tgz#f1850fb9a70041a14ace4f81a7ed782db8548317"
+"@types/jquery@2":
+  version "2.0.49"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.49.tgz#95bd7064caebf65bde10429dff491a1aea05b67d"
 
 "@types/lodash@^4.14.91":
   version "4.14.111"

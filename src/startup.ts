@@ -1,9 +1,9 @@
 import './scripts/startup/VueModules';
 
-import {mountVue} from './scripts/routing/Routes';
+import {mount} from './scripts/routing/Routes';
 
 export default async function () {
-    mountVue();
+    mount();
 
     (window as any).config = config;
 }
