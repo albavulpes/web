@@ -50,7 +50,7 @@ const CONFIG = merge([
             }),
             new HtmlInjectManifestPlugin({
                 files: [
-                    path.join(env.paths.dist, 'vendor-manifest.json')
+                    path.join(env.paths.dist, env.filenames.manifests.vendor)
                 ]
             }),
             // TODO: remove this when we can get access to hosting
