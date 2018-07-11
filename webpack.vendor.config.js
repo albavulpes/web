@@ -11,7 +11,7 @@ module.exports = merge([
     common,
     {
         entry: {
-            vendor: [path.join(env.paths.src, 'Vendor.js')]
+            vendor: [path.join(env.paths.src, 'vendor.js')]
         },
         output: {
             path: env.paths.dist,

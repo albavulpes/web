@@ -14,7 +14,7 @@ const CONFIG = merge([
     common,
     {
         entry: {
-            'app': path.join(env.paths.src, 'index.ts')
+            'app': [path.join(env.paths.src, 'index.ts')]
         },
         output: {
             publicPath: '/',
