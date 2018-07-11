@@ -22,21 +22,6 @@ const CONFIG = merge([
             library: '[name]',
             filename: 'js/[name].[chunkhash:8].js'
         },
-        module: {
-            rules: [
-                {
-                    test: /\.vue$/,
-                    use: [
-                        {
-                            loader: 'vue-loader',
-                            options: {
-                                esModule: true
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
         plugins: [
             new webpack.DllReferencePlugin({
                 manifest: env.paths.dll.vendor
