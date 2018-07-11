@@ -56,6 +56,7 @@ const configs = [
         watchOptions: {
             aggregateTimeout: 1000
         },
+        devtool: env.isDev ? 'cheap-module-eval-source-map' : 'source-map',
         cache: true
     },
     { // Typescript
