@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const escapeStringRegExp = require('escape-string-regexp');
 
 // We need html-webpack-plugin to work, so do a check
@@ -28,15 +27,23 @@ class HtmlInjectManifestPlugin {
     
     apply(compiler) {
         compiler.hooks.compilation.tap(this.constructor.name, (compilation) => {
-            compilation.hooks.htmlWebpackPluginAfterEmit.tap(this.constructor.name, (htmlPluginData) => {
-                const emittedHtmlFilePath = path.join(compiler.outputPath, htmlPluginData.outputName);
+            compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tap(this.constructor.name, (htmlPluginData) => {
+                const unprocessedHtml = htmlPluginData.html;
                 
                 compiler.hooks.webpackManifestPluginAfterEmit.tap(this.constructor.name, (manifest) => {
                     const mergedManifest = this.mergeManifest(manifest);
-                    
-                    compiler.hooks.afterEmit.tap(this.constructor.name, () => {
-                        this.processHtmlFile(emittedHtmlFilePath, mergedManifest);
-                    });
+    
+                    const processedHtml = this.processHtmlFile(unprocessedHtml, mergedManifest);
+    
+                    // Emit the file
+                    compilation.assets[`index.html`] = {
+                        source() {
+                            return Buffer.from(processedHtml);
+                        },
+                        size() {
+                            return Buffer.byteLength(this.source(), 'utf8');
+                        }
+                    };
                 });
             });
         });
@@ -54,7 +61,7 @@ class HtmlInjectManifestPlugin {
         // If files were provided, watch em
         if (this.options.files.length) {
             const manifests = this.options.files
-                .map(file => JSON.parse(fs.readFileSync(file)));
+                .map(file => JSON.parse(fs.readFileSync(file, 'utf-8')));
             
             mergedManifest = Object.assign(mergedManifest, ...manifests);
         }
@@ -62,11 +69,8 @@ class HtmlInjectManifestPlugin {
         return Object.assign(mergedManifest, manifest);
     }
     
-    processHtmlFile(filePath, manifest) {
-        if (!fs.existsSync(filePath))
-            return;
-        
-        let processedHtml = fs.readFileSync(filePath, 'utf8');
+    processHtmlFile(unprocessedHtml, manifest) {
+        let processedHtml = unprocessedHtml;
         
         for (let key of Object.keys(manifest)) {
             const replace = escapeStringRegExp(`[${key}]`);
@@ -75,7 +79,7 @@ class HtmlInjectManifestPlugin {
             processedHtml = processedHtml.replace(new RegExp(replace, 'g'), replaceWith);
         }
         
-        fs.writeFileSync(filePath, processedHtml);
+        return processedHtml;
     }
 }
 
