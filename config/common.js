@@ -8,10 +8,25 @@ const config = require('../config.json');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const configs = [
     {
         context: env.paths.root,
+        mode: env.isDev ? 'development' : 'production',
+        performance: {
+            maxEntrypointSize: 100000,
+            maxAssetSize: 450000
+        },
+        stats: {
+            modules: false,
+            errorDetails: true,
+            colors: true,
+            cached: true,
+            entrypoints: false
+        
+        },
         plugins: [
             new webpack.NoEmitOnErrorsPlugin(),
             new webpack.DefinePlugin({
@@ -39,11 +54,7 @@ const configs = [
         watchOptions: {
             aggregateTimeout: 1000
         },
-        cache: true,
-        stats: {
-            errorDetails: true,
-            colors: true
-        }
+        cache: true
     },
     { // Typescript
         module: {
