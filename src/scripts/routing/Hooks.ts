@@ -12,6 +12,7 @@ export function init(router: VueRouter) {
         const pageTitle = to.meta.title;
 
         document.title = `${pageTitle ? `${pageTitle} - ` : ''}Alba Vulpes`;
+
         next();
     });
 }
