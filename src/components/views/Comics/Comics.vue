@@ -6,8 +6,10 @@
 
         <hr class="border-white">
 
-        <div class="comics-container">
-            <ComicPanel v-for="comic in comics" :comic="comic" :key="comic.Id"></ComicPanel>
+        <div class="comics-container row">
+            <div class="d-inline-block m-3" v-for="comic in comics" :key="comic.Id">
+                <ComicPanel :comic="comic"></ComicPanel>
+            </div>
         </div>
     </div>
 </template>

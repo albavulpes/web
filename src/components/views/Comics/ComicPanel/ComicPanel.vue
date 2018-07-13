@@ -1,36 +1,19 @@
 <script lang="ts" src="./ComicPanel.ts"></script>
+<style lang="scss" src="./ComicPanel.scss"></style>
 
 <template>
     <div class="ComicPanelComponent">
-        <div class="card bg-dark text-white my-5 shadow-4 comic-card" :key="comic.Id">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="card border-0 shadow-2">
-                            <img class="img-fluid" :src="comic.CoverImage.Thumbnail" :alt="comic.Title">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row h-100 flex-column">
-                            <div class="col">
-                                <div class="h2">
-                                    {{comic.Title}}
-                                </div>
-                                <hr class="border-light">
-                                <p v-html="comic.Description"></p>
-                            </div>
-                            <div class="col-auto text-right">
-                                <button type="button" class="btn btn-outline-secondary">
-                                    Some Action
-                                </button>
-                                <button type="button" class="btn btn-primary">
-                                    View Comic
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="comic-card">
+            <div class="comic-cover-container shadow-4">
+                <img class="img-fluid" :src="Comic.CoverImage.Main" :alt="Comic.Title">
+            </div>
+            <div class="mt-2 px-1">
+                <h3 class="h5 comic-cover-title text-white font-weight-light">
+                    {{Comic.Title}}
+                </h3>
+                <p class="text-info">
+                    {{NumberOfArcs}} arcs
+                </p>
             </div>
         </div>
     </div>
