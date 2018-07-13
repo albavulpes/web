@@ -2,11 +2,9 @@
 
 <template>
     <div class="ComicsComponent container">
-        <h1>Comic Page</h1>
+        <h1>Comics</h1>
 
-        <hr class="border-white">
-
-        <div class="comics-container row">
+        <div class="row comics-container mt-4">
             <div class="d-inline-block m-3" v-for="comic in comics" :key="comic.Id">
                 <ComicPanel :comic="comic"></ComicPanel>
             </div>
