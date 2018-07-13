@@ -3,9 +3,9 @@
 
 #app-container {
     padding: 0;
-    padding-top: $navbar-small-height + 30px;
+    padding-top: $navbar-small-height + 60px;
 
     @include breakpoint(md) {
-        padding-top: $navbar-normal-height + 30px;
+        padding-top: $navbar-normal-height + 60px;
     }
 }
