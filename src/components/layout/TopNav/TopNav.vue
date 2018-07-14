@@ -24,7 +24,7 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="btn nav-link" :to="{name: 'comic'}">
+                    <router-link class="btn nav-link" :to="{name: 'comics'}">
                         Comics
                     </router-link>
                 </li>
@@ -35,30 +35,5 @@
                 </li>
             </ul>
         </nav>
-
-        <!--<div fixed class="primary text-xs-center text-sm-left">
-            <v-toolbar-items class="menu-button-container hidden-md-and-up">
-                <v-btn flat large class="menu__button">
-                    <v-icon class="fa-lg">mdi-menu</v-icon>
-                </v-btn>
-            </v-toolbar-items>
-            <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat large :to="{name: 'home'}" exact>
-                    <span class="subheading">
-                        Home
-                    </span>
-                </v-btn>
-                <v-btn flat large :to="{name: 'comic'}">
-                    <span class="subheading">
-                        Comics
-                    </span>
-                </v-btn>
-                <v-btn flat large :to="{name: 'reader'}">
-                    <span class="subheading">
-                        Reader
-                    </span>
-                </v-btn>
-            </v-toolbar-items>
-        </div>-->
     </div>
 </template>

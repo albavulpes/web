@@ -14,7 +14,7 @@
                 <router-link class="btn btn-primary" :to="{name: 'reader'}">
                     Reader
                 </router-link>
-                <router-link class="btn btn-secondary" :to="{name: 'comic'}">
+                <router-link class="btn btn-secondary" :to="{name: 'comics'}">
                     Comics
                 </router-link>
             </div>

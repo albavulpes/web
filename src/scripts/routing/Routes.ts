@@ -4,29 +4,16 @@ import VueRouter, {RouteConfig} from 'vue-router';
 import * as RoutingHooks from './Hooks';
 
 import App from '../../components/App.vue';
-import Home from '../../components/views/Home/Home.vue';
-import Comics from '../../components/views/Comics/Comics.vue';
 
 import Reader from '../../components/views/Reader/Reader.vue';
 import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
 
+import {home} from './routes/home';
+import {comics} from './routes/comics';
+
 const routes: RouteConfig[] = [
-    {
-        name: 'home',
-        path: '/',
-        meta: {
-            title: 'Home'
-        },
-        component: Home
-    },
-    {
-        name: 'comic',
-        path: '/comic',
-        meta: {
-            title: 'Comics'
-        },
-        component: Comics
-    },
+    home,
+    ...comics,
     {
         name: 'reader',
         path: '/reader',

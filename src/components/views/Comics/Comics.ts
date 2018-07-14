@@ -2,7 +2,7 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import {Comic} from '@albavulpes/data-abstraction-layer/dist/models/api/Comic';
 
-import ComicPanel from './ComicPanel/ComicPanel.vue';
+import ComicPanel from './ComicCard/ComicCard.vue';
 import {Arc} from '@albavulpes/data-abstraction-layer/dist/models/api/Arc';
 
 @Component({
