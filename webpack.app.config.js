@@ -20,7 +20,12 @@ const CONFIG = merge([
             publicPath: '/',
             path: env.paths.dist,
             library: '[name]',
-            filename: 'js/[name].[chunkhash:8].js'
+            filename: 'js/[name].[hash:8].js'
+        },
+        devServer: {
+            contentBase: './dist',
+            port: 5164,
+            hot: true
         },
         plugins: [
             new webpack.DllReferencePlugin({
@@ -44,7 +49,8 @@ const CONFIG = merge([
                     from: path.join(env.paths.src, 'assets'),
                     to: 'assets'
                 }
-            ])
+            ]),
+            new webpack.HotModuleReplacementPlugin()
         ]
     }
 ]);

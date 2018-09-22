@@ -16,7 +16,7 @@ module.exports = merge([
         output: {
             path: env.paths.dist,
             publicPath: '/',
-            filename: 'js/[name].[chunkhash:8].dll.js',
+            filename: 'js/[name].[hash:8].dll.js',
             library: '[name]'
         },
         plugins: [
