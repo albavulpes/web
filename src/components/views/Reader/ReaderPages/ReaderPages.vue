@@ -1,35 +1,46 @@
 <script lang="ts" src="./ReaderPages.ts"></script>
-<style lang="stylus" src="./ReaderPages.styl"></style>
+<style lang="scss" src="./ReaderPages.scss"></style>
 
 <template>
-    <v-layout class="pages-container">
-        <div class="page-nav-buttons">
-            <button class="page-nav-button previous text-xs-left" v-if="!!previousPage" @click="prevPage()">
-                <i class="fa fa-fw fa-2x fa-chevron-left"></i>
-            </button>
-            <button class="page-nav-button next text-xs-right" v-if="!!nextPage" @click="nextPage()">
-                <i class="fa fa-fw fa-2x fa-chevron-right"></i>
-            </button>
+    <div class="ReaderPagesComponent">
+        <div class="pages-container">
+            <div class="row h-100 justify-content-center pages-container-row">
+                <!-- Previous Page -->
+                <div class="col-4 h-100 page-container d-none d-md-block previous">
+                    <div class="row h-100 align-items-center justify-content-center page-content" v-if="!!previousPage">
+                        <img class="page-image card border-0 shadow-4" :src="`http://via.placeholder.com/1200x1600?text=Page+${previousPage.Number}`" alt="Previous Page">
+                    </div>
+                </div>
+
+                <!-- Current Page -->
+                <div class="col-lg-6 h-100 page-container current">
+                    <div class="row h-100 align-items-center justify-content-center page-content">
+                        <img class="page-image card border-0 shadow-4" :src="`http://via.placeholder.com/1200x1600?text=Page+${currentPage.Number}`" alt="Current Page">
+                    </div>
+                </div>
+
+                <!-- Next Page -->
+                <div class="col-4 h-100 page-container d-none d-md-block next">
+                    <div class="row h-100 align-items-center justify-content-center page-content" v-if="!!nextPage">
+                        <img class="page-image card border-0 shadow-4" :src="`http://via.placeholder.com/1200x1600?text=Page+${nextPage.Number}`" alt="Next Page">
+                    </div>
+                </div>
+            </div>
         </div>
-        <v-flex lg6 class="text-xs-center text-lg-left">
-            <div class="page-container main">
-                <div class="page-heading">
-                    <h6 class="page-title text-xs-center text-lg-right">Page {{pageId}}</h6>
+
+        <div class="page-nav-buttons">
+            <div class="row h-100">
+                <div class="col-6 col-lg-3">
+                    <button class="page-nav-button btn-block text-left text-white previous" v-if="!!previousPage" @click="goToPreviousPage()">
+                        <i class="fa fa-fw fa-3x fa-chevron-left"></i>
+                    </button>
                 </div>
-                <div class="page-content">
-                    <img class="page-image elevation-8" src="currentPage.Image.Main" alt="currentPage">
-                </div>
-            </div>
-        </v-flex>
-        <v-flex lg6 class="hidden-md-and-down">
-            <div class="page-container" v-if="!!nextPage">
-                <div class="page-heading">
-                    <h6 class="page-title text-xs-right">Page {{nextPage.Number}}</h6>
-                </div>
-                <div class="page-content">
-                    <img class="page-image elevation-8" src="nextPage.Image.Main" :alt="nextPage.Description">
+                <div class="col-6 col-lg-3 ml-auto">
+                    <button class="page-nav-button btn-block text-right text-white next" v-if="!!nextPage" @click="goToNextPage()">
+                        <i class="fa fa-fw fa-3x fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
-        </v-flex>
-    </v-layout>
+        </div>
+    </div>
 </template>

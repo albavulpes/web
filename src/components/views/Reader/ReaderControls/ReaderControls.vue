@@ -1,43 +1,54 @@
 <script lang="ts" src="./ReaderControls.ts"></script>
-<style lang="stylus" src="./ReaderControls.styl"></style>
+<style lang="scss" src="./ReaderControls.scss"></style>
 
 <template>
-    <v-bottom-nav absolute value="true" class="reader-controls">
-        <v-layout class="reader-controls-layout">
-            <v-flex class="text-xs-left">
-                <v-btn flat>
-                    <v-icon>mdi-view-list</v-icon>
-                </v-btn>
-            </v-flex>
-            <v-flex md8 lg6 class="text-xs-center">
-                <v-layout justify-center>
-                    <v-btn flat class="hidden-xs-only">
-                        <v-icon>mdi-page-first</v-icon>
-                    </v-btn>
-                    <v-btn flat class="hidden-sm-and-down" @click="prevPage()">
-                        <v-icon>mdi-chevron-left</v-icon>
-                    </v-btn>
+    <div class="ReaderControlsComponent">
+        <div class="reader-controls container-fluid">
+            <div class="row align-items-center reader-controls-row">
+                <div class="col-2 text-left d-none d-sm-block">
+                    <button class="btn btn-dark">
+                        <i class="fa-lg mdi mdi-view-list"></i>
+                    </button>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-auto d-none d-lg-block">
+                            <button class="btn btn-dark">
+                                <i class="fa-lg mdi mdi-page-first"></i>
+                            </button>
+                        </div>
+                        <div class="col-auto d-none d-sm-block">
+                            <button class="btn btn-dark" @click="goToPreviousPage()">
+                                <i class="fa-lg mdi mdi-chevron-left"></i>
+                            </button>
+                        </div>
 
-                    <v-flex md5 class="text-xs-center">
-                        <v-btn block flat>
-                            <span class="subheading">{{currentPage}}</span>
-                            <span>Chapter 2</span>
-                        </v-btn>
-                    </v-flex>
+                        <div class="col-sm-6 col-lg-4 text-center">
+                            <button class="btn btn-dark btn-block">
+                                <span class="h5">
+                                    Chapter 2 - Page {{currentPage.Number}}
+                                </span>
+                            </button>
+                        </div>
 
-                    <v-btn flat class="hidden-sm-and-down" @click="nextPage()">
-                        <v-icon>mdi-chevron-right</v-icon>
-                    </v-btn>
-                    <v-btn flat class="hidden-xs-only">
-                        <v-icon>mdi-page-last</v-icon>
-                    </v-btn>
-                </v-layout>
-            </v-flex>
-            <v-flex class="text-xs-right">
-                <v-btn flat>
-                    <v-icon>mdi-fullscreen</v-icon>
-                </v-btn>
-            </v-flex>
-        </v-layout>
-    </v-bottom-nav>
+                        <div class="col-auto d-none d-sm-block">
+                            <button class="btn btn-dark" @click="goToNextPage()">
+                                <i class="fa-lg mdi mdi-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <button class="btn btn-dark">
+                                <i class="fa-lg mdi mdi-page-last"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 text-right d-none d-sm-block">
+                    <button class="btn btn-dark">
+                        <i class="fa-lg mdi mdi-fullscreen"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

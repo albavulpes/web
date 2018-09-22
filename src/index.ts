@@ -1,10 +1,12 @@
 // Vendor
-import './Vendor';
+import './vendor';
+
+import '@albavulpes/data-abstraction-layer';
 
 // Styles
-import './styles/main.styl';
+import './styles/main.scss';
 
 // Init the app
-import startup from './Startup';
+import startup from './startup';
 
 startup();

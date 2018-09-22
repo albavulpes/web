@@ -5,10 +5,10 @@ import 'reflect-metadata';
 import 'vue';
 import 'vue-router';
 import 'vue-property-decorator';
-import 'vuetify';
 
 // Utils
-import 'zepto/src/zepto';
+import 'jquery/dist/jquery.slim';
+import 'bootstrap';
 import 'lodash';
 import 'moment';
 import 'store';

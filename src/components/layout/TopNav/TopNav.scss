@@ -1,0 +1,51 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+nav.navbar {
+    background: linear-gradient(to bottom, darken($primary, 5%), $secondary 125%);
+    border: none;
+    z-index: 500;
+    border-radius: 0 !important;
+    border-bottom-left-radius: 350px 50px !important;
+
+    @include navbar-height();
+
+    .menu-button-container {
+        margin-left: 0 !important;
+    }
+
+    .navbar-brand {
+        margin-left: 30px;
+        margin-right: 60px;
+
+        .brand-logo {
+            margin: 0;
+            width: 42px;
+            height: 42px;
+
+            @include breakpoint(md) {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .brand-name {
+            margin: 0;
+            text-shadow: rgba($black, 0.75) 1px 1px 2px;
+        }
+    }
+
+    .nav-item {
+        .nav-link {
+            padding: 10px 20px;
+            margin: 0 8px;
+
+            text-shadow: rgba($black, 0.75) 1px 1px 2px;
+            box-shadow: none;
+
+            &:hover,
+            &:active {
+                border-color: $secondary;
+            }
+        }
+    }
+}

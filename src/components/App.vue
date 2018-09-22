@@ -1,16 +1,12 @@
 <script lang="ts" src="./App.ts"></script>
-<style lang="stylus" src="./App.styl"></style>
+<style lang="scss" src="./App.scss"></style>
 
 <template>
     <div class="AppComponent">
-        <v-app dark>
-            <TopNav></TopNav>
+        <TopNav></TopNav>
 
-            <v-content>
-                <div class="page-container" id="router-container">
-                    <router-view :key="$route.path"></router-view>
-                </div>
-            </v-content>
-        </v-app>
+        <div class="page-container">
+            <router-view></router-view>
+        </div>
     </div>
 </template>

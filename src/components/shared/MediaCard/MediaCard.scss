@@ -1,0 +1,22 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.MediaCardComponent {
+    .media-card {
+        width: 320px;
+
+        @include transition(margin-top, 0.1s);
+
+        &:hover,
+        &:active,
+        &:focus {
+            margin-top: -2px;
+        }
+
+        .media-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

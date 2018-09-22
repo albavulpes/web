@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlInjectManifestFiles = require('./config/plugins/HtmlInjectManifestFiles');
+const HtmlInjectManifestPlugin = require('./config/plugins/HtmlInjectManifestPlugin');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -14,28 +14,18 @@ const CONFIG = merge([
     common,
     {
         entry: {
-            'app': path.join(env.paths.src, 'index.ts')
+            'app': [path.join(env.paths.src, 'index.ts')]
         },
         output: {
             publicPath: '/',
             path: env.paths.dist,
             library: '[name]',
-            filename: 'js/[name].[chunkhash:8].js'
+            filename: 'js/[name].[hash:8].js'
         },
-        module: {
-            rules: [
-                {
-                    test: /\.vue$/,
-                    use: [
-                        {
-                            loader: 'vue-loader',
-                            options: {
-                                esModule: true
-                            }
-                        }
-                    ]
-                }
-            ]
+        devServer: {
+            contentBase: './dist',
+            port: 5164,
+            hot: true
         },
         plugins: [
             new webpack.DllReferencePlugin({
@@ -48,20 +38,9 @@ const CONFIG = merge([
             new ManifestPlugin({
                 fileName: env.filenames.manifests.app
             }),
-            new HtmlInjectManifestFiles({
-                manifests: [
-                    {
-                        manifest: env.paths.manifests.app,
-                        files: [
-                            'app.js'
-                        ]
-                    },
-                    {
-                        manifest: env.paths.manifests.vendor,
-                        files: [
-                            'vendor.js'
-                        ]
-                    }
+            new HtmlInjectManifestPlugin({
+                files: [
+                    path.join(env.paths.dist, env.filenames.manifests.vendor)
                 ]
             }),
             // TODO: remove this when we can get access to hosting
@@ -70,7 +49,8 @@ const CONFIG = merge([
                     from: path.join(env.paths.src, 'assets'),
                     to: 'assets'
                 }
-            ])
+            ]),
+            new webpack.HotModuleReplacementPlugin()
         ]
     }
 ]);

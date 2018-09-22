@@ -11,25 +11,18 @@ module.exports = merge([
     common,
     {
         entry: {
-            vendor: [path.join(env.paths.src, 'Vendor.js')]
+            vendor: [path.join(env.paths.src, 'vendor.js')]
         },
         output: {
             path: env.paths.dist,
             publicPath: '/',
-            filename: 'js/[name].[chunkhash:8].dll.js',
+            filename: 'js/[name].[hash:8].dll.js',
             library: '[name]'
         },
         plugins: [
             new webpack.DllPlugin({
                 name: '[name]',
                 path: path.join(env.paths.dist, env.filenames.dll.vendor)
-            }),
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                'window.jQuery': 'jquery',
-                Popper: ['popper.js', 'default'],
-                _: 'lodash'
             }),
             new ManifestPlugin({
                 fileName: env.filenames.manifests.vendor

@@ -1,0 +1,11 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+#app-container {
+    padding: 0;
+    padding-top: $navbar-small-height + 60px;
+
+    @include breakpoint(md) {
+        padding-top: $navbar-normal-height + 60px;
+    }
+}

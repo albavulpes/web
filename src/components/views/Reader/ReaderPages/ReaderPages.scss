@@ -1,0 +1,80 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.ReaderPagesComponent {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    @include navbar-height(top);
+    @include navbar-height(bottom);
+
+    .pages-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+
+        padding: 15px 0;
+
+        .pages-container-row {
+            perspective: 1000px;
+
+            .page-container {
+                .page-content {
+                    .page-image {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+
+                &.previous,
+                &.next {
+                    opacity: 0.4;
+                }
+                &.previous {
+                    margin-left: -33.3333%;
+                    transform: scale(0.85) rotateY(-10deg);
+                }
+                &.next {
+                    margin-right: -33.3333%;
+                    transform: scale(0.85) rotateY(10deg);
+                }
+            }
+        }
+    }
+
+    .page-nav-buttons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+
+        .page-nav-button {
+            height: 100%;
+            padding: 60px;
+
+            cursor: pointer;
+            border: none;
+            outline: none;
+
+            opacity: 0;
+            @include transition(opacity);
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.previous {
+                background: linear-gradient(to left, transparent, rgba(black, 0.5));
+            }
+            &.next {
+                background: linear-gradient(to right, transparent, rgba(black, 0.5));
+            }
+        }
+    }
+}

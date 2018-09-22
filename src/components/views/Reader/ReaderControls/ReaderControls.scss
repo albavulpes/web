@@ -1,0 +1,27 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.ReaderControlsComponent {
+    .reader-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background: rgba(black, 0.8) !important;
+
+        @include navbar-height();
+
+        > .row {
+            height: 100%;
+        }
+
+        .btn {
+            background-color: transparent;
+
+            &:not(:hover) {
+                border-color: transparent;
+            }
+        }
+    }
+}

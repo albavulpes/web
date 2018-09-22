@@ -1,0 +1,19 @@
+@mixin breakpoint($class, $threshold: 'min') {
+    @if ($threshold != 'min' and $threshold != 'max') {
+        @error "$threshold must be either 'min' or 'max'.";
+    }
+
+    @if (map_has_key($grid-breakpoints, $class) == false) {
+        @error "Cannot find breakpoint: #{$class}";
+    }
+
+    $breakpointVal: map-get($grid-breakpoints, $class);
+
+    @if ($threshold == 'max') {
+        $breakpointVal: $breakpointVal - 1;
+    }
+
+    @media (#{$threshold}-width: $breakpointVal) {
+        @content;
+    }
+}

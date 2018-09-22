@@ -1,0 +1,8 @@
+@for $i from 1 through 8 {
+    .shadow-#{$i} {
+        @include shadow($i, 0.75);
+    }
+    .shadow-light-#{$i} {
+        @include shadow($i, 0.45);
+    }
+}

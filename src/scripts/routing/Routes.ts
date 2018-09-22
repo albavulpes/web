@@ -1,32 +1,19 @@
-import Vue from 'vue';
+import Vue, {Component} from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 
 import * as RoutingHooks from './Hooks';
 
 import App from '../../components/App.vue';
-import Home from '../../components/views/Home/Home.vue';
-import Comics from '../../components/views/Comics/Comics.vue';
 
 import Reader from '../../components/views/Reader/Reader.vue';
 import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
 
+import {home} from './routes/home';
+import {comics} from './routes/comics';
+
 const routes: RouteConfig[] = [
-    {
-        name: 'home',
-        path: '/',
-        meta: {
-            title: 'Home'
-        },
-        component: Home
-    },
-    {
-        name: 'comic',
-        path: '/comic',
-        meta: {
-            title: 'Comics'
-        },
-        component: Comics
-    },
+    home,
+    ...comics,
     {
         name: 'reader',
         path: '/reader',
@@ -43,19 +30,37 @@ const routes: RouteConfig[] = [
     }
 ];
 
-export function mountVue() {
+export function mount(): void {
+    const router = createRouter();
+
+    // Mount router to page
+    new Vue({
+        el: `#vue-entry`,
+        router,
+        render: h => h(App)
+    });
+}
+
+function createRouter() {
+    // Create router
     const router = new VueRouter({
         routes,
         mode: 'history',
-        scrollBehavior: () => ({x: 0, y: 0})
+        scrollBehavior(to, from, savedPosition) {
+            // Simulate anchor scroll
+            if (to.hash && document.getElementById(to.hash.substring(1))) {
+                return {
+                    selector: to.hash
+                };
+            }
+
+            // Otherwise go to top of page
+            return {x: 0, y: 0};
+        }
     });
 
+    // Register hooks
     RoutingHooks.init(router);
 
-    // Mount vue
-    new Vue({
-        router,
-        el: `#vue-entry`,
-        render: h => h(App)
-    });
+    return router;
 }
