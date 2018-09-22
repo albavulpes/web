@@ -12,7 +12,7 @@ import {Arc} from '@albavulpes/data-abstraction-layer/dist/models/api/Arc';
 })
 export default class extends Vue {
 
-
+    // TODO: Get comics from the API
 
     comics: Partial<Comic>[] = [
         {
