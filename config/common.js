@@ -27,7 +27,6 @@ const configs = [
             colors: true,
             cached: true,
             entrypoints: false
-            
         },
         plugins: [
             new webpack.NoEmitOnErrorsPlugin(),

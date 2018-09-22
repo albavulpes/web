@@ -25,7 +25,11 @@ const CONFIG = merge([
         devServer: {
             contentBase: './dist',
             port: 5164,
-            hot: true
+            hot: true,
+            historyApiFallback: true,
+            stats: {
+                modules: false
+            }
         },
         plugins: [
             new webpack.DllReferencePlugin({
