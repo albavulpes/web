@@ -7,8 +7,6 @@ export namespace comics {
     }
 
     export async function get(id: string) {
-        return await axios.get<Comic>('/comics/:id', {
-            params: {id}
-        });
+        return await axios.get<Comic>(`/comics/${id}`);
     }
 }

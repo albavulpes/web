@@ -6,6 +6,8 @@
 @import "~bootswatch/dist/sketchy/bootswatch";
 
 /* App Specific */
+@import "./theme/globals";
+@import "./theme/containers";
 @import "./theme/type";
 @import "./theme/buttons";
 @import "./theme/shadows";

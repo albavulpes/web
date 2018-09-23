@@ -2,16 +2,18 @@
 
 <template>
     <div class="ComicPanelComponent">
-        <MediaCard>
-            <template slot="image">
-                <img class="img-fluid" :src="Comic.CoverImage.FullSize" :alt="Comic.Title">
-            </template>
-            <template slot="title">
-                {{Comic.Title}}
-            </template>
-            <template slot="subheading">
-                {{NumberOfArcs}} arcs
-            </template>
-        </MediaCard>
+        <router-link :to="{name: 'comics.id', params: {ComicId: Comic.Id}}">
+            <MediaCard>
+                <template slot="image">
+                    <img class="img-fluid" :src="Comic.CoverImage.FullSize" :alt="Comic.Title">
+                </template>
+                <template slot="title">
+                    {{Comic.Title}}
+                </template>
+                <template slot="subheading">
+                    {{NumberOfArcs}} arcs
+                </template>
+            </MediaCard>
+        </router-link>
     </div>
 </template>
