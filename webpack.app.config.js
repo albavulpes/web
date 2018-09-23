@@ -47,6 +47,9 @@ const CONFIG = merge([
                     path.join(env.paths.dist, env.filenames.manifests.vendor)
                 ]
             }),
+            new webpack.DefinePlugin({
+                'AppConfig': JSON.stringify(require('./config')[process.env.NODE_ENV])
+            }),
             // TODO: remove this when we can get access to hosting
             new CopyWebpackPlugin([
                 {

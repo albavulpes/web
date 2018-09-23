@@ -14,7 +14,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "@albavulpes/data-abstraction-layer": "^0.1.2",
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "bootswatch": "^4.1.1",
     "bottlejs": "^1.6.3",
