@@ -3,9 +3,15 @@ import {Component, Prop} from 'vue-property-decorator';
 
 import {Comic} from '../../../../scripts/api/models/Comic';
 import {Arc} from '../../../../scripts/api/models/Arc';
-import {ComicsService} from '../../../../scripts/services/ComicsService';
+import {api} from '../../../../scripts/api/api';
 
-@Component
+import MediaCard from '../../../shared/MediaCard/MediaCard.vue';
+
+@Component({
+    components: {
+        MediaCard
+    }
+})
 export default class extends Vue {
 
     @Prop()
@@ -15,6 +21,8 @@ export default class extends Vue {
     Arcs: Arc[] = null;
 
     async created() {
-        this.Comic = await ComicsService.getComic(this.ComicId);
+        this.Comic = await api.comics.get(this.ComicId);
+
+        this.Arcs = await api.arcs.getAllForComic(this.ComicId);
     }
 }

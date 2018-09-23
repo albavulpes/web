@@ -25,6 +25,24 @@
                 <p style="white-space: pre-line">
                     <span v-html="Comic.Description"></span>
                 </p>
+
+                <hr>
+
+                <div class="row mb-5" v-if="Arcs">
+                    <div class="col-xs-4 col-md-3 col-lg-2" v-for="arc in Arcs">
+                        <MediaCard>
+                            <template slot="image">
+                                <img :src="arc.CoverImage.FullSize" :alt="arc.Title" class="img-fluid">
+                            </template>
+                            <template slot="title">
+                                {{arc.Title}}
+                            </template>
+                            <template slot="subheading">
+                                4 chapters
+                            </template>
+                        </MediaCard>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -3,8 +3,6 @@
 
 .MediaCardComponent {
     .media-card {
-        width: 320px;
-
         @include transition(margin-top, 0.1s);
 
         &:hover,
