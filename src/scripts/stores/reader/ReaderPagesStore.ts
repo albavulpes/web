@@ -1,5 +1,5 @@
 import {Store} from 'vuex';
-import {Page} from '@albavulpes/data-abstraction-layer/dist/models/api/Page';
+import {Page} from '../../api/models/Page';
 
 interface CartStoreState {
     previousPage: Page,

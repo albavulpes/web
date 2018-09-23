@@ -4,9 +4,9 @@
     <div class="ComicsComponent container">
         <h1>Comics</h1>
 
-        <div class="row comics-container mt-4">
-            <div class="d-inline-block m-3" v-for="comic in comics" :key="comic.Id">
-                <ComicPanel :comic="comic"></ComicPanel>
+        <div class="row comics-container mt-4" v-if="Comics">
+            <div class="d-inline-block m-3" v-for="comic in Comics" :key="comic.Id">
+                <ComicCard :comic="comic"></ComicCard>
             </div>
         </div>
     </div>
