@@ -27,8 +27,10 @@
     "popper.js": "^1.12.9",
     "reflect-metadata": "^0.1.10",
     "vue": "^2.5.13",
+    "vue-moment": "^4.0.0",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
+    "vue2-filters": "^0.3.0",
     "vuex": "^3.0.1",
     "zepto": "^1.2.0"
   },
