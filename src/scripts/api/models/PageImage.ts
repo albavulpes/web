@@ -1,4 +1,4 @@
 export interface PageImage {
-    Main: string;
+    FullSize: string;
     Thumbnail: string;
 }

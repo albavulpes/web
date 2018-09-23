@@ -13,9 +13,6 @@ import 'lodash';
 import 'moment';
 import 'store';
 
-// Project
-import '@albavulpes/data-abstraction-layer';
-
 // Styles
 import 'font-awesome/css/font-awesome.css';
 import 'mdi/css/materialdesignicons.css';

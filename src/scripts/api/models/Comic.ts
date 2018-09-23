@@ -4,7 +4,8 @@ import {PageImage} from './PageImage';
 
 export interface Comic extends Model {
     Title: string;
-    Description: string;
-    Arcs: Arc[];
+    Author: string;
+    ReleaseDate: string;
     CoverImage: PageImage;
+    Arcs: Arc[];
 }

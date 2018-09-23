@@ -4,7 +4,7 @@
     <div class="ComicPanelComponent">
         <MediaCard>
             <template slot="image">
-                <img class="img-fluid" :src="Comic.CoverImage.Main" :alt="Comic.Title">
+                <img class="img-fluid" :src="Comic.CoverImage.FullSize" :alt="Comic.Title">
             </template>
             <template slot="title">
                 {{Comic.Title}}
