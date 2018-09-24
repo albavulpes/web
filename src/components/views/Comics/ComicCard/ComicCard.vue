@@ -11,7 +11,7 @@
                     {{Comic.Title}}
                 </template>
                 <template slot="subheading">
-                    {{NumberOfArcs}} arcs
+                    {{Comic.ArcsCount}} arcs
                 </template>
             </MediaCard>
         </router-link>

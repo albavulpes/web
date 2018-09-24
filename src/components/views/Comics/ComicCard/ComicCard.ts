@@ -12,8 +12,4 @@ import MediaCard from '../../../shared/MediaCard/MediaCard.vue';
 export default class extends Vue {
     @Prop()
     Comic: Comic;
-
-    get NumberOfArcs() {
-        return this.Comic && this.Comic.Arcs && this.Comic.Arcs.length;
-    }
 }

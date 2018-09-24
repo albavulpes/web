@@ -1,5 +1,4 @@
 import {Model} from './base/Model';
-import {Arc} from './Arc';
 import {PageImage} from './PageImage';
 
 export interface Comic extends Model {
@@ -8,5 +7,5 @@ export interface Comic extends Model {
     Description: string;
     ReleaseDate: string;
     CoverImage: PageImage;
-    Arcs: Arc[];
+    ArcsCount: number;
 }
