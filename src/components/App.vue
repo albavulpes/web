@@ -8,5 +8,7 @@
         <div class="page-container">
             <router-view></router-view>
         </div>
+
+        <FooterNav></FooterNav>
     </div>
 </template>
