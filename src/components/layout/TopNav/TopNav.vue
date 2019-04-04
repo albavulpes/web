@@ -26,11 +26,6 @@
                     Comics
                 </router-link>
             </li>
-            <li class="nav-item">
-                <router-link class="btn nav-link" :to="{name: 'reader'}">
-                    Reader
-                </router-link>
-            </li>
         </ul>
     </nav>
 </template>
