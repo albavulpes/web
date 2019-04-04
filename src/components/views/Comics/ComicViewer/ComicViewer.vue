@@ -1,48 +1,64 @@
 <script lang="ts" src="./ComicViewer.ts"></script>
+<style lang="scss" src="./ComicViewer.scss"></style>
 
 <template>
-    <div class="ComicViewerComponent container-fluid" v-if="Comic">
+    <div class="ComicViewerComponent container" v-if="Comic">
         <div class="row">
             <div class="col-lg-auto text-center">
                 <div class="mb-4">
-                    <img class="coverImage shadow-4" :src="Comic.CoverImage.Thumbnail" :alt="Comic.Title">
+                    <img class="coverImage shadow-4" :src="Comic.CoverImage.FullSize" :alt="Comic.Title">
                 </div>
             </div>
             <div class="col">
                 <h1>
                     {{Comic.Title}}
                 </h1>
+
                 <hr>
+
                 <h5>
                     <span class="text-white-50">Author: </span>
                     {{Comic.Author}}
                 </h5>
-                <h5>
-                    <span class="text-white-50">Release Date: </span>
-                    {{Comic.ReleaseDate | moment('LL')}}
+
+                <h5 v-if="Comic.IsPublished">
+                    <span class="text-white-50">Publish Date: </span>
+                    {{Comic.PublishDate | moment('LL')}}
                 </h5>
+
                 <hr>
+
                 <p style="white-space: pre-line">
                     <span v-html="Comic.Description"></span>
                 </p>
 
                 <hr>
 
-                <div class="row mb-5" v-if="Arcs">
-                    <div class="col-xs-4 col-md-3 col-lg-2" v-for="arc in Arcs">
-                        <MediaCard>
-                            <template slot="image">
-                                <img :src="arc.CoverImage.FullSize" :alt="arc.Title" class="img-fluid">
-                            </template>
-                            <template slot="title">
-                                {{arc.Title}}
-                            </template>
-                            <template slot="subheading">
-                                4 chapters
-                            </template>
-                        </MediaCard>
+                <template v-if="ChapterGroups">
+                    <h4 class="my-4">
+                        Chapters
+                    </h4>
+
+                    <div class="" v-for="chapterGroup in ChapterGroups">
+                        <div class="row">
+                            <div class="col-xs-4 col-md-3 col-lg-2" v-for="chapter in chapterGroup.Chapters">
+                                <MediaCard>
+                                    <template slot="image">
+                                        <img :src="chapter.CoverImage.FullSize" :alt="chapter.Title" class="img-fluid">
+                                    </template>
+                                    <template slot="title">
+                                        {{chapter.Title}}
+                                    </template>
+                                    <template slot="subheading">
+                                        <small>
+                                            {{chapter.PagesCount}} {{Comic.ChaptersCount | pluralize('page')}}
+                                        </small>
+                                    </template>
+                                </MediaCard>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </template>
             </div>
         </div>
     </div>

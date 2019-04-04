@@ -2,19 +2,21 @@
 @import "~root/styles/meta";
 
 .MediaCardComponent {
-    .media-card {
-        @include transition(margin-top, 0.1s);
+    @include transition(margin-top, 0.1s);
 
-        &:hover,
-        &:active,
-        &:focus {
-            margin-top: -2px;
-        }
+    max-width: 320px;
 
-        .media-title {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+    margin-bottom: 1.5rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        margin-top: -2px;
+    }
+
+    .media-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

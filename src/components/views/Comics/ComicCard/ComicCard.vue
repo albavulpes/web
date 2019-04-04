@@ -11,7 +11,7 @@
                     {{Comic.Title}}
                 </template>
                 <template slot="subheading">
-                    {{Comic.ArcsCount}} arcs
+                    {{Comic.ChaptersCount}} {{Comic.ChaptersCount | pluralize('chapter')}}
                 </template>
             </MediaCard>
         </router-link>

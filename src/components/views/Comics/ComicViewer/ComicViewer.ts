@@ -20,8 +20,10 @@ export default class extends Vue {
     HttpService: HttpService;
 
     Comic: Comic = null;
+    ChapterGroups: ChapterGroupResponse[] = null;
 
     async created() {
         this.Comic = await this.HttpService.api.comics.get(this.ComicId);
+        this.ChapterGroups = await this.HttpService.api.chapters.getAll(this.ComicId);
     }
 }
