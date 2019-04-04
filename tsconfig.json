@@ -3,7 +3,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "module": "es2015",
+    "importHelpers": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "noEmitOnError": false,
     "noImplicitAny": true,
@@ -20,7 +21,8 @@
     ],
     "rootDir": "./src",
     "typeRoots": [
-      "./node_modules/@types"
+      "./node_modules/@types",
+      "./node_modules/@albavulpes"
     ]
   }
 }

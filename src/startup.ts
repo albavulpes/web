@@ -1,4 +1,5 @@
 import './scripts/startup/VueModules';
+import './scripts/startup/AppModules';
 
 import {mount} from './scripts/routing/Routes';
 

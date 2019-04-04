@@ -1,5 +1,4 @@
 import {Store} from 'vuex';
-import {Page} from '../../api/models/Page';
 
 interface CartStoreState {
     previousPage: Page,
@@ -33,7 +32,7 @@ export const ReaderPagesStore = new (class extends Store<CartStoreState> {
 
                     // TODO: Make API call for next page here
                     const previousPage = {
-                        Number: context.state.previousPage.Number - 1
+                        Number: context.state.previousPage.PageNumber - 1
                     } as any;
 
                     this.commit('goToPrevious', previousPage);
@@ -44,7 +43,7 @@ export const ReaderPagesStore = new (class extends Store<CartStoreState> {
 
                     // TODO: Make API call for next page here
                     const nextPage = {
-                        Number: context.state.nextPage.Number + 1
+                        Number: context.state.nextPage.PageNumber + 1
                     } as any;
 
                     this.commit('goToNext', nextPage);

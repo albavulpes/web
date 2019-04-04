@@ -4,8 +4,8 @@ const merge = require('webpack-merge');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlInjectManifestPlugin = require('./config/plugins/HtmlInjectManifestPlugin');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -19,14 +19,14 @@ const CONFIG = merge([
         output: {
             publicPath: '/',
             path: env.paths.dist,
-            library: '[name]',
             filename: 'js/[name].[hash:8].js'
         },
         devServer: {
             contentBase: './dist',
-            port: 5164,
+            port: 40319,
             hot: true,
             historyApiFallback: true,
+            disableHostCheck: true,
             stats: {
                 modules: false
             }
@@ -36,25 +36,28 @@ const CONFIG = merge([
                 manifest: env.paths.dll.vendor
             }),
             new HtmlWebpackPlugin({
-                inject: false,
+                inject: true,
                 template: path.join(env.paths.src, 'index.html')
             }),
+            new AddAssetHtmlPlugin([
+                {
+                    filepath: path.join(env.paths.dist, 'js/vendor.*.js')
+                },
+                {
+                    filepath: path.join(env.paths.dist, 'css/vendor.*.css'),
+                    typeOfAsset: 'css'
+                }
+            ]),
             new ManifestPlugin({
                 fileName: env.filenames.manifests.app
             }),
-            new HtmlInjectManifestPlugin({
-                files: [
-                    path.join(env.paths.dist, env.filenames.manifests.vendor)
-                ]
-            }),
             new webpack.DefinePlugin({
-                'AppConfig': JSON.stringify(require('./config')[process.env.NODE_ENV])
+                'AppConfig': JSON.stringify(require('./config.json')[process.env.NODE_ENV])
             }),
-            // TODO: remove this when we can get access to hosting
             new CopyWebpackPlugin([
                 {
-                    from: path.join(env.paths.src, 'assets'),
-                    to: 'assets'
+                    from: path.join(env.paths.root, 'runtime/*'),
+                    flatten: true
                 }
             ]),
             new webpack.HotModuleReplacementPlugin()

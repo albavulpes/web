@@ -2,11 +2,13 @@ import {RouteConfig} from 'vue-router';
 
 import Home from '../../../components/views/Home/Home.vue';
 
-export const home: RouteConfig = {
-    name: 'home',
-    path: '/',
-    meta: {
-        title: 'Home'
-    },
-    component: Home
-};
+export default [
+    {
+        name: 'home',
+        path: '/',
+        meta: {
+            title: 'Home'
+        },
+        component: Home
+    }
+] as RouteConfig[];

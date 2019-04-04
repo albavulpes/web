@@ -1,13 +1,13 @@
 ﻿/* App Theme */
 @import "./meta";
 
-/* Libraries */
-@import "~bootstrap/scss/bootstrap";
-@import "~bootswatch/dist/sketchy/bootswatch";
+/* Vendors */
+@import "./vendors/bootstrap";
+@import "./vendors/vue2-animate";
+
+/* Bootstrap Overrides */
+@import "./components/forms";
 
 /* App Specific */
-@import "./theme/globals";
-@import "./theme/containers";
-@import "./theme/type";
-@import "./theme/buttons";
+@import "./theme/global";
 @import "./theme/shadows";

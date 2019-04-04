@@ -5,29 +5,14 @@ import * as RoutingHooks from './Hooks';
 
 import App from '../../components/App.vue';
 
-import Reader from '../../components/views/Reader/Reader.vue';
-import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
-
-import {home} from './routes/home';
-import {comics} from './routes/comics';
+import home from './routes/home';
+import comics from './routes/comics';
+import reader from './routes/reader';
 
 const routes: RouteConfig[] = [
-    home,
+    ...home,
     ...comics,
-    {
-        name: 'reader',
-        path: '/reader',
-        meta: {
-            title: 'Reader'
-        },
-        component: Reader,
-        children: [
-            {
-                name: 'reader.page',
-                path: 'page/:pageId'
-            }
-        ]
-    }
+    ...reader
 ];
 
 export function mount(): void {
@@ -58,9 +43,6 @@ function createRouter() {
             return {x: 0, y: 0};
         }
     });
-
-    // Register hooks
-    RoutingHooks.init(router);
 
     return router;
 }

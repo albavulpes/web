@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
-import {Comic} from '../../../scripts/api/models/Comic';
-import {api} from '../../../scripts/api/api';
+
+import {Require} from '@albavulpes/ui-core/dist/di';
+import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
+
 
 import ComicCard from './ComicCard/ComicCard.vue';
 
@@ -12,9 +14,12 @@ import ComicCard from './ComicCard/ComicCard.vue';
 })
 export default class extends Vue {
 
+    @Require()
+    HttpService: HttpService;
+
     Comics: Comic[] = null;
 
     async created() {
-        this.Comics = await api.comics.getAll();
+        this.Comics = await this.HttpService.api.comics.getAll();
     }
 }

@@ -14,7 +14,6 @@ import 'moment';
 import 'store';
 
 // Styles
-import 'font-awesome/css/font-awesome.css';
 import 'mdi/css/materialdesignicons.css';
 
 // Libraries

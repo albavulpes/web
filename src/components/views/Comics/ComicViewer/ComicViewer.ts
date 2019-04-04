@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 
-import {Comic} from '../../../../scripts/api/models/Comic';
-import {Arc} from '../../../../scripts/api/models/Arc';
-import {api} from '../../../../scripts/api/api';
+import {Require} from '@albavulpes/ui-core/dist/di';
+import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 
 import MediaCard from '../../../shared/MediaCard/MediaCard.vue';
 
@@ -17,12 +16,12 @@ export default class extends Vue {
     @Prop()
     ComicId: string;
 
+    @Require()
+    HttpService: HttpService;
+
     Comic: Comic = null;
-    Arcs: Arc[] = null;
 
     async created() {
-        this.Comic = await api.comics.get(this.ComicId);
-
-        this.Arcs = await api.arcs.getAllForComic(this.ComicId);
+        this.Comic = await this.HttpService.api.comics.get(this.ComicId);
     }
 }
