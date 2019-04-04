@@ -10,8 +10,6 @@
 
         background: rgba(black, 0.8) !important;
 
-        @include navbar-height();
-
         > .row {
             height: 100%;
         }

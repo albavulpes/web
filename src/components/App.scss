@@ -7,10 +7,5 @@
     justify-content: space-between;
     min-height: 100vh;
 
-    padding: 0;
-    padding-top: $navbar-small-height + 60px;
-
-    @include breakpoint(md) {
-        padding-top: $navbar-normal-height + 60px;
-    }
+    padding-top: 120px;
 }

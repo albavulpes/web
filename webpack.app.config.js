@@ -23,7 +23,7 @@ const CONFIG = merge([
         },
         devServer: {
             contentBase: './dist',
-            port: 40319,
+            port: 5164,
             hot: true,
             historyApiFallback: true,
             disableHostCheck: true,
