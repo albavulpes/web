@@ -7,12 +7,13 @@ import App from '../../components/App.vue';
 
 import home from './routes/home';
 import comics from './routes/comics';
+import chapters from './routes/chapters';
 import reader from './routes/reader';
 
 const routes: RouteConfig[] = [
     ...home,
     ...comics,
-    ...reader
+    ...chapters
 ];
 
 export function mount(): void {

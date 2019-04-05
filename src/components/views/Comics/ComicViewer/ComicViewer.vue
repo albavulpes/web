@@ -40,21 +40,25 @@
                     </h4>
 
                     <div class="" v-for="chapterGroup in ChapterGroups">
+                        <!-- TODO: Arc Data -->
+
                         <div class="row">
                             <div class="col-xs-4 col-md-3 col-lg-2" v-for="chapter in chapterGroup.Chapters">
-                                <MediaCard>
-                                    <template slot="image">
-                                        <img :src="chapter.CoverImage.FullSize" :alt="chapter.Title" class="img-fluid">
-                                    </template>
-                                    <template slot="title">
-                                        {{chapter.Title}}
-                                    </template>
-                                    <template slot="subheading">
-                                        <small>
-                                            {{chapter.PagesCount}} {{Comic.ChaptersCount | pluralize('page')}}
-                                        </small>
-                                    </template>
-                                </MediaCard>
+                                <router-link :to="{name: 'chapters.id', params: {ChapterId: chapter.Id}}">
+                                    <MediaCard>
+                                        <template slot="image">
+                                            <img :src="chapter.CoverImage.FullSize" :alt="chapter.Title" class="img-fluid">
+                                        </template>
+                                        <template slot="title">
+                                            {{chapter.Title}}
+                                        </template>
+                                        <template slot="subheading">
+                                            <small>
+                                                {{chapter.PagesCount}} {{chapter.PagesCount | pluralize('page')}}
+                                            </small>
+                                        </template>
+                                    </MediaCard>
+                                </router-link>
                             </div>
                         </div>
                     </div>
