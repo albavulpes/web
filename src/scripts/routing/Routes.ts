@@ -13,7 +13,8 @@ import reader from './routes/reader';
 const routes: RouteConfig[] = [
     ...home,
     ...comics,
-    ...chapters
+    ...chapters,
+    ...reader
 ];
 
 export function mount(): void {

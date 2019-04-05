@@ -4,16 +4,11 @@ import {RouteConfig} from 'vue-router';
 export default [
     {
         name: 'reader',
-        path: '/reader',
+        path: '/reader/:ChapterId/page/:PageNumber',
         meta: {
             title: 'Reader'
         },
         component: Reader,
-        children: [
-            {
-                name: 'reader.page',
-                path: 'page/:pageId'
-            }
-        ]
+        props: true
     }
 ] as RouteConfig[];

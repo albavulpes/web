@@ -41,7 +41,7 @@
 
                     <div class="row">
                         <div class="col-xs-4 col-md-3 col-lg-2" v-for="page in Pages">
-                            <router-link :to="{name: 'comics.id', params: {ChapterId: page.Id}}">
+                            <router-link :to="{name: 'reader', params: {ChapterId: Chapter.Id, PageNumber: page.PageNumber}}">
                                 <MediaCard>
                                     <template slot="image">
                                         <img :src="page.CoverImage.FullSize" :alt="page.Title" class="img-fluid">
