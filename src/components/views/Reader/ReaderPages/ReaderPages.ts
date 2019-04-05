@@ -7,4 +7,12 @@ export default class extends Vue {
 
     @Prop()
     Page: Page;
+
+    GoToPrevPage() {
+        this.$emit('pages:previous');
+    }
+
+    GoToNextPage() {
+        this.$emit('pages:next');
+    }
 }

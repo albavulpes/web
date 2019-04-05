@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 
-import {ReaderPagesStore} from '../../../../scripts/stores/reader/ReaderPagesStore';
-
 @Component
 export default class extends Vue {
 
@@ -11,4 +9,12 @@ export default class extends Vue {
 
     @Prop()
     Page: Page;
+
+    GoToPrevPage() {
+        this.$emit('controls:previous');
+    }
+
+    GoToNextPage() {
+        this.$emit('controls:next');
+    }
 }

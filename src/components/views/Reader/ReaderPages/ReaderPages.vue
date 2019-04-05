@@ -12,14 +12,14 @@
         <div class="pageNavButtons">
             <div class="d-flex h-100">
                 <div class="col-6 col-lg-3 p-0">
-                    <button class="page-nav-button btn-block text-left text-white previous">
+                    <b-button block class="page-nav-button text-left text-white previous" @click="GoToPrevPage">
                         <i class="mdi mdi-48px mdi-chevron-left"></i>
-                    </button>
+                    </b-button>
                 </div>
                 <div class="col-6 col-lg-3 p-0 ml-auto">
-                    <button class="page-nav-button btn-block text-right text-white next">
+                    <b-button block class="page-nav-button text-right text-white next" @click="GoToNextPage">
                         <i class="mdi mdi-48px mdi-chevron-right"></i>
-                    </button>
+                    </b-button>
                 </div>
             </div>
         </div>

@@ -31,4 +31,12 @@ export default class extends Vue {
         this.Chapter = await this.HttpService.api.chapters.get(this.ChapterId);
         this.Page = await this.HttpService.api.pages.getByPageNumber(this.ChapterId, this.PageNumber);
     }
+
+    async OnPrevPage() {
+        this.Page = await this.HttpService.api.pages.getPreviousPage(this.Page.Id);
+    }
+
+    async OnNextPage() {
+        this.Page = await this.HttpService.api.pages.getNextPage(this.Page.Id);
+    }
 }
