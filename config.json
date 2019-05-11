@@ -1,6 +1,6 @@
 {
   "development": {
-    "ApiPath": "http://localhost:43222"
+    "ApiPath": "https://stage-api.albavulpes.com"
   },
   "production": {
     "ApiPath": "https://stage-api.albavulpes.com"
