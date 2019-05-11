@@ -6,7 +6,12 @@
         <div class="pagesContainer d-flex align-items-center justify-content-center">
             <div class="pageContent">
                 <transition name="fade" mode="out-in">
-                    <img class="pageImage card border-0 shadow-4" :src="Page.CoverImage.FullSize" alt="Current Page" :key="Page.Id">
+                    <img class="pageImage card border-0 shadow-4" :src="CurrentPage.CoverImage.FullSize" alt="Current Page" :key="CurrentPage.Id">
+                </transition>
+            </div>
+            <div class="pageContent inactive" v-if="InactivePage">
+                <transition name="fade" mode="out-in">
+                    <img class="pageImage card border-0 shadow-4" :src="InactivePage.CoverImage.FullSize" alt="Current Page" :key="InactivePage.Id">
                 </transition>
             </div>
         </div>

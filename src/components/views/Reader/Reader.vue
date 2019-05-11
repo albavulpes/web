@@ -5,13 +5,13 @@
     <div class="ReaderComponent">
         <div class="readerContainer d-flex flex-column justify-content-between">
             <div class="readerPagesContainer">
-                <ReaderPages :Page="Page"
+                <ReaderPages :CurrentPage="CurrentPage" :InactivePage="InactivePage"
                     @pages:previous="OnPrevPage"
                     @pages:next="OnNextPage"
                 ></ReaderPages>
             </div>
             <div class="readerControlsContainer">
-                <ReaderControls :Chapter="Chapter" :Page="Page"
+                <ReaderControls :Chapter="Chapter" :Page="CurrentPage"
                     @controls:previous="OnPrevPage"
                     @controls:next="OnNextPage"
                 ></ReaderControls>

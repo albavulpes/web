@@ -16,15 +16,15 @@
 
                 <hr>
 
-                <h5>
+                <h2 class="h5">
                     <span class="text-white-50">Author: </span>
                     {{Comic.Author}}
-                </h5>
+                </h2>
 
-                <h5 v-if="Comic.IsPublished">
+                <h2 class="h5" v-if="Comic.IsPublished">
                     <span class="text-white-50">Publish Date: </span>
                     {{Comic.PublishDate | moment('LL')}}
-                </h5>
+                </h2>
 
                 <hr>
 
@@ -35,12 +35,12 @@
                 <hr>
 
                 <template v-if="ChapterGroups">
-                    <h4 class="my-4">
-                        Chapters
-                    </h4>
-
-                    <div class="" v-for="chapterGroup in ChapterGroups">
-                        <!-- TODO: Arc Data -->
+                    <div v-for="chapterGroup in ChapterGroups">
+                        <template v-if="chapterGroup.Arc">
+                            <h4 class="my-4">
+                                {{chapterGroup.Arc.Title}}
+                            </h4>
+                        </template>
 
                         <div class="row">
                             <div class="col-xs-4 col-md-3 col-lg-2" v-for="chapter in chapterGroup.Chapters">
@@ -61,6 +61,10 @@
                                 </router-link>
                             </div>
                         </div>
+
+                        <template v-if="chapterGroup.Arc">
+                            <hr class="mt-0 mb-5">
+                        </template>
                     </div>
                 </template>
             </div>

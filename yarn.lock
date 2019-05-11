@@ -698,11 +698,6 @@ bootswatch@^4.1.1:
   resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.3.1.tgz#be54748b420a1962dbcf9782605aac092f842e38"
   integrity sha512-kNdpo/TnhO++aic1IODLIe1V0lx6pXwHMpwXMacpANDnuVDtgU1MUgUbVMC3rSWm4UcbImfwPraNYgjKDT0BtA==
 
-bottlejs@^1.6.3:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/bottlejs/-/bottlejs-1.7.1.tgz#f2673c42feb2ba092d94b8add390e66b3f7d948f"
-  integrity sha512-OUex4/uBgIyanzPpMzie5NfMfjJ23Z1mUy8ZC6omFBPwExMeoSrwyndlaZW0tci0unMH2LVfNn+jwDPRQLPncw==
-
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"

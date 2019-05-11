@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {Component, Prop} from 'vue-property-decorator';
+import {Component, Prop, Watch} from 'vue-property-decorator';
 
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
@@ -25,18 +25,28 @@ export default class extends Vue {
     HttpService: HttpService;
 
     Chapter: Chapter = null;
-    Page: Page = null;
+    CurrentPage: Page = null;
+    InactivePage: Page = null;
 
     async created() {
         this.Chapter = await this.HttpService.api.chapters.get(this.ChapterId);
-        this.Page = await this.HttpService.api.pages.getByPageNumber(this.ChapterId, this.PageNumber);
+        this.CurrentPage = await this.HttpService.api.pages.getByPageNumber(this.ChapterId, this.PageNumber);
     }
 
     async OnPrevPage() {
-        this.Page = await this.HttpService.api.pages.getPreviousPage(this.Page.Id);
+        this.CurrentPage = await this.HttpService.api.pages.getPreviousPage(this.CurrentPage.Id);
     }
 
     async OnNextPage() {
-        this.Page = await this.HttpService.api.pages.getNextPage(this.Page.Id);
+        this.CurrentPage = await this.HttpService.api.pages.getNextPage(this.CurrentPage.Id);
+    }
+
+    @Watch('CurrentPage', {immediate: true})
+    async WatchCurrentPage() {
+        await this.GetInactivePage();
+    }
+
+    async GetInactivePage() {
+        this.InactivePage = await this.HttpService.api.pages.getNextPage(this.CurrentPage.Id);
     }
 }

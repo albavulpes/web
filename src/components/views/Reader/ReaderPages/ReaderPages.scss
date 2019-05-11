@@ -13,6 +13,14 @@
             .pageImage {
                 max-height: 100%;
             }
+
+            &.inactive {
+                margin-left: 30px;
+                margin-right: -240px;
+
+                transform: scale(0.925);
+                opacity: 0.4;
+            }
         }
     }
 

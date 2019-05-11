@@ -1,12 +1,14 @@
 import Vue from 'vue';
-import {Component, Prop, Provide, Watch} from 'vue-property-decorator';
-import {ReaderPagesStore} from '../../../../scripts/stores/reader/ReaderPagesStore';
+import {Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
 
     @Prop()
-    Page: Page;
+    CurrentPage: Page;
+
+    @Prop()
+    InactivePage: Page;
 
     GoToPrevPage() {
         this.$emit('pages:previous');
