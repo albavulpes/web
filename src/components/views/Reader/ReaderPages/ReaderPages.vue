@@ -3,7 +3,7 @@
 
 <template>
     <div class="ReaderPagesComponent">
-        <div class="pagesContainer d-flex align-items-center justify-content-center">
+        <div class="pagesContainer d-flex align-items-center justify-content-center" v-if="CurrentPage">
             <div class="pageContent">
                 <transition name="fade" mode="out-in">
                     <img class="pageImage card border-0 shadow-4" :src="CurrentPage.CoverImage.FullSize" alt="Current Page" :key="CurrentPage.Id">

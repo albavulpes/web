@@ -2,7 +2,7 @@
 <style lang="scss" src="./ReaderControls.scss"></style>
 
 <template>
-    <div class="ReaderControlsComponent container-fluid" v-if="Page">
+    <div class="ReaderControlsComponent container-fluid" v-if="CurrentPage">
         <div class="row align-items-center reader-controls-row">
             <div class="col-2 text-left d-none d-sm-block">
                 <b-button variant="dark">
@@ -23,9 +23,9 @@
                     </div>
 
                     <div class="col-sm-6 col-lg-4 text-center">
-                        <b-button variant="dark" block :to="{name: 'chapters.id', params: {ChapterId: Chapter.Id}}">
+                        <b-button variant="dark" block :to="{name: 'chapters.id', params: {ChapterId: CurrentChapter.Id}}">
                             <span class="h5">
-                                {{Chapter.Title}} - Page {{Page.PageNumber}}
+                                {{CurrentChapter.Title}} - Page {{CurrentPage.PageNumber}}
                             </span>
                         </b-button>
                     </div>
