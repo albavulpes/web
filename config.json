@@ -3,6 +3,6 @@
     "ApiPath": "https://stage-api.albavulpes.com"
   },
   "production": {
-    "ApiPath": "https://stage-api.albavulpes.com"
+    "ApiPath": "https://api.albavulpes.com"
   }
 }
