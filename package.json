@@ -71,7 +71,7 @@
     "webpack-merge": "^4.1.1"
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rimraf release",
     "wp:vendor": "webpack --config webpack.vendor.config.js",
     "wp:app": "webpack --config webpack.app.config.js",
     "start": "webpack-dev-server --config webpack.app.config.js"

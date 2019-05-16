@@ -28,3 +28,5 @@ exports.paths = paths;
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 exports.isDev = process.env.NODE_ENV === 'development';
+
+console.info(`(i) Environment:`, process.env.NODE_ENV);

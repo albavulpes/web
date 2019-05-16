@@ -177,23 +177,6 @@ if (!env.isDev) {
                         uglifyOptions: {
                             comments: false
                         }
-                    }),
-                    new OptimizeCssAssetsPlugin({
-                        cssProcessor: require('cssnano'),
-                        cssProcessorOptions: {
-                            preset: [
-                                'default',
-                                {
-                                    normalizeUrl: {
-                                        stripWWW: false
-                                    },
-                                    discardUnused: false,
-                                    discardComments: {
-                                        removeAll: true
-                                    }
-                                }
-                            ]
-                        }
                     })
                 ]
             },
