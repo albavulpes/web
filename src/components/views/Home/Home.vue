@@ -34,12 +34,15 @@
 
                     <div class="d-flex justify-content-center">
                         <b-card class="bg-transparent text-center">
-                            <i class="mdi mdi-library-books" style="font-size: 84px"></i>
+                            <img src="../../../assets/home-comics-icon.png" alt="Comics Icon" height="150" />
 
                             <br>
 
                             <p class="my-3 text-white">
-                                I'm an aspiring artist that likes to draw and do art stuff. I dont know what you do, put a better "bio" line here.
+                                I'm an artist who loves to write stories and draw comics.
+                            </p>
+                            <p class="my-3 text-white">
+                                Check out my <a class="text-white font-weight-bold" href="https://www.instagram.com/albavulpes" target="_blank"><i class="mdi mdi-instagram"></i> Instagram</a> for more cool stuff!
                             </p>
 
                             <router-link class="btn btn-primary mt-3" :to="{name: 'comics'}">
