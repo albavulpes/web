@@ -1,0 +1,41 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.HomeComponent {
+    .topBanner {
+        position: relative;
+
+        background-image: url('../../../assets/home-banner.jpg');
+        background-repeat: no-repeat;
+        background-position: center 45%;
+        background-size: cover;
+
+        height: 560px;
+        margin-top: -120px;
+
+        .topBannerOverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background-image: linear-gradient(to bottom, transparent 30%, rgba(black, 0.8));
+        }
+
+        .topBannerTitles {
+            padding: 90px;
+
+            .topBannerMainTitle {
+                font-size: 72px;
+            }
+            .topBannerSubTitle {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .mainContent {
+        margin-top: -60px;
+    }
+}
